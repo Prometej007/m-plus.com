@@ -403,21 +403,28 @@
     <div class="foot2">Lockation</div>
     <div class="foot3">Some Text</div>
 </footer>
+
+
+
+<script type="text/javascript" src="js/js.js"></script>
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>-->
+    <script type="text/javascript" src="js/js1.js"></script>
+    <script type="text/javascript" src="js/galleria.classic.js"></script>
+    
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <script type="text/javascript" src="js/galleria-1.2.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
 <script>
 
     // Load the classic theme
-    Galleria.loadTheme('galleria.classic.min.js');
+    Galleria.loadTheme('js/galleria.classic.min.js');
 
     // Initialize Galleria
     $('#galleria').galleria();
 
 </script>
 
-    <script type="text/javascript" src="js/js.js"></script>
-    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>-->
-    <script type="text/javascript" src="js/js1.js"></script>
-    <script type="text/javascript" src="js/galleria.classic.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="js/galleria-1.2.2.min.js"></script>
+    
 </body>
 </html>
