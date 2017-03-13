@@ -3,12 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>M-GS</title>
-    <script type="text/javascript" src="JS/js.js"></script>
-    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>-->
-    <script type="text/javascript" src="JS/js1.js"></script>
-    <script type="text/javascript" src="galleria.classic.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="galleria-1.2.2.min.js"></script>
+
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style1.css">
@@ -417,5 +412,12 @@
     $('#galleria').galleria();
 
 </script>
+
+    <script type="text/javascript" src="JS/js.js"></script>
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>-->
+    <script type="text/javascript" src="JS/js1.js"></script>
+    <script type="text/javascript" src="galleria.classic.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="galleria-1.2.2.min.js"></script>
 </body>
 </html>
