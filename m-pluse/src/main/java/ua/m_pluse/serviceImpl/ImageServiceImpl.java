@@ -2,28 +2,35 @@ package ua.m_pluse.serviceImpl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import ua.m_pluse.dao.ImageDao;
 import ua.m_pluse.entity.Image;
 import ua.m_pluse.service.ImageService;
 
-public class ImageServiceImpl implements ImageService  {
+public class ImageServiceImpl implements ImageService {
+
+	@Autowired
+	ImageDao imageDao;
 
 	public void save(Image image) {
-		// TODO Auto-generated method stub
+		imageDao.save(image);
 	}
 
 	public List<Image> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+
+		return imageDao.findAll();
 	}
 
 	public Image findOne(int id) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return imageDao.findOne(id);
 	}
 
 	public void delete(int id) {
-		// TODO Auto-generated method stub
-		
+
+		imageDao.delete(id);
+
 	}
 
 }

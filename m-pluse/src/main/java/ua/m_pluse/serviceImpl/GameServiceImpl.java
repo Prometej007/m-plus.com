@@ -12,24 +12,25 @@ public class GameServiceImpl implements GameService {
 
 	@Autowired
 	private GameDao gameDao;
-	
+
 	public void save(Game game) {
-		
+		gameDao.save(game);
 	}
 
 	public List<Game> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+
+		return gameDao.findAll();
 	}
 
 	public Game findOne(int id) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return gameDao.findOne(id);
 	}
 
 	public void delete(int id) {
-		// TODO Auto-generated method stub
-		
+
+		gameDao.delete(id);
+
 	}
 
 }
