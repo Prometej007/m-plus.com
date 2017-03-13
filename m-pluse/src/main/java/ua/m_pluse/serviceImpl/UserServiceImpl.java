@@ -2,29 +2,37 @@ package ua.m_pluse.serviceImpl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import ua.m_pluse.dao.UserDao;
 import ua.m_pluse.entity.User;
 import ua.m_pluse.service.UserService;
 
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	UserDao userDao;
 
 	public void save(User user) {
-		// TODO Auto-generated method stub
-		
+
+		userDao.save(user);
+
 	}
 
 	public List<User> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+
+		return userDao.findAll();
 	}
 
 	public User findOne(int id) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return userDao.findOne(id);
 	}
 
 	public void delete(int id) {
-		// TODO Auto-generated method stub
-		
+
+		userDao.delete(id);
+
 	}
 
 }
