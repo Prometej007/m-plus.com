@@ -1,4 +1,7 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="UTF-8"%>
+     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+	 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,7 +30,20 @@
 </div>
 </nav>
 <!--  call back-->
+<br>
 
+<c:forEach var="img" items="${imgs}">
+	
+		<img src="${img}" alt="add foto">
+	</c:forEach>
+
+<br>
+
+<form:form action="./saveImg?${_csrf.parameterName}=${_csrf.token}"
+	method="post" enctype="multipart/form-data">
+	<input type="file" name="image">
+	<button>save image</button>
+</form:form>
 <!--  first block -->
 <div class="B00">
 <div  class=" b1 ">
@@ -67,4 +83,3 @@
     <script type="text/javascript" src="js/galleria-1.2.2.js"></script>
     <script type="text/javascript" src="js/js.js"></script>
 </body>
-</html>
