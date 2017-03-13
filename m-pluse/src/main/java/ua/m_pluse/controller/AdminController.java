@@ -2,11 +2,13 @@ package ua.m_pluse.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import ua.m_pluse.entity.Image;
 import ua.m_pluse.service.ImageService;
 
 @Controller
@@ -22,9 +24,12 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "admin",method = RequestMethod.GET)
-	public String admin(){
+	public String admin(Model model){
+//		model.addAttribute("imgs", imageService.findAll());
+		model.addAttribute("img", new Image());
 		
-		return "adminn";
+		
+		return "admin";
 	}
 	
 //	@RequestMapping(value = "saveImg",method = RequestMethod.POST)
