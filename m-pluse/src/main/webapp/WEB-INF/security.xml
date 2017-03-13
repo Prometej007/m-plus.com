@@ -16,7 +16,7 @@
 
         <security:logout logout-url="/logout" logout-success-url="/"/>
         
-        <security:remember-me key="myApp" user-service-ref="userDetailsService"/>
+<!--         <security:remember-me key="myApp" user-service-ref="userDetailsService"/> -->
         
     </security:http>
 
@@ -26,9 +26,9 @@
                 <security:user name="admin" password="admin" authorities="ROLE_ADMIN"/>
             </security:user-service>
         </security:authentication-provider>
-        <security:authentication-provider user-service-ref="userDetailsService">
-            <security:password-encoder ref="encoder"/>
-        </security:authentication-provider>
+<!--         <security:authentication-provider user-service-ref="userDetailsService"> -->
+<!--             <security:password-encoder ref="encoder"/> -->
+<!--         </security:authentication-provider> -->
     </security:authentication-manager>
     
     

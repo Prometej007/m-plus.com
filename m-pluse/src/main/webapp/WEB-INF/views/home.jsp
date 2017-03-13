@@ -5,11 +5,11 @@
     <title>M-GS</title>
 
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style1.css">
-    <link rel="stylesheet" href="stylefooter.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/stylefooter.css">
     <link rel="stylesheet" href="css/styleicon.css">
-    <link rel="stylesheet" href="galleria.classic.css">
+    <link rel="stylesheet" href="css/galleria.classic.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
 </head>
 <body>
@@ -413,11 +413,11 @@
 
 </script>
 
-    <script type="text/javascript" src="JS/js.js"></script>
+    <script type="text/javascript" src="js/js.js"></script>
     <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>-->
-    <script type="text/javascript" src="JS/js1.js"></script>
-    <script type="text/javascript" src="galleria.classic.js"></script>
+    <script type="text/javascript" src="js/js1.js"></script>
+    <script type="text/javascript" src="js/galleria.classic.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="galleria-1.2.2.min.js"></script>
+    <script type="text/javascript" src="js/galleria-1.2.2.min.js"></script>
 </body>
 </html>
