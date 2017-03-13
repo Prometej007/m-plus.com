@@ -1,9 +1,11 @@
 package ua.m_pluse.entity;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class Image {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +15,12 @@ public class Image {
 
 	public Image() {
 
+	}
+
+	public Image(String name, String path) {
+
+		this.name = name;
+		this.path = path;
 	}
 
 	public int getId() {

@@ -1,20 +1,37 @@
 package ua.m_pluse.entity;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class Game {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private String path;
-	
+	private String pathA;
+
 	public Game() {
-		
+
 	}
-	
+
+	public Game(String name, String path, String pathA) {
+		this.pathA = pathA;
+		this.name = name;
+		this.path = path;
+	}
+
+	public String getPathA() {
+		return pathA;
+	}
+
+	public void setPathA(String pathA) {
+		this.pathA = pathA;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -24,6 +41,7 @@ public class Game {
 		result = prime * result + ((path == null) ? 0 : path.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -47,28 +65,34 @@ public class Game {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "Game [id=" + id + ", name=" + name + ", path=" + path + "]";
 	}
-	
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getPath() {
 		return path;
 	}
+
 	public void setPath(String path) {
 		this.path = path;
 	}
-	
+
 }
