@@ -1,0 +1,36 @@
+body,p,h1,h2 {
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.block{
+
+    top:10%;
+    text-align: center;
+    background-color: #ffe121;
+    left:40%;
+    height: 150px;
+    width: 200px;
+    font-size: 15px;
+    position: absolute;
+}
+
+.form{
+    height:20px;
+}
+.button{
+    border: none;
+
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
