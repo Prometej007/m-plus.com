@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>M-GS</title>
-
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script type="text/javascript" src="js/galleria.classic.js"></script>
+    <script type="text/javascript" src="js/js.js"></script>
+    <script type="text/javascript" src="js/js1.js"></script>
+    <script type="text/javascript" src="galleria-1.2.2.js"></script>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style1.css">
     <link rel="stylesheet" href="css/stylefooter.css">
-    <link rel="stylesheet" href="css/styleicon.css">
+    <link rel="stylesheet" href="css/css/styleicon.css">
     <link rel="stylesheet" href="css/galleria.classic.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
 </head>
@@ -49,7 +54,10 @@
 </div>
 
 <span class="navbutton" style="width: auto;right:0;" onclick="openNav()">
-    <i class="ibar"></i></span>
+    <i class="ibar"> <img style="
+height: 50px;
+    width: 45px;
+    padding-top: 16%;" src="SMARTPHONE1.png" alt=""> </i></span>
 <!--  first block -->
 <div class="B00">
 <div  class=" b1 ">
@@ -425,6 +433,5 @@
 
 </script>
 
-    
 </body>
 </html>
