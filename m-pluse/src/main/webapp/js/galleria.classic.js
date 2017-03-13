@@ -87,4 +87,4 @@ Galleria.addTheme({
     }
 });
 
-}(jQuery));
+});

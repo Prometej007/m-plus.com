@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>M-GS</title>
-    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>-->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-    <script type="text/javascript" src="js/galleria.classic.js"></script>
     <script type="text/javascript" src="js/js.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>
     <script type="text/javascript" src="js/js1.js"></script>
-    <script type="text/javascript" src="galleria-1.2.2.js"></script>
+    <script type="text/javascript" src="js/galleria.classic.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script type="text/javascript" src="js/galleria-1.2.2.js"></script>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style1.css">
     <link rel="stylesheet" href="css/stylefooter.css">
-    <link rel="stylesheet" href="css/css/styleicon.css">
+    <link rel="stylesheet" href="css/styleicon.css">
     <link rel="stylesheet" href="css/galleria.classic.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
 </head>
@@ -411,18 +411,6 @@ height: 50px;
     <div class="foot2">Lockation</div>
     <div class="foot3">Some Text</div>
 </footer>
-
-
-
-<script type="text/javascript" src="js/js.js"></script>
-    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>-->
-    <script type="text/javascript" src="js/js1.js"></script>
-    <script type="text/javascript" src="js/galleria.classic.js"></script>
-    
-<!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-    <script type="text/javascript" src="js/galleria-1.2.2.min.js"></script>
-<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-
 <script>
 
     // Load the classic theme
@@ -432,6 +420,5 @@ height: 50px;
     $('#galleria').galleria();
 
 </script>
-
 </body>
 </html>
