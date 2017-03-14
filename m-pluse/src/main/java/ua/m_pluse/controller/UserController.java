@@ -15,6 +15,7 @@ import ua.m_pluse.entity.User;
 import ua.m_pluse.service.GameService;
 import ua.m_pluse.service.ImageService;
 import ua.m_pluse.service.UserService;
+import ua.m_pluse.wrapper.UserWrapper;
 
 @Controller
 public class UserController {
@@ -57,7 +58,38 @@ public class UserController {
 
 		userService.save(user);
 
-		return "redirect:/#formMessageCall";
+		return "redirect:/";
 
 	}
+
+	@RequestMapping(value = "messageCallLeft", method = RequestMethod.POST)
+	public String messageCallLeft(Model model, @ModelAttribute UserWrapper userWrapper) {
+		User user = new User();
+		boolean check = true;
+		boolean checkNumber = true;
+		String phoneOrEmail = userWrapper.getPhoneOrEmail();
+
+		user.setName(userWrapper.getName());
+		for (int i = 0; i < phoneOrEmail.length(); i++) {
+			if (phoneOrEmail.charAt(i) != '@' && check) {
+				check = true;
+			} else {
+				check = false;
+			}
+		}
+		if (check) {
+
+			user.setPhone(phoneOrEmail);
+			userService.save(user);
+
+		} else {
+
+			user.setEmail(phoneOrEmail);
+			userService.save(user);
+		}
+
+		return "redirect:/";
+
+	}
+
 }

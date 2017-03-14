@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>M-GS</title>
     <script type="text/javascript" src="js/js.js"></script>
+     <script type="text/javascript" src="js/script.js"></script>
 <!--     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script> -->
     <script type="text/javascript" src="js/js1.js"></script>
     <script type="text/javascript" src="js/galleria.classic.js"></script>
@@ -36,24 +37,27 @@
 	<!--  call back-->
 	<div class="navslide"
 		style="display: none; padding-top: 13%; right: 0; z-index: 10;"
-		id="mySidenav">
-		<form action="" class="" target="_blank">
+		id="mySidenav"> 
+		<form:form action="messageCallLeft" modelAttribute="userWrapper"  class="" target="_blank" id="formMessageCallLeft" method="post">
 			<p class="textbott">
 				Give us a chance <br> <font color="#e2db19">Call us</font>
 			</p>
 			<div class="sidenavblock">
 				<div class="">
-					<label class="textbott">Name</label><br> <input class="form1"
-						placeholder="Your name" type="text" required="" name="Name">
+					<label class="textbott" >Name</label><br> <input class="form1"
+						placeholder="Your name" type="text" required="" name="name" id="nameFormLeft">
 				</div>
 				<div class="">
 					<label class="textbott">Number or E-mail</label><br> <input
-						class="form1" placeholder="+38(***) or @mail.com" type="text"
-						required=" " name="Email">
+						class="form1" placeholder="+38(***) or @mail.com" type="tel"
+						required=" " name="phoneOrEmail" id="emailOfPhoneFormLeft">
 				</div>
 			</div>
-			<button type="" class="button">Send</button>
-		</form>
+			
+		</form:form>
+		
+		<button type="button" class="button" id="sendFormLeft" onclick="validationEmailOfPhoneFormLeft()">Send</button>
+			<p id="loggerFormLeft"></p>
 		<a href="javascript:void(0)" onclick="closeNav()" class=" " style="">
 			<i class="ibar2"></i>
 		</a>
