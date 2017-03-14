@@ -12,7 +12,7 @@
     <script type="text/javascript" src="js/galleria.classic.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
     <script type="text/javascript" src="js/galleria-1.2.2.js"></script>
-
+<script type="text/javascript" src="js/ajax.js"></script>
 
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style1.css">
@@ -23,6 +23,11 @@
 	rel="stylesheet">
 </head>
 <body>
+
+<input type="hidden" name="csrf_name"
+       value="${_csrf.parameterName}" />
+<input type="hidden" name="csrf_value"
+       value="${_csrf.token}" />
 	<!-- nav bar -->
 	<nav class="nav">
 		<div class="nav1">
@@ -38,7 +43,7 @@
 	<div class="navslide"
 		style="display: none; padding-top: 13%; right: 0; z-index: 10;"
 		id="mySidenav"> 
-		<form:form action="messageCallLeft" modelAttribute="userWrapper"  class="" target="_blank" id="formMessageCallLeft" method="post">
+<%-- 		<form:form action="messageCallLeft" modelAttribute="userWrapper"  class="" target="_blank" id="formMessageCallLeft" method="post"> --%>
 			<p class="textbott">
 				Give us a chance <br> <font color="#e2db19">Call us</font>
 			</p>
@@ -54,7 +59,7 @@
 				</div>
 			</div>
 			
-		</form:form>
+<%-- 		</form:form> --%>
 		
 		<button type="button" class="button" id="sendFormLeft" onclick="validationEmailOfPhoneFormLeft()">Send</button>
 			<p id="loggerFormLeft"></p>
