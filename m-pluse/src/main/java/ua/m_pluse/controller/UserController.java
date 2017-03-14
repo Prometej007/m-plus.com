@@ -5,11 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ua.m_pluse.entity.Game;
 import ua.m_pluse.entity.Image;
+import ua.m_pluse.entity.User;
 import ua.m_pluse.service.GameService;
 import ua.m_pluse.service.ImageService;
 import ua.m_pluse.service.UserService;
@@ -41,13 +43,21 @@ public class UserController {
 		// доробити------------------------------------------------------------------------------------------
 		for (Game gameI : game) {
 
-			gameString = "<a href='" + gameI.getPath() + "'> <img alt='" + gameI.getName() + "' src='"
-					+ gameI.getPath() + "'></a>";
+			gameString = "<a href='" + gameI.getPath() + "'> <img alt='" + gameI.getName() + "' src='" + gameI.getPath()
+					+ "'></a>";
 
 		}
-		//____________________________________________________________________________________________________
+		// ____________________________________________________________________________________________________
 		model.addAttribute(galleryString, "gallery");
 		return "home";
 	}
 
+	@RequestMapping(value = "messageCall", method = RequestMethod.POST)
+	public String messageCall(Model model, @ModelAttribute User user) {
+
+		userService.save(user);
+
+		return "redirect:/#formMessageCall";
+
+	}
 }

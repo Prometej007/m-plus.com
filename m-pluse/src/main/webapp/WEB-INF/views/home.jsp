@@ -1,3 +1,4 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -61,7 +62,7 @@
 	<span class="navbutton" style="width: auto; right: 0;"
 		onclick="openNav()"> <i class="ibar"> <img
 			style="height: 50px; width: 45px; padding-top: 16%;"
-			src="SMARTPHONE1.png" alt="">
+			src="img/SMARTPHONE1.png" alt="">
 	</i></span>
 	<!--  first block -->
 	<div class="B00">
@@ -93,30 +94,30 @@
 			<div class="b2-block1-01">
 				<div class="b2-block1-01-00">
 					<span class="b2-font"> VR/AR </span> <br> <a href=""> <img
-						src="images/virtual_reality.png" class="B2-iclon" " alt="">
+						src="img/virtual_reality.png" class="B2-iclon" " alt="">
 					</a>
 				</div>
 				<div class="b2-block1-01-01">
 					<span class="b2-font"> G&P </span> <br> <a href=""> <img
-						src="images/game_design.png" class="B2-iclon" " alt="">
+						src="img/game_design.png" class="B2-iclon" " alt="">
 					</a>
 				</div>
 			</div>
 			<div class="b2-block1-02">
 				<div class="b2-block1-02-03">
 					<span class="b2-font">SITE</span> <br> <a href=""> <img
-						src="images/site_design.png" class="B2-iclon" " alt="">
+						src="img/site_design.png" class="B2-iclon" " alt="">
 					</a>
 				</div>
 				<div class="b2-block1-02-04">
 
 					<span class="b2-font">DESIGN</span> <br> <a href=""> <img
-						src="images/design.png" class="B2-iclon" " alt="">
+						src="img/design.png" class="B2-iclon" " alt="">
 					</a>
 				</div>
 				<div class="b2-block1-02-05">
 					<span class="b2-font">MARKETING</span> <br> <a href=""> <img
-						src="images/marketing.png" class="B2-iclon" " alt="">
+						src="img/marketing.png" class="B2-iclon" " alt="">
 					</a>
 				</div>
 
@@ -349,26 +350,26 @@
 		<!-- call back -->
 		<div class="b6-block1">
 			<div class="end-callback">
-				<form action="" target="_blank">
+				<form:form action="messageCall" target="_blank" modelAttribute="user" method="post" id="formMessageCall">
 					<p class="textbott">
 						Give us a chance <br> <font color="#e2db19">Call us</font>
 					</p>
 					<div class="sidenavblock1">
 						<div class="sidenavbloc">
 							<label class="text-callbakc">Name</label><br> <input
-								class="end-callbackblock" type="text" name="Name">
+								class="end-callbackblock" type="text" name="name">
 							<div class="">
 								<label class="text-callbakc">Email</label><br> <input
-									class="end-callbackblock" type="text" name="Email">
+									class="end-callbackblock" type="text" name="email">
 							</div>
 							<div class="">
 								<label class="text-callbakc">Message</label> <input
-									class="end-callbackmess" name="Message">
+									class="end-callbackmess" name="message">
 							</div>
 						</div>
-						<button type="" class="button">Send</button>
+						<button type="submit" class="button">Send</button>
 					</div>
-				</form>
+				</form:form>
 			</div>
 		</div>
 		<div class="b b2-block2">
