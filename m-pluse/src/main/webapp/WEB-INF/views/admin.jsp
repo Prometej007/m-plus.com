@@ -32,9 +32,20 @@
 <!--  call back-->
 <br>
 
-<c:forEach var="img" items="${imgs}">
+<!--  first block -->
+<div class="B00">
+<div  class=" b1 ">
+   
+</div>
+</div>
+<div>
+<div ></div>									
+<c:forEach var="img" items="${imgs}" >
 	
-		<img src="${img}" alt="add foto">
+		<img src="${img.path}" alt="add foto">
+		
+		${img.name}
+		
 	</c:forEach>
 
 <br>
@@ -42,13 +53,42 @@
 <form:form action="./saveImg?${_csrf.parameterName}=${_csrf.token}"
 	method="post" enctype="multipart/form-data">
 	<input type="file" name="image">
+	<input type="text" name="name" placeholder="Name">
 	<button>save image</button>
 </form:form>
-<!--  first block -->
-<div class="B00">
-<div  class=" b1 ">
-   
+
+<c:forEach var="img" items="${imgs}" >
+		${img.name}
+		<a href="deleteImg/${img.id}">delete img</a>
+	</c:forEach>
 </div>
+<div>
+<c:forEach var="game" items="${games}" >
+	
+		<img src="${game.path}" alt="add foto">
+		{game.pathA}
+		<br>
+		${game.name}
+		
+	</c:forEach>
+
+<br>
+
+<form:form action="./saveGame?${_csrf.parameterName}=${_csrf.token}"
+	method="post" enctype="multipart/form-data">
+	<input type="file" name="game">
+	<input type="text" name="name" placeholder="Name">
+	<input type="text" name="pathA" placeholder="Link">
+	<button>save game</button>
+</form:form>
+
+<c:forEach var="game" items="${games}" >
+		${game.name}
+		<a href="deleteGame/${game.id}">delete game</a>
+	</c:forEach>
+</div>
+
+
 </div>
 
 <!-- block 7 -->

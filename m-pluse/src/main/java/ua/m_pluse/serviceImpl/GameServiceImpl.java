@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import ua.m_pluse.dao.GameDao;
@@ -37,23 +38,21 @@ public class GameServiceImpl implements GameService {
 		gameDao.delete(id);
 
 	}
-
+	@Transactional
 	public void saveGame(MultipartFile multipartFile, String name, String pathA) {
 
-		String path = System.getProperty("catalina.home") + "/resources/img/";
+		Game game=new Game(name,"resources/Games/" + name +  "/" + multipartFile.getOriginalFilename(),pathA);
+		save(game);
+        String path = System.getProperty("catalina.home") + "/resources/Games/"+name + "/" + multipartFile.getOriginalFilename();
+               
+        File file = new File(path);
 
-		File filePath = new File(path);
-
-		try {
-
-			filePath.mkdirs();
-
-			multipartFile.transferTo(filePath);
-			Game game = new Game(name, path, pathA);
-			gameDao.save(game);
-		} catch (IOException e) {
-			System.out.println("error with file");
-		}
+        try {
+            file.mkdirs();
+            multipartFile.transferTo(file);
+        } catch (IOException e) {
+            System.out.println("error with file");
+        }
 
 	}
 
