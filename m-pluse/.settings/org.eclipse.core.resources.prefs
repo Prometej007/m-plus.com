@@ -1,3 +1,7 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=cc6cf7a5089eeb2912e1385cd82d936184b55d5b
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/views/home.jsp=UTF-8
-encoding//src/main/webapp/WEB-INF/views/homeUa.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/homeEN.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/homeRU.jsp=UTF-8

@@ -1,6 +1,6 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
 
 
@@ -32,9 +32,9 @@
 	<nav class="nav">
 		<div class="nav1">
 			<div class="navmenu">
-				<a href="#we" class="navtag">WE</a> <a href="#work" class="navtag">WORK</a>
-				<a href="#blog" class="navtag">BLOG</a> <a href="#gall"
-					class="navtag">GALLARY</a> <a href="#cont" class="navtag">CONTACT</a>
+				<a href="#we" class="navtag">МЫ</a> <a href="#work" class="navtag">РАБОТА</a>
+				<a href="#blog" class="navtag">БЛОГ</a> <a href="#gall"
+					class="navtag">ГАЛЕРЕЯ</a> <a href="#cont" class="navtag">НАШИ КОНТАКТЫ</a>
 			</div>
 			<a href="#home" class="navlogo">M-Plus</a>
 		</div>
@@ -45,16 +45,16 @@
 		id="mySidenav">
 		<%-- 		<form:form action="messageCallLeft" modelAttribute="userWrapper"  class="" target="_blank" id="formMessageCallLeft" method="post"> --%>
 		<p class="textbott">
-			Give us a chance <br> <font color="#e2db19">Call us</font>
+			Дайте нам шанс <br> <font color="#e2db19">Связаться с нами </font>
 		</p>
 		<div class="sidenavblock">
 			<div class="">
-				<label class="textbott">Name</label><br> <input class="form1"
+				<label class="textbott">Имя</label><br> <input class="form1"
 					placeholder="Your name" type="text" required="" name="name"
 					id="nameFormLeft">
 			</div>
 			<div class="">
-				<label class="textbott">Number or E-mail</label><br> <input
+				<label class="textbott">Номер или E-mail</label><br> <input
 					class="form1" placeholder="+38(***) or @mail.com" type="tel"
 					required=" " name="phoneOrEmail" id="emailOfPhoneFormLeft">
 			</div>
@@ -63,7 +63,7 @@
 		<%-- 		</form:form> --%>
 
 		<button type="button" class="button" id="sendFormLeft"
-			onclick="validationEmailOfPhoneFormLeft()">Send</button>
+			onclick="validationEmailOfPhoneFormLeft()">Отправить</button>
 		<p id="loggerFormLeft"></p>
 		<a href="javascript:void(0)" onclick="closeNav()" class=" " style="">
 			<i class="ibar2"></i>
@@ -79,9 +79,8 @@
 	<div class="B00">
 		<div class=" b1 ">
 			<div class="b1-block1">
-				<span class="texttitle">Making <mone></mone>y is art and
-					working is art and good business <br>is the <font
-					color="#e2db19"> best art.</font>
+				<span class="texttitle">Мы верим <mone></mone> в идеалы и ценим каждого нашего клиента <br>с нами вы будете чувствовать себя в <font
+					color="#e2db19"> безопасности.</font>
 				</span>
 			</div>
 			<div class=" b b1-block0">
@@ -96,11 +95,11 @@
 		</div>
 		<div class="b b2-block2">
 
-			<span class="text1-b2"> <font color="#e2db19">WHAT</font> <br>
-				WE <br> DO <br>
+			<span class="text1-b2"> <font color="#e2db19">ЧТО</font> <br>
+				МЫ <br> ДЕЛАЕМ <br>
 			</span>
 		</div>
-		<span class="spanBG">CREAT</span>
+		<span class="spanBG">СОЗДАЁМ</span>
 		<div class="b b2-block1">
 			<div class="b2-block1-01">
 				<div class="b2-block1-01-00">
@@ -116,18 +115,18 @@
 			</div>
 			<div class="b2-block1-02">
 				<div class="b2-block1-02-03">
-					<span class="b2-font">SITE</span> <br> <a href=""> <img
+					<span class="b2-font">САЙТЫ</span> <br> <a href=""> <img
 						src="img/site_design.png" class="B2-iclon" " alt="">
 					</a>
 				</div>
 				<div class="b2-block1-02-04">
 
-					<span class="b2-font">DESIGN</span> <br> <a href=""> <img
+					<span class="b2-font">ДИЗАЙН</span> <br> <a href=""> <img
 						src="img/design.png" class="B2-iclon" " alt="">
 					</a>
 				</div>
 				<div class="b2-block1-02-05">
-					<span class="b2-font">MARKETING</span> <br> <a href=""> <img
+					<span class="b2-font">МАРКЕЙТИНГ</span> <br> <a href=""> <img
 						src="img/marketing.png" class="B2-iclon" " alt="">
 					</a>
 				</div>
@@ -144,7 +143,7 @@
       <span class="text-b4"> <button type="button" class="button-b2" class="b" onclick="myFunction()"> VR/AR </button>
           <br>
           <a href="#"class=""></a>
-        <button type="button" class="button-b2" onclick="myFunction1()">GAMES </button>
+        <button type="button" class="button-b2" onclick="myFunction1()">ИГРЫ </button>
           <br>
            <button type="button" class="button-b2" onclick="myFunction2()">COUTH</button><br>
       </span>
@@ -152,11 +151,11 @@
     <div class="b b2-block2">
 
        <span class="text1-b2">
-            <font color="#e2db19">OUR</font> <br>
-        PROJECTS <br>
+            <font color="#e2db19">НАШИ</font> <br>
+        ПРОЕКТЫ <br>
        </span>
     </div>
-    <span class="spanBG">WORK</span>
+    <span class="spanBG">РАБОТА</span>
     <div class="b"></div>
     <div class="b3-block0"></div>
     <div id="div3" class="b3-block1">
@@ -167,40 +166,27 @@
 </div>
 	<!-- block 4-->
 	<div class=" b4">
-		<span class="spanBG">WE</span>
+		<span class="spanBG">МЫ</span>
 		<div class="b"></div>
 		<div class="b4-block3"></div>
 		<div class="b4-block0">
 			<div class="b4-block0-0">
-				<span class="text2-b4"> latest new </span>
-				<p class="textpar">The developer also teases the mysterious
-					PS4-exclusive's online mode.</p>
+				<span class="text2-b4">  "Be_Touch"  </span>
+				<p class="textpar">Новая игра под названием "Be_Touch" </p>
 			</div>
 			<div class="b4-block0-1">
-				<span class="text2-b4"> latest new </span>
-				<p class="textpar">The developer also teases the mysterious
-					PS4-exclusive's online mode.</p>
-			</div>
-			<div class="b4-block0-2">
-				<span class="text2-b4"> latest new </span>
-				<p class="textpar">The developer also teases the mysterious
-					PS4-exclusive's online mode.</p>
-			</div>
-			<div class="b4-block0-3">
-				<span class="text2-b4"> latest new </span>
-				<p class="textpar">The developer also teases the mysterious
-					PS4-exclusive's online mode.</p>
+				<span class="text2-b4"> Несколько больших обновлений. </span>
+				<p class="textpar">Добавлено меню, добавлено 2 новых мода, добавлено много тем. Исправлено много ошибок, созданы реалистичные коллайдеры. Новая версия игры сейчас тестируется в закрытом бета-тесте.</p>
 			</div>
 		</div>
 		<div class="b2-block2">
-			<span class="text1-b2"> <font color="#e2db19">OUR</font> <br>
-				BLOG <br>
+			<span class="text1-b2"> <font color="#e2db19">НАШ</font> <br>
+				БЛОГ <br>
 			</span>
 		</div>
 		<div class="b2-block3">
-			<h1 class="text-b3">Game Development is our core competence. We
-				collaborate closely with our partners, assisting them throughout the
-				whole process of developing high quality AAA titles.</h1>
+			<h1 class="text-b3">Разработка игр является нашей главной деятельностью. 
+Мы тесно сотрудничаем с нашими партнерами, помогая им на протяжении всего процесса разработки высококачественных игр.</h1>
 		</div>
 	</div>
 	<!-- block 5-->
@@ -223,39 +209,39 @@
 		</div>
 		<div class="b b6-block3">
 
-			<span class="text1-b2"> <font color="#e2db19">GALLARY</font> <br>
+			<span class="text1-b2"> <font color="#e2db19">ГАЛЕРЕЯ</font> <br>
 
 			</span>
 		</div>
 	</div>
 	<!-- block 6 -->
 	<div class=" b6">
-		<span class="spanBG">CONTACT</span>
+		<span class="spanBG">НАШИ КОНТАКТЫ</span>
 		<div class="b6-block0"></div>
 		<!-- call back -->
 		<div class="b6-block1">
 			<div class="end-callback">
 				<%-- 				<form:form action="messageCall" target="_blank" modelAttribute="user" method="post" id="formMessageCall"> --%>
 				<p class="textbott">
-					Give us a chance <br> <font color="#e2db19">Call us</font>
+					Дайте нам шанс <br> <font color="#e2db19">Связаться с нами</font>
 				</p>
 				<div class="sidenavblock1">
 					<div class="sidenavbloc">
-						<label class="text-callbakc">Name</label><br> <input
+						<label class="text-callbakc">Имя</label><br> <input
 							class="end-callbackblock" type="text" name="name"
 							id="nameUser-bottom">
 						<div class="">
-							<label class="text-callbakc">Email</label><br> <input
+							<label class="text-callbakc">E-mail</label><br> <input
 								class="end-callbackblock" type="text" name="email"
 								id="email-bottom">
 						</div>
 						<div class="">
-							<label class="text-callbakc">Message</label> <input
+							<label class="text-callbakc">Сообщение</label> <input
 								class="end-callbackmess" name="message" id="message-bottom">
 						</div>
 					</div>
 					<button type="submit" class="button"
-						onclick="validationEmailOfPhoneFormBottom()">Send</button>
+						onclick="validationEmailOfPhoneFormBottom()">Отправить</button>
 					<p id="loggerFormBottom"></p>
 				</div>
 				<%-- 				</form:form> --%>
@@ -282,9 +268,19 @@
 					class="entypo-dribbble" style="width: 40px; height: 40px;"></i>
 			</div>
 		</div>
-		<div class="foot1">Contacts</div>
-		<div class="foot2">Lockation</div>
-		<div class="foot3">Some Text</div>
+<!-- 		<div class="foot1">Contacts</div> -->
+		<div class="foot2"><h2><p class="foot2-p1">Contacts</p></h2>
+			<p class="foot2-p2">Ukr-lviv </p>
+ 			<p class="foot2-p3"> Mobile phone: 096-369-03-91</p>
+ 			<p class="foot2-p4"> Email: ceo@m-plus.com</p>
+		
+		</div>
+<!--  		<div class="foot3"><p>Contacts</p> -->
+<!--  			<p>Ukr-lviv </p> -->
+<!--  			<p> Mobile phone: 096-369-03-91</p> -->
+<!--  			<p> Email: ceo@m-plus.com</p> -->
+ 		
+<!--  		</div>  -->
 	</footer>
 	<script>
 		// Load the classic theme

@@ -79,7 +79,7 @@
 	<div class="B00">
 		<div class=" b1 ">
 			<div class="b1-block1">
-				<span class="texttitle">Making <mone></mone>y is art and
+				<span class="texttitle">Making <mone></mone> is art and
 					working is art and good business <br>is the <font
 					color="#e2db19"> best art.</font>
 				</span>
@@ -172,24 +172,12 @@
 		<div class="b4-block3"></div>
 		<div class="b4-block0">
 			<div class="b4-block0-0">
-				<span class="text2-b4"> latest new </span>
-				<p class="textpar">The developer also teases the mysterious
-					PS4-exclusive's online mode.</p>
+				<span class="text2-b4">New game called "Be_Touch"  </span>
+				<p class="textpar">Almost made a new game called "Be_Touch".</p>
 			</div>
 			<div class="b4-block0-1">
-				<span class="text2-b4"> latest new </span>
-				<p class="textpar">The developer also teases the mysterious
-					PS4-exclusive's online mode.</p>
-			</div>
-			<div class="b4-block0-2">
-				<span class="text2-b4"> latest new </span>
-				<p class="textpar">The developer also teases the mysterious
-					PS4-exclusive's online mode.</p>
-			</div>
-			<div class="b4-block0-3">
-				<span class="text2-b4"> latest new </span>
-				<p class="textpar">The developer also teases the mysterious
-					PS4-exclusive's online mode.</p>
+				<span class="text2-b4"> Some big updates </span>
+				<p class="textpar">Added menu, made 2 playing modes, added a lot of themes. Fixed lot of bugs, made realistic colliders. The new version of the game is now testing by a closed beta-testing.</p>
 			</div>
 		</div>
 		<div class="b2-block2">
@@ -282,9 +270,19 @@
 					class="entypo-dribbble" style="width: 40px; height: 40px;"></i>
 			</div>
 		</div>
-		<div class="foot1">Contacts</div>
-		<div class="foot2">Lockation</div>
-		<div class="foot3">Some Text</div>
+<!-- 		<div class="foot1">Contacts</div> -->
+		<div class="foot2"><h2><p class="foot2-p1">Contacts</p></h2>
+			<p class="foot2-p2">Ukr-lviv </p>
+ 			<p class="foot2-p3"> Mobile phone: 096-369-03-91</p>
+ 			<p class="foot2-p4"> Email: ceo@m-plus.com</p>
+		
+		</div>
+<!--  		<div class="foot3"><p>Contacts</p> -->
+<!--  			<p>Ukr-lviv </p> -->
+<!--  			<p> Mobile phone: 096-369-03-91</p> -->
+<!--  			<p> Email: ceo@m-plus.com</p> -->
+ 		
+<!--  		</div>  -->
 	</footer>
 	<script>
 		// Load the classic theme

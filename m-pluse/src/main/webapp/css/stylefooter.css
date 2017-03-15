@@ -20,6 +20,10 @@
     height: 100%;
     width: 25%;
 }
+.foot2-p1{
+	color:yellow;
+	size:25px;
+}
 .foot2{
     height: 100%;
     width: 25%;
@@ -59,6 +63,9 @@
     height: 100%;
     width: 25%;
     position: absolute;
+}
+.foot2-p2{
+	
 }
 .foot3{
 
