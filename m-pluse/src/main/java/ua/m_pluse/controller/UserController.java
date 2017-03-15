@@ -34,7 +34,7 @@ public class UserController {
 	@Autowired
 	private TextService textService;
 
-	@RequestMapping(value = { "/", "home" }, method = RequestMethod.GET)
+	@RequestMapping(value =  "ua" , method = RequestMethod.GET)
 	public String homeUA(Model model/* , @PathVariable String languageTeg */) {
 		// ________________________________________________TextLoading_____________________Start_______________________________
 
@@ -66,7 +66,7 @@ public class UserController {
 		return "homeUA";
 	}
 
-	@RequestMapping(value = { "/", "home" }, method = RequestMethod.GET)
+	@RequestMapping(value =  "ru" , method = RequestMethod.GET)
 	public String homeRU(Model model/* , @PathVariable String languageTeg */) {
 		// ________________________________________________TextLoading_____________________Start_______________________________
 
@@ -98,7 +98,7 @@ public class UserController {
 		return "homeRU";
 	}
 
-	@RequestMapping(value = { "/", "home" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/", "en" }, method = RequestMethod.GET)
 	public String homeEN(Model model/* , @PathVariable String languageTeg */) {
 		// ________________________________________________TextLoading_____________________Start_______________________________
 

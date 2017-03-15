@@ -270,16 +270,18 @@
 					class="entypo-dribbble" style="width: 40px; height: 40px;"></i>
 			</div>
 		</div>
-		<div class="foot1">
-		<a href="ua">UA</a>
- 			<a href="ru">RU</a></div>
+<!-- 		<div class="foot1">Contacts</div> -->
 		<div class="foot2"><h2><p class="foot2-p1">Contacts</p></h2>
 			<p class="foot2-p2">Ukr-lviv </p>
  			<p class="foot2-p3"> Mobile phone: 096-369-03-91</p>
- 			<p class="foot2-p4"> Email: ceo@m-plus.com</p>	
+ 			<p class="foot2-p4"> Email: ceo@m-plus.com</p>
+		
 		</div>
-<!--  		<div class="foot3"> -->
- 			
+<!--  		<div class="foot3"><p>Contacts</p> -->
+<!--  			<p>Ukr-lviv </p> -->
+<!--  			<p> Mobile phone: 096-369-03-91</p> -->
+<!--  			<p> Email: ceo@m-plus.com</p> -->
+ 		
 <!--  		</div>  -->
 	</footer>
 	<script>

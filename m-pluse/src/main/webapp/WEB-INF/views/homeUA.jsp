@@ -6,7 +6,7 @@
 
 <meta charset="UTF-8">
 <title>M-Plus</title>
- <link rel="shortcut icon" href="img/logo_m-plus.png" type="image/png">
+<link rel="shortcut icon" href="img/logo_m-plus.png" type="image/png">
 <script type="text/javascript" src="js/js.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <!--     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script> -->
@@ -35,6 +35,7 @@
 				<a href="#we" class="navtag">WE</a> <a href="#work" class="navtag">WORK</a>
 				<a href="#blog" class="navtag">BLOG</a> <a href="#gall"
 					class="navtag">GALLARY</a> <a href="#cont" class="navtag">CONTACT</a>
+					<a href="en">EN</a> <a href="ru">RU</a>
 			</div>
 			<a href="#home" class="navlogo">M-Plus</a>
 		</div>
@@ -140,31 +141,30 @@
 	</div>
 	<!-- block 3-->
 	<div id="work" class=" b3">
-    <div class="b3-block2">
-      <span class="text-b4"> <button type="button" class="button-b2" class="b" onclick="myFunction()"> VR/AR </button>
-          <br>
-          <a href="#"class=""></a>
-        <button type="button" class="button-b2" onclick="myFunction1()">GAMES </button>
-          <br>
-           <button type="button" class="button-b2" onclick="myFunction2()">COUTH</button><br>
-      </span>
-    </div>
-    <div class="b b2-block2">
+		<div class="b3-block2">
+			<span class="text-b4">
+				<button type="button" class="button-b2" class="b"
+					onclick="myFunction()">VR/AR</button> <br> <a href="#"
+				class=""></a>
+				<button type="button" class="button-b2" onclick="myFunction1()">GAMES
+				</button> <br>
+				<button type="button" class="button-b2" onclick="myFunction2()">COUTH</button>
+				<br>
+			</span>
+		</div>
+		<div class="b b2-block2">
 
-       <span class="text1-b2">
-            <font color="#e2db19">OUR</font> <br>
-        PROJECTS <br>
-       </span>
-    </div>
-    <span class="spanBG">WORK</span>
-    <div class="b"></div>
-    <div class="b3-block0"></div>
-    <div id="div3" class="b3-block1">
-       ${game}
-    </div>
-    
+			<span class="text1-b2"> <font color="#e2db19">OUR</font> <br>
+				PROJECTS <br>
+			</span>
+		</div>
+		<span class="spanBG">WORK</span>
+		<div class="b"></div>
+		<div class="b3-block0"></div>
+		<div id="div3" class="b3-block1">${game}</div>
 
-</div>
+
+	</div>
 	<!-- block 4-->
 	<div class=" b4">
 		<span class="spanBG">WE</span>
@@ -172,12 +172,14 @@
 		<div class="b4-block3"></div>
 		<div class="b4-block0">
 			<div class="b4-block0-0">
-				<span class="text2-b4">New game called "Be_Touch"  </span>
+				<span class="text2-b4">New game called "Be_Touch" </span>
 				<p class="textpar">Almost made a new game called "Be_Touch".</p>
 			</div>
 			<div class="b4-block0-1">
 				<span class="text2-b4"> Some big updates </span>
-				<p class="textpar">Added menu, made 2 playing modes, added a lot of themes. Fixed lot of bugs, made realistic colliders. The new version of the game is now testing by a closed beta-testing.</p>
+				<p class="textpar">Added menu, made 2 playing modes, added a lot
+					of themes. Fixed lot of bugs, made realistic colliders. The new
+					version of the game is now testing by a closed beta-testing.</p>
 			</div>
 		</div>
 		<div class="b2-block2">
@@ -271,16 +273,23 @@
 			</div>
 		</div>
 		<div class="foot1">
-		<a href="ua">UA</a>
- 			<a href="ru">RU</a></div>
-		<div class="foot2"><h2><p class="foot2-p1">Contacts</p></h2>
-			<p class="foot2-p2">Ukr-lviv </p>
- 			<p class="foot2-p3"> Mobile phone: 096-369-03-91</p>
- 			<p class="foot2-p4"> Email: ceo@m-plus.com</p>	
+			<a href="en">EN</a> <a href="ru">RU</a>
 		</div>
-<!--  		<div class="foot3"> -->
- 			
-<!--  		</div>  -->
+		<div class="foot2">
+			<h2>
+				<p class="foot2-p1">Contacts</p>
+			</h2>
+			<p class="foot2-p2">Ukr-lviv</p>
+			<p class="foot2-p3">Mobile phone: 096-369-03-91</p>
+			<p class="foot2-p4">Email: ceo@m-plus.com</p>
+
+		</div>
+		<!--  		<div class="foot3"><p>Contacts</p> -->
+		<!--  			<p>Ukr-lviv </p> -->
+		<!--  			<p> Mobile phone: 096-369-03-91</p> -->
+		<!--  			<p> Email: ceo@m-plus.com</p> -->
+
+		<!--  		</div>  -->
 	</footer>
 	<script>
 		// Load the classic theme
