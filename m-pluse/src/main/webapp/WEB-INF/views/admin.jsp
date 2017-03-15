@@ -5,7 +5,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>M-GS</title>
+
+<link rel="shortcut icon" href="img/logo_m-plus.png" " type="image/png">
+<meta charset="UTF-8">
+<title>M-Pulse</title>
 
 <script src="js/ajax.js"></script>
 <link rel="stylesheet" href="css/menu.css">
@@ -31,7 +34,7 @@
 				<a href="#blog" class="navtag">BLOG</a> <a href="#gall"
 					class="navtag">GALLARY</a> <a href="#cont" class="navtag">CONTACT</a>
 			</div>
-			<a href="#home" class="navlogo">M-GS</a>
+			<a href="#home" class="navlogo">M-Pulse</a>
 		</div>
 	</nav>
 	<!--  call back-->
@@ -85,56 +88,56 @@
 						</div>
 
 
-					<div class="container" style="background-color: #f1f1f1">
-					
-					<div>
-			<button class="profilebutton"
-				onclick="document.getElementById('addphoto').style.display='block'"
-				style="">addphoto</button>
+						<div class="container" style="background-color: #f1f1f1">
 
-			<div id="addphoto" class="modal">
+							<div>
+								<button class="profilebutton"
+									onclick="document.getElementById('addphoto').style.display='block'"
+									style="">addphoto</button>
 
-				<div class="modal-content animate">
-					<div class="imgcontainer">
-						<span
-							onclick="document.getElementById('addphoto').style.display='none'"
-							class="close" title="Close Modal">&times;</span>
-					</div>
-					<div class="imgcontainer">
-						<p>imgcontainer</p>
-					</div>
+								<div id="addphoto" class="modal">
 
-					<div class="container">
-						<form:form
-							action="./saveImg?${_csrf.parameterName}=${_csrf.token}"
-							method="post" enctype="multipart/form-data">
-							<input type="file" name="image">
-							<input type="text" name="name" placeholder="Name">
-							<button>save image</button>
-						</form:form>
-					</div>
-					<div class="container" style="background-color: #f1f1f1">
-						<button type="button"
-							onclick="document.getElementById('addphoto').style.display='none'"
-							class="cancelbtn">Cancel</button>
+									<div class="modal-content animate">
+										<div class="imgcontainer">
+											<span
+												onclick="document.getElementById('addphoto').style.display='none'"
+												class="close" title="Close Modal">&times;</span>
+										</div>
+										<div class="imgcontainer">
+											<p>imgcontainer</p>
+										</div>
 
+										<div class="container">
+											<form:form
+												action="./saveImg?${_csrf.parameterName}=${_csrf.token}"
+												method="post" enctype="multipart/form-data">
+												<input type="file" name="image">
+												<input type="text" name="name" placeholder="Name">
+												<button>save image</button>
+											</form:form>
+										</div>
+										<div class="container" style="background-color: #f1f1f1">
+											<button type="button"
+												onclick="document.getElementById('addphoto').style.display='none'"
+												class="cancelbtn">Cancel</button>
+
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<button type="button"
+								onclick="document.getElementById('GalleryImage').style.display='none'"
+								class="cancelbtn">Cancel</button>
+
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-					
-						<button type="button"
-							onclick="document.getElementById('GalleryImage').style.display='none'"
-							class="cancelbtn">Cancel</button>
-							
-					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
 
-		
+
+
 		<div>
 			<button class="profilebutton"
 				onclick="document.getElementById('Game').style.display='block'"
@@ -156,54 +159,53 @@
 						<c:forEach var="game" items="${games}">
 							<p>${game.name}</p>
 							<div>
-								<img src="${game.path}" alt="add foto">
-								<a href="deleteGame/${game.id}">&times;</a>
-								</img>
-								</div>
-							
+								<img src="${game.path}" alt="add foto"> <a
+									href="deleteGame/${game.id}">&times;</a> </img>
+							</div>
+
 						</c:forEach>
 					</div>
 					<div class="container" style="background-color: #f1f1f1">
-					
-					<div>
-			<button class="profilebutton"
-				onclick="document.getElementById('addgame').style.display='block'"
-				style="">addgame</button>
 
-			<div id="addgame" class="modal">
+						<div>
+							<button class="profilebutton"
+								onclick="document.getElementById('addgame').style.display='block'"
+								style="">addgame</button>
 
-				<div class="modal-content animate">
-					<div class="imgcontainer">
-						<span
-							onclick="document.getElementById('addgame').style.display='none'"
-							class="close" title="Close Modal">&times;</span>
-					</div>
-					<div class="imgcontainer">
-						<p>imgcontainer</p>
-					</div>
+							<div id="addgame" class="modal">
 
-					<div class="container">
-						<form:form
-							action="./saveGame?${_csrf.parameterName}=${_csrf.token}"
-							method="post" enctype="multipart/form-data">
-							<input type="file" name="game">
-							<input type="text" name="name" placeholder="Name">
-							<input type="text" name="pathA" placeholder="Link">
-							<button>save game</button>
-						</form:form>
+								<div class="modal-content animate">
+									<div class="imgcontainer">
+										<span
+											onclick="document.getElementById('addgame').style.display='none'"
+											class="close" title="Close Modal">&times;</span>
+									</div>
+									<div class="imgcontainer">
+										<p>imgcontainer</p>
+									</div>
 
-					</div>
-					<div class="container" style="background-color: #f1f1f1">
-						<button type="button"
-							onclick="document.getElementById('addgame').style.display='none'"
-							class="cancelbtn">Cancel</button>
+									<div class="container">
+										<form:form
+											action="./saveGame?${_csrf.parameterName}=${_csrf.token}"
+											method="post" enctype="multipart/form-data">
+											<input type="file" name="game">
+											<input type="text" name="name" placeholder="Name">
+											<input type="text" name="pathA" placeholder="Link">
+											<button>save game</button>
+										</form:form>
 
-					</div>
-				</div>
-			</div>
-		</div>
-		
-					
+									</div>
+									<div class="container" style="background-color: #f1f1f1">
+										<button type="button"
+											onclick="document.getElementById('addgame').style.display='none'"
+											class="cancelbtn">Cancel</button>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+
 						<button type="button"
 							onclick="document.getElementById('Game').style.display='none'"
 							class="cancelbtn">Cancel</button>
@@ -223,7 +225,7 @@
 	</div>
 
 	<div>
-<div>
+		<div>
 			<button class="profilebutton"
 				onclick="document.getElementById('Message').style.display='block'"
 				style="">Message</button>
@@ -253,7 +255,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- block 7 -->
 		<footer class="b7">
 			<div class="foot0">

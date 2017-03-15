@@ -4,6 +4,9 @@
 <html lang="en">
 
 <head>
+<link rel="shortcut icon" href="img/logo_m-plus.png"	" type="image/png">
+<meta charset="UTF-8">
+<title>M-pulse</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 	<script type="text/javascript" src="js/ajax.js"></script>
     <meta charset="UTF-8">
