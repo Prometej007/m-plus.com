@@ -1,4 +1,4 @@
-window.onload = function () {
+function messageLoad() {
 
     $.ajax({
 
@@ -8,13 +8,17 @@ window.onload = function () {
         dataType: 'json',
         success: function (res) {
 
-            var all = '';
-
+            var all = "";
+            document.getElementById('allMessages').innerHTML=res.length;
             for (var i = 0; i < res.length; i++) {
                 var index = res[i].id;
                 all += '<div class="box">'+res[i].name +'<a onclick="deleteMessage(' + index + ')"> delete </div><br>';
+                all += '<div class="box">'+res[i].message +'></div><br>';
+                all += '<div class="box">'+res[i].phone +'></div><br>';
+                all += '<div class="box">'+res[i].email +'></div><br>';
+                all += '<div class="box">'+res[i].dateOfPublic +'></div><br>';
             }
-            document.getElementById('allMessages').innerHTML = all;
+            document.getElementById('allMessages').innerHTML += all;
         }
     })
 
@@ -36,6 +40,10 @@ function deleteMessage(index) {
             for (var i = 0; i < res.length; i++) {
                 var index = res[i].id;
                 all += '<div class="box">'+res[i].name +'<a onclick="deleteMessage(' + index + ')"> delete </div><br>';
+                all += '<div class="box">'+res[i].message +'></div><br>';
+                all += '<div class="box">'+res[i].phone +'></div><br>';
+                all += '<div class="box">'+res[i].email +'></div><br>';
+                all += '<div class="box">'+res[i].dateOfPublic +'></div><br>';
             }
             document.getElementById('allMessages').innerHTML = all;
         	
@@ -61,6 +69,10 @@ function wasRead(index) {
             for (var i = 0; i < res.length; i++) {
                 var index = res[i].id;
                 all += '<div class="box">'+res[i].name +'<a onclick="deleteMessage(' + index + ')"> delete </div><br>';
+                all += '<div class="box">'+res[i].message +'></div><br>';
+                all += '<div class="box">'+res[i].phone +'></div><br>';
+                all += '<div class="box">'+res[i].email +'></div><br>';
+                all += '<div class="box">'+res[i].dateOfPublic +'></div><br>';
             }
             document.getElementById('allMessages').innerHTML = all;
         	

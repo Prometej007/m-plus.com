@@ -7,13 +7,14 @@
     <meta charset="UTF-8">
     <title>M-GS</title>
 
-
+	<script src="js/ajax.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style1.css">
     <link rel="stylesheet" href="css/stylefooter.css">
     <link rel="stylesheet" href="css/styleicon.css">
     <link rel="stylesheet" href="css/galleria.classic.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
+    
 </head>
 <body>
 
@@ -96,6 +97,18 @@
 
 </div>
 
+<div>
+
+<button onclick="messageLoad()">messageLoad()</button>
+<div id="allMessages"></div>
+
+
+
+
+
+
+</div>
+
 <!-- block 7 -->
 <footer class="b7">
     <div class="foot0">
@@ -127,4 +140,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="js/galleria-1.2.2.js"></script>
     <script type="text/javascript" src="js/js.js"></script>
+    <scrtpt></scrtpt>
 </body>

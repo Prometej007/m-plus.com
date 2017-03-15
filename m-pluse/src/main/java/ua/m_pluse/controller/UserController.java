@@ -36,7 +36,7 @@ public class UserController {
 	@RequestMapping(value = { "/", "home" }, method = RequestMethod.GET)
 	public String home(Model model) {
 
-		textService.findAll()
+		textService.findAll();
 		
 		List<Image> gallery = imageService.findAll();
 		List<Game> game = gameService.findAll();
