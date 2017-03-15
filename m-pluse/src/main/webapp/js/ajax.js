@@ -27,20 +27,21 @@
 
 function deleteMessage(index) {
 
-    $.ajax({
+	$.ajax({
 
-        url: 'deleteMessage?' + $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
-        method: 'POST',
-        contentType: 'application/json; charset=UTF-8',
-        dataType: 'json',
-        data: '' + index,
-        success: function (res) {
+		url : 'deleteMessage?' + $('input[name=csrf_name]').val() + "="
+				+ $('input[name=csrf_value]').val(),
+		method : 'POST',
+		contentType : 'application/json; charset=UTF-8',
+		dataType : 'json',
+		data : '' + index,
+		success : function(res) {
 
-            var all = '';
+			var all = '';
 
-            for (var i = 0; i < res.length; i++) {
-                var index = res[i].id;
-				                all += '<div class="box">' + res[i].name
+			for (var i = 0; i < res.length; i++) {
+				var index = res[i].id;
+				all += '<div class="box">' + res[i].name
 						+ '<a onclick="deleteMessage(' + index
 						+ ')"> delete </div><br>';
 				all += '<div class="box">' + res[i].message + '></div><br>';
@@ -48,48 +49,50 @@ function deleteMessage(index) {
 				all += '<div class="box">' + res[i].email + '></div><br>';
 				all += '<div class="box">' + res[i].dateOfPublic
 						+ '></div><br>';
-            }
-            document.getElementById('allMessages').innerHTML = all;
-        	
-        }
-    })
+			}
+			document.getElementById('allMessages').innerHTML = all;
 
+		}
+	})
 
 }
 
 function wasRead(index) {
 
-    $.ajax({
+	$.ajax({
 
-        url: 'wasRead?' + $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
-        method: 'POST',
-        contentType: 'application/json; charset=UTF-8',
-        dataType: 'json',
-        data: '' + index,
-        success: function (res) {
+		url : 'wasRead?' + $('input[name=csrf_name]').val() + "="
+				+ $('input[name=csrf_value]').val(),
+		method : 'POST',
+		contentType : 'application/json; charset=UTF-8',
+		dataType : 'json',
+		data : '' + index,
+		success : function(res) {
 
-            var all = '';
+			var all = '';
 
-            for (var i = 0; i < res.length; i++) {
-                var index = res[i].id;
-                all += '<div class="box">'+res[i].name +'<a onclick="deleteMessage(' + index + ')"> delete </div><br>';
-                all += '<div class="box">'+res[i].message +'></div><br>';
-                all += '<div class="box">'+res[i].phone +'></div><br>';
-                all += '<div class="box">'+res[i].email +'></div><br>';
-                all += '<div class="box">'+res[i].dateOfPublic +'></div><br>';
-            }
-            document.getElementById('allMessages').innerHTML = all;
-        	
-        }
-    })
+			for (var i = 0; i < res.length; i++) {
+				var index = res[i].id;
+				all += '<div class="box">' + res[i].name
+						+ '<a onclick="deleteMessage(' + index
+						+ ')"> delete </div><br>';
+				all += '<div class="box">' + res[i].message + '></div><br>';
+				all += '<div class="box">' + res[i].phone + '></div><br>';
+				all += '<div class="box">' + res[i].email + '></div><br>';
+				all += '<div class="box">' + res[i].dateOfPublic
+						+ '></div><br>';
+			}
+			document.getElementById('allMessages').innerHTML = all;
 
+		}
+	})
 
 }
 
-//==============================================================================================================
-//==============================================================================================================
-//==============================================================================================================
-//==============================================================================================================
+// ==============================================================================================================
+// ==============================================================================================================
+// ==============================================================================================================
+// ==============================================================================================================
 function messageSave() {
 
 	var user = {
@@ -265,11 +268,11 @@ function validationEmailOfPhoneFormBottom() {
 			checkEmail = false;
 		}
 	}
-	if (!checkEmail && email != "") {
+	if (!checkEmail && email != "" && name.length < 255) {
 
-		if (name != "") {
+		if (name != "" && name.length < 255) {
 			document.getElementById('loggerFormBottom').innerHTML = "";
-			if (message != "") {
+			if (message != "" && name.length < 255) {
 				document.getElementById('loggerFormBottom').style = "color:green;";
 				document.getElementById('loggerFormBottom').innerHTML = "ready!";
 				messageSaveBottom();
@@ -284,9 +287,9 @@ function validationEmailOfPhoneFormBottom() {
 
 	} else {
 		document.getElementById('loggerFormBottom').style = "color:red;";
-		if(checkEmail){
+		if (checkEmail) {
 			document.getElementById('loggerFormBottom').innerHTML = "incorrectly eMail";
-		}else{
+		} else {
 			document.getElementById('loggerFormBottom').innerHTML = "eMail not found";
 		}
 	}
