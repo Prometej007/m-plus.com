@@ -1,5 +1,7 @@
 package ua.m_pluse.entity;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +17,8 @@ public class User {
 	private String email;
 	private String phone;
 	private String message;
-
+	private Role role;
+	private LocalDate dateOfPublic;
 	public User() {
 
 	}
@@ -66,6 +69,23 @@ public class User {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+	
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+	
+
+	public LocalDate getDateOfPublic() {
+		return dateOfPublic;
+	}
+
+	public void setDateOfPublic(LocalDate dateOfPublic) {
+		this.dateOfPublic = dateOfPublic;
 	}
 
 	@Override

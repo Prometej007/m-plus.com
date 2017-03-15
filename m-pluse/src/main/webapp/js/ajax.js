@@ -1,3 +1,79 @@
+window.onload = function () {
+
+    $.ajax({
+
+        url: 'loadMessages?' + $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
+        method: 'POST',
+        contentType: 'application/json; charset=UTF-8',
+        dataType: 'json',
+        success: function (res) {
+
+            var all = '';
+
+            for (var i = 0; i < res.length; i++) {
+                var index = res[i].id;
+                all += '<div class="box">'+res[i].name +'<a onclick="deleteMessage(' + index + ')"> delete </div><br>';
+            }
+            document.getElementById('allMessages').innerHTML = all;
+        }
+    })
+
+}
+
+function deleteMessage(index) {
+
+    $.ajax({
+
+        url: 'deleteMessage?' + $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
+        method: 'POST',
+        contentType: 'application/json; charset=UTF-8',
+        dataType: 'json',
+        data: '' + index,
+        success: function (res) {
+
+            var all = '';
+
+            for (var i = 0; i < res.length; i++) {
+                var index = res[i].id;
+                all += '<div class="box">'+res[i].name +'<a onclick="deleteMessage(' + index + ')"> delete </div><br>';
+            }
+            document.getElementById('allMessages').innerHTML = all;
+        	
+        }
+    })
+
+
+}
+
+function wasRead(index) {
+
+    $.ajax({
+
+        url: 'wasRead?' + $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
+        method: 'POST',
+        contentType: 'application/json; charset=UTF-8',
+        dataType: 'json',
+        data: '' + index,
+        success: function (res) {
+
+            var all = '';
+
+            for (var i = 0; i < res.length; i++) {
+                var index = res[i].id;
+                all += '<div class="box">'+res[i].name +'<a onclick="deleteMessage(' + index + ')"> delete </div><br>';
+            }
+            document.getElementById('allMessages').innerHTML = all;
+        	
+        }
+    })
+
+
+}
+
+//==============================================================================================================
+//==============================================================================================================
+//==============================================================================================================
+//==============================================================================================================
 function messageSave() {
 
 	var user = {
