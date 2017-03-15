@@ -221,11 +221,16 @@ function validationEmailOfPhoneFormLeft() {
 			}
 		}
 	}
-	if (!checkPhoneOrPhone && nameFormLeft != "") {
+	if (!checkPhoneOrPhone && nameFormLeft != "" && nameFormLeft.length < 255) {
+		if (emailOfPhoneFormLeft.length < 255) {
 
-		wrapperSave();
-		document.getElementById('loggerFormLeft').innerHTML = "ready";
-		document.getElementById('loggerFormLeft').style = "color:green;";
+			wrapperSave();
+			document.getElementById('loggerFormLeft').innerHTML = "ready";
+			document.getElementById('loggerFormLeft').style = "color:green;";
+		} else {
+			document.getElementById('loggerFormLeft').innerHTML = "error eMail length";
+			document.getElementById('loggerFormLeft').style = "color:red;"
+		}
 	} else {
 
 		if (checkPhone
@@ -235,6 +240,9 @@ function validationEmailOfPhoneFormLeft() {
 			document.getElementById('loggerFormLeft').innerHTML = "ready";
 			document.getElementById('loggerFormLeft').style = "color:green;";
 
+		} else if (!(nameFormLeft.length < 255)) {
+			document.getElementById('loggerFormLeft').style = "color:red;"
+			document.getElementById('loggerFormLeft').innerHTML = "error name length";
 		} else {
 			if (nameFormLeft == "") {
 				document.getElementById('loggerFormLeft').style = "color:red;"
@@ -268,11 +276,11 @@ function validationEmailOfPhoneFormBottom() {
 			checkEmail = false;
 		}
 	}
-	if (!checkEmail && email != "" && name.length < 255) {
+	if (!checkEmail && email != "" && email.length < 255) {
 
 		if (name != "" && name.length < 255) {
 			document.getElementById('loggerFormBottom').innerHTML = "";
-			if (message != "" && name.length < 255) {
+			if (message != "" && message.length < 255) {
 				document.getElementById('loggerFormBottom').style = "color:green;";
 				document.getElementById('loggerFormBottom').innerHTML = "ready!";
 				messageSaveBottom();
