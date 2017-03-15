@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>M-GS</title>
+    <title>M-pulse</title>
     <script type="text/javascript" src="js/js.js"></script>
      <script type="text/javascript" src="js/script.js"></script>
 <!--     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script> -->
@@ -340,7 +340,8 @@
 						<img title="Locomotives Roundhouse"
 						alt="Steam locomotives of the Chicago &amp; North Western Railway."
 						src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Locomotives-Roundhouse2.jpg/100px-Locomotives-Roundhouse2.jpg">
-					</a> ${gallery}
+					</a> 
+					${gallery}
 				</div>
 
 			</div>
