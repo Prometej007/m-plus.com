@@ -15,7 +15,7 @@ public class Text {
 	String languageName;
 	String languageTeg;
 	public Text() {
-		super();
+		
 	}
 	public Text(String label, String text, String languageName, String languageTeg) {
 		super();

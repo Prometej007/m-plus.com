@@ -3,15 +3,16 @@
 <html lang="en">
 <head>
 
-    <meta charset="UTF-8">
-    <title>M-pulse</title>
-    <script type="text/javascript" src="js/js.js"></script>
-     <script type="text/javascript" src="js/script.js"></script>
+ <link rel="shortcut icon" href="img/logo_m-plus.png" type="image/png">
+<meta charset="UTF-8">
+<title>M-pulse</title>
+<script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 <!--     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script> -->
-    <script type="text/javascript" src="js/js1.js"></script>
-    <script type="text/javascript" src="js/galleria.classic.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-    <script type="text/javascript" src="js/galleria-1.2.2.js"></script>
+<script type="text/javascript" src="js/js1.js"></script>
+<script type="text/javascript" src="js/galleria.classic.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script type="text/javascript" src="js/galleria-1.2.2.js"></script>
 <script type="text/javascript" src="js/ajax.js"></script>
 
 <link rel="stylesheet" href="css/style.css">
@@ -24,10 +25,8 @@
 </head>
 <body>
 
-<input type="hidden" name="csrf_name"
-       value="${_csrf.parameterName}" />
-<input type="hidden" name="csrf_value"
-       value="${_csrf.token}" />
+	<input type="hidden" name="csrf_name" value="${_csrf.parameterName}" />
+	<input type="hidden" name="csrf_value" value="${_csrf.token}" />
 	<!-- nav bar -->
 	<nav class="nav">
 		<div class="nav1">
@@ -36,33 +35,35 @@
 				<a href="#blog" class="navtag">BLOG</a> <a href="#gall"
 					class="navtag">GALLARY</a> <a href="#cont" class="navtag">CONTACT</a>
 			</div>
-			<a href="#home" class="navlogo">M-GS</a>
+			<a href="#home" class="navlogo">M-Pulse</a>
 		</div>
 	</nav>
 	<!--  call back-->
 	<div class="navslide"
 		style="display: none; padding-top: 13%; right: 0; z-index: 10;"
-		id="mySidenav"> 
-<%-- 		<form:form action="messageCallLeft" modelAttribute="userWrapper"  class="" target="_blank" id="formMessageCallLeft" method="post"> --%>
-			<p class="textbott">
-				Give us a chance <br> <font color="#e2db19">Call us</font>
-			</p>
-			<div class="sidenavblock">
-				<div class="">
-					<label class="textbott" >Name</label><br> <input class="form1"
-						placeholder="Your name" type="text" required="" name="name" id="nameFormLeft">
-				</div>
-				<div class="">
-					<label class="textbott">Number or E-mail</label><br> <input
-						class="form1" placeholder="+38(***) or @mail.com" type="tel"
-						required=" " name="phoneOrEmail" id="emailOfPhoneFormLeft">
-				</div>
+		id="mySidenav">
+		<%-- 		<form:form action="messageCallLeft" modelAttribute="userWrapper"  class="" target="_blank" id="formMessageCallLeft" method="post"> --%>
+		<p class="textbott">
+			Give us a chance <br> <font color="#e2db19">Call us</font>
+		</p>
+		<div class="sidenavblock">
+			<div class="">
+				<label class="textbott">Name</label><br> <input class="form1"
+					placeholder="Your name" type="text" required="" name="name"
+					id="nameFormLeft">
 			</div>
-			
-<%-- 		</form:form> --%>
-		
-		<button type="button" class="button" id="sendFormLeft" onclick="validationEmailOfPhoneFormLeft()">Send</button>
-			<p id="loggerFormLeft"></p>
+			<div class="">
+				<label class="textbott">Number or E-mail</label><br> <input
+					class="form1" placeholder="+38(***) or @mail.com" type="tel"
+					required=" " name="phoneOrEmail" id="emailOfPhoneFormLeft">
+			</div>
+		</div>
+
+		<%-- 		</form:form> --%>
+
+		<button type="button" class="button" id="sendFormLeft"
+			onclick="validationEmailOfPhoneFormLeft()">Send</button>
+		<p id="loggerFormLeft"></p>
 		<a href="javascript:void(0)" onclick="closeNav()" class=" " style="">
 			<i class="ibar2"></i>
 		</a>
@@ -83,7 +84,7 @@
 				</span>
 			</div>
 			<div class=" b b1-block0">
-				<span class="b spanBGT">M-GS</span>
+				<span class="b spanBGT">M-Pulse</span>
 			</div>
 		</div>
 	</div>
@@ -340,8 +341,7 @@
 						<img title="Locomotives Roundhouse"
 						alt="Steam locomotives of the Chicago &amp; North Western Railway."
 						src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Locomotives-Roundhouse2.jpg/100px-Locomotives-Roundhouse2.jpg">
-					</a> 
-					${gallery}
+					</a> ${gallery}
 				</div>
 
 			</div>
@@ -360,27 +360,30 @@
 		<!-- call back -->
 		<div class="b6-block1">
 			<div class="end-callback">
-<%-- 				<form:form action="messageCall" target="_blank" modelAttribute="user" method="post" id="formMessageCall"> --%>
-					<p class="textbott">
-						Give us a chance <br> <font color="#e2db19">Call us</font>
-					</p>
-					<div class="sidenavblock1">
-						<div class="sidenavbloc">
-							<label class="text-callbakc">Name</label><br> <input
-								class="end-callbackblock" type="text" name="name" id="nameUser-bottom">
-							<div class="">
-								<label class="text-callbakc">Email</label><br> <input
-									class="end-callbackblock" type="text" name="email" id="email-bottom">
-							</div>
-							<div class="">
-								<label class="text-callbakc">Message</label> <input
-									class="end-callbackmess" name="message" id="message-bottom">
-							</div>
+				<%-- 				<form:form action="messageCall" target="_blank" modelAttribute="user" method="post" id="formMessageCall"> --%>
+				<p class="textbott">
+					Give us a chance <br> <font color="#e2db19">Call us</font>
+				</p>
+				<div class="sidenavblock1">
+					<div class="sidenavbloc">
+						<label class="text-callbakc">Name</label><br> <input
+							class="end-callbackblock" type="text" name="name"
+							id="nameUser-bottom">
+						<div class="">
+							<label class="text-callbakc">Email</label><br> <input
+								class="end-callbackblock" type="text" name="email"
+								id="email-bottom">
 						</div>
-						<button type="submit" class="button" onclick="validationEmailOfPhoneFormBottom()">Send</button>
-					<p id="loggerFormBottom"></p>
+						<div class="">
+							<label class="text-callbakc">Message</label> <input
+								class="end-callbackmess" name="message" id="message-bottom">
+						</div>
 					</div>
-<%-- 				</form:form> --%>
+					<button type="submit" class="button"
+						onclick="validationEmailOfPhoneFormBottom()">Send</button>
+					<p id="loggerFormBottom"></p>
+				</div>
+				<%-- 				</form:form> --%>
 			</div>
 		</div>
 		<div class="b b2-block2">

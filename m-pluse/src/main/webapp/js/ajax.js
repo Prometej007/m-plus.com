@@ -1,28 +1,29 @@
-function messageLoad() {
-
-    $.ajax({
-
-        url: 'loadMessages?' + $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
-        method: 'POST',
-        contentType: 'application/json; charset=UTF-8',
-        dataType: 'json',
-        success: function (res) {
-
-            var all = "";
-            document.getElementById('allMessages').innerHTML=res.length;
-            for (var i = 0; i < res.length; i++) {
-                var index = res[i].id;
-                all += '<div class="box">'+res[i].name +'<a onclick="deleteMessage(' + index + ')"> delete </div><br>';
-                all += '<div class="box">'+res[i].message +'></div><br>';
-                all += '<div class="box">'+res[i].phone +'></div><br>';
-                all += '<div class="box">'+res[i].email +'></div><br>';
-                all += '<div class="box">'+res[i].dateOfPublic +'></div><br>';
-            }
-            document.getElementById('allMessages').innerHTML += all;
-        }
-    })
-
-}
+// function () {
+//
+//    $.ajax({
+//
+//        url: 'loadMessages?' + $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
+//        method: 'POST',
+//        contentType: 'application/json; charset=UTF-8',
+//        dataType: 'json',
+//        success: function (res) {
+//
+//            var all = "";
+//            document.getElementById('allMessages').innerHTML=res.length;
+//            for (var i = 0; i < res.length; i++) {
+//                var index = res[i].id;
+//                all += '<div class="box">'+res[i].name +'<a onclick="deleteMessage(' + index + ')"> delete </div><br>';
+// 
+//            }
+//            document.getElementById('allMessages').innerHTML = all;
+//        },
+//    	error: function (errormessage) {
+//    		
+//    	alert(errormessage);
+//    	}
+//    })
+//
+//}
 
 function deleteMessage(index) {
 
@@ -39,11 +40,14 @@ function deleteMessage(index) {
 
             for (var i = 0; i < res.length; i++) {
                 var index = res[i].id;
-                all += '<div class="box">'+res[i].name +'<a onclick="deleteMessage(' + index + ')"> delete </div><br>';
-                all += '<div class="box">'+res[i].message +'></div><br>';
-                all += '<div class="box">'+res[i].phone +'></div><br>';
-                all += '<div class="box">'+res[i].email +'></div><br>';
-                all += '<div class="box">'+res[i].dateOfPublic +'></div><br>';
+				                all += '<div class="box">' + res[i].name
+						+ '<a onclick="deleteMessage(' + index
+						+ ')"> delete </div><br>';
+				all += '<div class="box">' + res[i].message + '></div><br>';
+				all += '<div class="box">' + res[i].phone + '></div><br>';
+				all += '<div class="box">' + res[i].email + '></div><br>';
+				all += '<div class="box">' + res[i].dateOfPublic
+						+ '></div><br>';
             }
             document.getElementById('allMessages').innerHTML = all;
         	

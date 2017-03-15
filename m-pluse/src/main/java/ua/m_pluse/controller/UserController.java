@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -34,10 +35,13 @@ public class UserController {
 	private TextService textService;
 
 	@RequestMapping(value = { "/", "home" }, method = RequestMethod.GET)
-	public String home(Model model) {
+	public String home(Model model/*, @PathVariable String languageTeg*/) {
+		// ________________________________________________TextLoading_____________________Start_______________________________
 
-		textService.findAll();
-		
+
+		//textService.findByLanguageTeg(languageTeg);
+		// ________________________________________________TextLoading_____________________End__________________________________
+
 		List<Image> gallery = imageService.findAll();
 		List<Game> game = gameService.findAll();
 		String galleryString = "";
