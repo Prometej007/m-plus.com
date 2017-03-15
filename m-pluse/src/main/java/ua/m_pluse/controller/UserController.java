@@ -38,8 +38,10 @@ public class UserController {
 	public String home(Model model/*, @PathVariable String languageTeg*/) {
 		// ________________________________________________TextLoading_____________________Start_______________________________
 
+
 		//textService.findByLanguageTeg(languageTeg);
 		// ________________________________________________TextLoading_____________________End__________________________________
+
 		List<Image> gallery = imageService.findAll();
 		List<Game> game = gameService.findAll();
 		String galleryString = "";

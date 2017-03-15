@@ -18,15 +18,13 @@ public class UserDTO {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public UserDTO(int id, String name, String email, String phone, String message, Role role, LocalDate dateOfPublic) {
+	public UserDTO(int id, String name, String email, String phone, String message) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.phone = phone;
-		this.message = message;
-		this.role = role;
-		this.dateOfPublic = dateOfPublic;
+		this.message = message;		
 	}
 
 

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 
- <link rel="shortcut icon" href="img/logo_m-plus.png	" type="image/png">
+ <link rel="shortcut icon" href="img/logo_m-plus.png"	" type="image/png">
 <meta charset="UTF-8">
 <title>M-pulse</title>
 <script type="text/javascript" src="js/js.js"></script>

@@ -19,7 +19,7 @@ import ua.m_pluse.entity.User;
 import ua.m_pluse.service.UserService;
 import ua.m_pluse.wrapper.UserWrapper;
 
-@Controller
+@RestController
 public class SpeñialRestController {
 
 	@Autowired
@@ -61,7 +61,7 @@ public class SpeñialRestController {
 	
 	@RequestMapping(value = "loadMessages", method = RequestMethod.POST)
 	public @ResponseBody List<UserDTO> loadMessages(@RequestBody String index) {
-
+		System.out.println("tut");
 		return DtoUtilMapper.userToUserDTO(userService.findAll());
 	}
 
@@ -69,7 +69,7 @@ public class SpeñialRestController {
 	@RequestMapping(value = "wasRead", method = RequestMethod.POST)
 	public @ResponseBody List<UserDTO> wasRead(@RequestBody String index) {
 
-		userService.findOne(Integer.parseInt(index));
+		userService.updateRole(Integer.parseInt(index));
 
 		return DtoUtilMapper.userToUserDTO(userService.findAll());
 	}
