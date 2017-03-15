@@ -53,43 +53,6 @@ public class UserController {
 		return "home";
 	}
 
-//	@RequestMapping(value = "messageCall", method = RequestMethod.POST)
-//	public String messageCall(Model model, @ModelAttribute User user) {
-//
-//		userService.save(user);
-//
-//		return "redirect:/";
-//
-//	}
-//
-//	@RequestMapping(value = "messageCallLeft", method = RequestMethod.POST)
-//	public String messageCallLeft(Model model, @ModelAttribute UserWrapper userWrapper) {
-//		User user = new User();
-//		boolean check = true;
-//		boolean checkNumber = true;
-//		String phoneOrEmail = userWrapper.getPhoneOrEmail();
-//
-//		user.setName(userWrapper.getName());
-//		for (int i = 0; i < phoneOrEmail.length(); i++) {
-//			if (phoneOrEmail.charAt(i) != '@' && check) {
-//				check = true;
-//			} else {
-//				check = false;
-//			}
-//		}
-//		if (check) {
-//
-//			user.setPhone(phoneOrEmail);
-//			userService.save(user);
-//
-//		} else {
-//
-//			user.setEmail(phoneOrEmail);
-//			userService.save(user);
-//		}
-//
-//		return "redirect:/";
-//
-//	}
+
 
 }
