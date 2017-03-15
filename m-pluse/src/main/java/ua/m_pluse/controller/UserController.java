@@ -35,11 +35,10 @@ public class UserController {
 	private TextService textService;
 
 	@RequestMapping(value = { "/", "home" }, method = RequestMethod.GET)
-	public String home(Model model/*, @PathVariable String languageTeg*/) {
+	public String homeUA(Model model/* , @PathVariable String languageTeg */) {
 		// ________________________________________________TextLoading_____________________Start_______________________________
 
-
-		//textService.findByLanguageTeg(languageTeg);
+		// textService.findByLanguageTeg(languageTeg);
 		// ________________________________________________TextLoading_____________________End__________________________________
 
 		List<Image> gallery = imageService.findAll();
@@ -55,12 +54,74 @@ public class UserController {
 		// доробити------------------------------------------------------------------------------------------
 		for (Game gameI : game) {
 
-			
-			
-			
-			gameString+="<div class='b3-block1-0' style='  background-image: url("+gameI.getPath()+");'><a href='"+gameI.getPathA()+"'><div class='overlay'><div class='text-b3-box'><span style='  font-size: 25px;'>"+gameI.getName() +"</span></div></div></a></div>";
-			
-			
+			gameString += "<div class='b3-block1-0' style='  background-image: url(" + gameI.getPath() + ");'><a href='"
+					+ gameI.getPathA()
+					+ "'><div class='overlay'><div class='text-b3-box'><span style='  font-size: 25px;'>"
+					+ gameI.getName() + "</span></div></div></a></div>";
+
+		}
+		// ____________________________________________________________________________________________________
+		model.addAttribute("gallery", galleryString);
+		model.addAttribute("game", gameString);
+		return "home";
+	}
+
+	@RequestMapping(value = { "/", "home" }, method = RequestMethod.GET)
+	public String homeRU(Model model/* , @PathVariable String languageTeg */) {
+		// ________________________________________________TextLoading_____________________Start_______________________________
+
+		// textService.findByLanguageTeg(languageTeg);
+		// ________________________________________________TextLoading_____________________End__________________________________
+
+		List<Image> gallery = imageService.findAll();
+		List<Game> game = gameService.findAll();
+		String galleryString = "";
+		String gameString = "";
+		for (Image image : gallery) {
+
+			galleryString += "<a href='" + image.getPath() + "'> <img alt='" + image.getName() + "' src='"
+					+ image.getPath() + "'></a>";
+
+		}
+		// доробити------------------------------------------------------------------------------------------
+		for (Game gameI : game) {
+
+			gameString += "<div class='b3-block1-0' style='  background-image: url(" + gameI.getPath() + ");'><a href='"
+					+ gameI.getPathA()
+					+ "'><div class='overlay'><div class='text-b3-box'><span style='  font-size: 25px;'>"
+					+ gameI.getName() + "</span></div></div></a></div>";
+
+		}
+		// ____________________________________________________________________________________________________
+		model.addAttribute("gallery", galleryString);
+		model.addAttribute("game", gameString);
+		return "home";
+	}
+
+	@RequestMapping(value = { "/", "home" }, method = RequestMethod.GET)
+	public String homeEN(Model model/* , @PathVariable String languageTeg */) {
+		// ________________________________________________TextLoading_____________________Start_______________________________
+
+		// textService.findByLanguageTeg(languageTeg);
+		// ________________________________________________TextLoading_____________________End__________________________________
+
+		List<Image> gallery = imageService.findAll();
+		List<Game> game = gameService.findAll();
+		String galleryString = "";
+		String gameString = "";
+		for (Image image : gallery) {
+
+			galleryString += "<a href='" + image.getPath() + "'> <img alt='" + image.getName() + "' src='"
+					+ image.getPath() + "'></a>";
+
+		}
+		// доробити------------------------------------------------------------------------------------------
+		for (Game gameI : game) {
+
+			gameString += "<div class='b3-block1-0' style='  background-image: url(" + gameI.getPath() + ");'><a href='"
+					+ gameI.getPathA()
+					+ "'><div class='overlay'><div class='text-b3-box'><span style='  font-size: 25px;'>"
+					+ gameI.getName() + "</span></div></div></a></div>";
 
 		}
 		// ____________________________________________________________________________________________________
