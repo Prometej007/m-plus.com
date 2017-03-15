@@ -1,5 +1,6 @@
 package ua.m_pluse.serviceImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class TextServiceImpl implements TextService {
 	}
 
 	public Text findOne(int id) {
-		
+
 		return textDao.findOne(id);
 	}
 
@@ -32,5 +33,14 @@ public class TextServiceImpl implements TextService {
 		textDao.findOne(id);
 	}
 
-	
+	public List<Text> findByLanguageTeg(String languageTeg) {
+		List<Text> list = new ArrayList<Text>();
+		for (Text text : textDao.findAll()) {
+			if (text.getLanguageTeg().equals(languageTeg)) {
+				list.add(text);
+			}
+		}
+		return list;
+	}
+
 }

@@ -12,4 +12,6 @@ public interface TextService {
 	Text findOne(int id);
 
 	void delete(int id);
+
+	List<Text> findByLanguageTeg(String languageTeg);
 }

@@ -14,6 +14,7 @@ import ua.m_pluse.entity.Image;
 import ua.m_pluse.entity.User;
 import ua.m_pluse.service.GameService;
 import ua.m_pluse.service.ImageService;
+import ua.m_pluse.service.TextService;
 import ua.m_pluse.service.UserService;
 import ua.m_pluse.wrapper.UserWrapper;
 
@@ -29,12 +30,19 @@ public class UserController {
 	@Autowired
 	private GameService gameService;
 
+	@Autowired
+	private TextService textService;
+
 	@RequestMapping(value = { "/", "home" }, method = RequestMethod.GET)
 	public String home(Model model) {
+
+		textService.findAll()
+		
 		List<Image> gallery = imageService.findAll();
 		List<Game> game = gameService.findAll();
 		String galleryString = "";
 		String gameString = "";
+
 		for (Image image : gallery) {
 
 			galleryString = "<a href='" + image.getPath() + "'> <img alt='" + image.getName() + "' src='"
@@ -49,10 +57,8 @@ public class UserController {
 
 		}
 		// ____________________________________________________________________________________________________
-		model.addAttribute("gallery",galleryString);
+		model.addAttribute("gallery", galleryString);
 		return "home";
 	}
-
-
 
 }
