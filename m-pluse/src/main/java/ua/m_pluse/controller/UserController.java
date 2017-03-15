@@ -63,7 +63,7 @@ public class UserController {
 		// ____________________________________________________________________________________________________
 		model.addAttribute("gallery", galleryString);
 		model.addAttribute("game", gameString);
-		return "home";
+		return "homeUA";
 	}
 
 	@RequestMapping(value = { "/", "home" }, method = RequestMethod.GET)
@@ -95,7 +95,7 @@ public class UserController {
 		// ____________________________________________________________________________________________________
 		model.addAttribute("gallery", galleryString);
 		model.addAttribute("game", gameString);
-		return "home";
+		return "homeRU";
 	}
 
 	@RequestMapping(value = { "/", "home" }, method = RequestMethod.GET)
@@ -127,7 +127,7 @@ public class UserController {
 		// ____________________________________________________________________________________________________
 		model.addAttribute("gallery", galleryString);
 		model.addAttribute("game", gameString);
-		return "home";
+		return "homeEN";
 	}
 
 }
