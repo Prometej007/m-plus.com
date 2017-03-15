@@ -44,22 +44,26 @@ public class UserController {
 		List<Game> game = gameService.findAll();
 		String galleryString = "";
 		String gameString = "";
-
 		for (Image image : gallery) {
 
-			galleryString = "<a href='" + image.getPath() + "'> <img alt='" + image.getName() + "' src='"
+			galleryString += "<a href='" + image.getPath() + "'> <img alt='" + image.getName() + "' src='"
 					+ image.getPath() + "'></a>";
 
 		}
 		// доробити------------------------------------------------------------------------------------------
 		for (Game gameI : game) {
 
-			gameString = "<a href='" + gameI.getPath() + "'> <img alt='" + gameI.getName() + "' src='" + gameI.getPath()
-					+ "'></a>";
+			
+			
+			
+			gameString+="<div class='b3-block1-0' style='  background-image: url("+gameI.getPath()+");'><a href='"+gameI.getPathA()+"'><div class='overlay'><div class='text-b3-box'><span style='  font-size: 25px;'>"+gameI.getName() +"</span></div></div></a></div>";
+			
+			
 
 		}
 		// ____________________________________________________________________________________________________
 		model.addAttribute("gallery", galleryString);
+		model.addAttribute("game", gameString);
 		return "home";
 	}
 

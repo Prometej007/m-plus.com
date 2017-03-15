@@ -332,13 +332,13 @@
   z-index: -1;
 }
 .b3-block1 {
-
+  overflow-x: hidden;
   background-color: yellow;
   height: 668.16px;
   right: 0;
   position: absolute;
   top: 0;
-  width: 682.16px;
+  width:  703.16px;
 }
 .b3-block2 {
   background-color: ;
@@ -350,16 +350,14 @@
   z-index: 5;
 }
 .b3-block1-0 {
-  background-image: url(https://wallpaperscraft.ru/image/google_art_brend_logotip_brauzer_poiskovaya_sistema_98942_602x339.jpg);
+  background-image: url();
   background-color: #cacaff;
-  right: 50%;
-  left: 0;
-  position: absolute;
-  top: 0;
   background-position: 50% 50%;
+  display: inline-block;
+  position: relative;
   z-index: 5;
-  width: 50%;
-  height: 50%;
+  width: 341.08px;
+  height: 334.08px;
   background-repeat: no-repeat;
   background-size: cover;
 }

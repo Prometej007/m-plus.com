@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 
- <link rel="shortcut icon" href="img/logo_m-plus.png" type="image/png">
+ <link rel="shortcut icon" href="img/logo_m-plus.png	" type="image/png">
 <meta charset="UTF-8">
 <title>M-pulse</title>
 <script type="text/javascript" src="js/js.js"></script>
@@ -139,157 +139,31 @@
 	</div>
 	<!-- block 3-->
 	<div id="work" class=" b3">
-		<div class="b3-block2">
-			<span class="text-b4">
-				<button type="button" class="button-b2" class="b"
-					onclick="myFunction()">VR/AR</button> <br> <a href="#"
-				class=""></a>
-				<button type="button" class="button-b2" onclick="myFunction1()">GAMES
-				</button> <br>
-				<button type="button" class="button-b2" onclick="myFunction2()">COUTH</button>
-				<br>
-			</span>
-		</div>
-		<div class="b b2-block2">
+    <div class="b3-block2">
+      <span class="text-b4"> <button type="button" class="button-b2" class="b" onclick="myFunction()"> VR/AR </button>
+          <br>
+          <a href="#"class=""></a>
+        <button type="button" class="button-b2" onclick="myFunction1()">GAMES </button>
+          <br>
+           <button type="button" class="button-b2" onclick="myFunction2()">COUTH</button><br>
+      </span>
+    </div>
+    <div class="b b2-block2">
 
-			<span class="text1-b2"> <font color="#e2db19">OUR</font> <br>
-				PROJECTS <br>
-			</span>
-		</div>
-		<span class="spanBG">WORK</span>
-		<div class="b"></div>
-		<div class="b3-block0"></div>
-		<div id="div3" class="b3-block1">
-			<div class="b3-block1-0">
-				<a href="">
-					<div class="overlay">
-						<div class="text-b3-box">
-							<span style="font-size: 25px;">GAME </span><br> some text
-							about games
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="b3-block1-1">
+       <span class="text1-b2">
+            <font color="#e2db19">OUR</font> <br>
+        PROJECTS <br>
+       </span>
+    </div>
+    <span class="spanBG">WORK</span>
+    <div class="b"></div>
+    <div class="b3-block0"></div>
+    <div id="div3" class="b3-block1">
+       ${game}
+    </div>
+    
 
-				<a href="">
-					<div class="overlay">
-						<div class="text-b3-box">
-							<span style="font-size: 25px;">GAME </span><br> some text
-							about games
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="b3-block1-2">
-				<a href="">
-					<div class="overlay">
-						<div class="text-b3-box">
-							<span style="font-size: 25px;">GAME </span><br> some text
-							about games
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="b3-block1-3">
-				<a href="">
-					<div class="overlay">
-						<div class="text-b3-box">
-							<span style="font-size: 25px;">GAME </span><br> some text
-							about games
-						</div>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div id="div1" class="b3-block1">
-			<div class="b3-block1-0">
-				<a href="">
-					<div class="overlay">
-						<div class="text-b3-box">
-							<span style="font-size: 25px;">GAME </span><br> some text
-							about games
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="b3-block1-1">
-
-				<a href="">
-					<div class="overlay">
-						<div class="text-b3-box">
-							<span style="font-size: 25px;">GAME </span><br> some text
-							about games
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="b3-block1-2">
-				<a href="">
-					<div class="overlay">
-						<div class="text-b3-box">
-							<span style="font-size: 25px;">GAME </span><br> some text
-							about games
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="b3-block1-3">
-				<a href="">
-					<div class="overlay">
-						<div class="text-b3-box">
-							<span style="font-size: 25px;">GAME </span><br> some text
-							about games
-						</div>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div id="div2" class="b3-block1">
-			<div class="b3-block1-0">
-				<a href="">
-					<div class="overlay">
-						<div class="text-b3-box">
-							<span style="font-size: 25px;">GAME </span><br> some text
-							about games
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="b3-block1-1">
-
-				<a href="">
-					<div class="overlay">
-						<div class="text-b3-box">
-							<span style="font-size: 25px;">GAME </span><br> some text
-							about games
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="b3-block1-2">
-				<a href="">
-					<div class="overlay">
-						<div class="text-b3-box">
-							<span style="font-size: 25px;">GAME </span><br> some text
-							about games
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="b3-block1-3">
-				<a href="">
-					<div class="overlay">
-						<div class="text-b3-box">
-							<span style="font-size: 25px;">GAME </span><br> some text
-							about games
-						</div>
-					</div>
-				</a>
-			</div>
-		</div>
-
-	</div>
+</div>
 	<!-- block 4-->
 	<div class=" b4">
 		<span class="spanBG">WE</span>
