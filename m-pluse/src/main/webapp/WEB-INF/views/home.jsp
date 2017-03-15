@@ -3,9 +3,10 @@
 <html lang="en">
 <head>
 
- <link rel="shortcut icon" href="img/logo_m-plus.png"	" type="image/png">
+
 <meta charset="UTF-8">
-<title>M-Pulse</title>
+<title>M-Plus</title>
+ <link rel="shortcut icon" href="img/logo_m-plus.png" type="image/png">
 <script type="text/javascript" src="js/js.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <!--     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script> -->
@@ -35,7 +36,7 @@
 				<a href="#blog" class="navtag">BLOG</a> <a href="#gall"
 					class="navtag">GALLARY</a> <a href="#cont" class="navtag">CONTACT</a>
 			</div>
-			<a href="#home" class="navlogo">M-Pulse</a>
+			<a href="#home" class="navlogo">M-Plus</a>
 		</div>
 	</nav>
 	<!--  call back-->
