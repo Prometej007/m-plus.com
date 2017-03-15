@@ -359,26 +359,27 @@
 		<!-- call back -->
 		<div class="b6-block1">
 			<div class="end-callback">
-				<form:form action="messageCall" target="_blank" modelAttribute="user" method="post" id="formMessageCall">
+<%-- 				<form:form action="messageCall" target="_blank" modelAttribute="user" method="post" id="formMessageCall"> --%>
 					<p class="textbott">
 						Give us a chance <br> <font color="#e2db19">Call us</font>
 					</p>
 					<div class="sidenavblock1">
 						<div class="sidenavbloc">
 							<label class="text-callbakc">Name</label><br> <input
-								class="end-callbackblock" type="text" name="name">
+								class="end-callbackblock" type="text" name="name" id="nameUser-bottom">
 							<div class="">
 								<label class="text-callbakc">Email</label><br> <input
-									class="end-callbackblock" type="text" name="email">
+									class="end-callbackblock" type="text" name="email" id="email-bottom">
 							</div>
 							<div class="">
 								<label class="text-callbakc">Message</label> <input
-									class="end-callbackmess" name="message">
+									class="end-callbackmess" name="message" id="message-bottom">
 							</div>
 						</div>
-						<button type="submit" class="button">Send</button>
+						<button type="submit" class="button" onclick="validationEmailOfPhoneFormBottom()">Send</button>
+					<p id="loggerFormBottom"></p>
 					</div>
-				</form:form>
+<%-- 				</form:form> --%>
 			</div>
 		</div>
 		<div class="b b2-block2">
