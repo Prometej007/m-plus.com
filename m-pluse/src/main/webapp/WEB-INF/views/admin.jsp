@@ -16,6 +16,11 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
 </head>
 <body>
+
+<input type="hidden" name="csrf_name"
+       value="${_csrf.parameterName}" />
+<input type="hidden" name="csrf_value"
+       value="${_csrf.token}" />
 <!-- nav bar -->
 <nav class="nav">
 <div class="nav1">
@@ -39,7 +44,7 @@
 </div>
 </div>
 <div>
-<div ></div>									
+<div>									
 <c:forEach var="img" items="${imgs}" >
 	
 		<img src="${img.path}" alt="add foto">
