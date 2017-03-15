@@ -49,7 +49,7 @@ public class UserController {
 
 		}
 		// ____________________________________________________________________________________________________
-		model.addAttribute(galleryString, "gallery");
+		model.addAttribute("gallery",galleryString);
 		return "home";
 	}
 
