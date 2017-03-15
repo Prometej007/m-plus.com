@@ -1,5 +1,8 @@
 package ua.m_pluse.controller;
 
+import java.time.LocalDate;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import ua.m_pluse.dto.DtoUtilMapper;
+import ua.m_pluse.dto.UserDTO;
 import ua.m_pluse.entity.User;
 import ua.m_pluse.service.UserService;
 import ua.m_pluse.wrapper.UserWrapper;
@@ -19,13 +24,14 @@ public class SpeñialRestController {
 
 	@Autowired
 	private UserService userService;
-	
+
 	@RequestMapping(value = "messageSave", method = RequestMethod.POST)
 	public @ResponseBody void messageCall(@RequestBody User user) {
+		user.setDateOfPublic(LocalDate.now());
 		userService.save(user);
 	}
-	
-	@RequestMapping(value = "messageCall",method = RequestMethod.POST)
+
+	@RequestMapping(value = "messageCall", method = RequestMethod.POST)
 	public @ResponseBody void messageCallLeft(@RequestBody UserWrapper userWrapper) {
 		User user = new User();
 		boolean check = true;
@@ -50,11 +56,29 @@ public class SpeñialRestController {
 			user.setEmail(phoneOrEmail);
 			userService.save(user);
 		}
-		
-		
+	}
 
-		
-
-		}
-}
 	
+	@RequestMapping(value = "loadMessages", method = RequestMethod.POST)
+	public @ResponseBody List<UserDTO> loadMessages(@RequestBody String index) {
+
+		return DtoUtilMapper.userToUserDTO(userService.findAll());
+	}
+
+	
+	@RequestMapping(value = "wasRead", method = RequestMethod.POST)
+	public @ResponseBody List<UserDTO> wasRead(@RequestBody String index) {
+
+		userService.findOne(Integer.parseInt(index));
+
+		return DtoUtilMapper.userToUserDTO(userService.findAll());
+	}
+
+	@RequestMapping(value = "deleteMessage", method = RequestMethod.POST)
+	public @ResponseBody List<UserDTO> deleteMessage(@RequestBody String index) {
+
+		userService.delete(Integer.parseInt(index));
+
+		return DtoUtilMapper.userToUserDTO(userService.findAll());
+	}
+}
