@@ -41,7 +41,7 @@ public class AdminController {
 		return "redirect:/";
 	}
 
-	@RequestMapping("chnkvjhnmghkjjmnvbhhngjfjvbjngvjhjljkbhmkbhvmjvjnvjmvjmmkkjhjuyh80890r56hcfgyttertete4tttttt46687876976856jn56547km876jr54hge354fgvwf3576gv7v567bh56345mk8967tftghdfgfgf")
+	@RequestMapping("chnkv2jhnmg2hkjjmnv2bh")
 	public String admin(Model model) {
 		String all = "";
 		model.addAttribute("imgs", imageService.findAll());
@@ -74,7 +74,7 @@ public class AdminController {
 			}
 		}
 		model.addAttribute("message", all);
-		return "chnkvjhnmghkjjmnvbhhngjfjvbjngvjhjljkbhmkbhvmjvjnvjmvjmmkkjhjuyh80890r56hcfgyttertete4tttttt46687876976856jn56547km876jr54hge354fgvwf3576gv7v567bh56345mk8967tftghdfgfgf";
+		return "chnkv2jhnmg2hkjjmnv2bh";
 	}
 
 	@RequestMapping(value = "saveImg", method = RequestMethod.POST)
@@ -82,7 +82,7 @@ public class AdminController {
 
 		imageService.saveImg(image, name);
 
-		return "redirect:/chnkvjhnmghkjjmnvbhhngjfjvbjngvjhjljkbhmkbhvmjvjnvjmvjmmkkjhjuyh80890r56hcfgyttertete4tttttt46687876976856jn56547km876jr54hge354fgvwf3576gv7v567bh56345mk8967tftghdfgfgf";
+		return "redirect:/chnkv2jhnmg2hkjjmnv2bh";
 	}
 
 	@RequestMapping(value = "saveGame", method = RequestMethod.POST)
@@ -90,7 +90,7 @@ public class AdminController {
 
 		gameService.saveGame(game, name, pathA);
 
-		return "redirect:/chnkvjhnmghkjjmnvbhhngjfjvbjngvjhjljkbhmkbhvmjvjnvjmvjmmkkjhjuyh80890r56hcfgyttertete4tttttt46687876976856jn56547km876jr54hge354fgvwf3576gv7v567bh56345mk8967tftghdfgfgf";
+		return "redirect:/chnkv2jhnmg2hkjjmnv2bh";
 	}
 
 	@RequestMapping(value = "deleteImg/{id}", method = RequestMethod.GET)
@@ -98,7 +98,7 @@ public class AdminController {
 
 		imageService.delete(Integer.parseInt(id));
 
-		return "redirect:/chnkvjhnmghkjjmnvbhhngjfjvbjngvjhjljkbhmkbhvmjvjnvjmvjmmkkjhjuyh80890r56hcfgyttertete4tttttt46687876976856jn56547km876jr54hge354fgvwf3576gv7v567bh56345mk8967tftghdfgfgf";
+		return "redirect:/chnkv2jhnmg2hkjjmnv2bh";
 	}
 
 	@RequestMapping(value = "deleteGame/{id}", method = RequestMethod.GET)
@@ -106,7 +106,7 @@ public class AdminController {
 
 		gameService.delete(Integer.parseInt(id));
 
-		return "redirect:/chnkvjhnmghkjjmnvbhhngjfjvbjngvjhjljkbhmkbhvmjvjnvjmvjmmkkjhjuyh80890r56hcfgyttertete4tttttt46687876976856jn56547km876jr54hge354fgvwf3576gv7v567bh56345mk8967tftghdfgfgf";
+		return "redirect:/chnkv2jhnmg2hkjjmnv2bh";
 	}
 
 }
