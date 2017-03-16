@@ -32,17 +32,17 @@
 }
 /**callback**/
 .navbutton{
+    position: fixed;
     width: auto;
     right: 0;
     color: #757575!important;
     padding-top: 28%;
-    position: fixed;
     margin-right: 0px!important;
     font-size: 36px!important;
     z-index: 8;
-    top:  31px;
+    top:31px;
     transition: background-color .25s,color .15s,box-shadow .15s,opacity .25s,filter .25s,border .15s;
-
+      
 }
 .ibar{
 

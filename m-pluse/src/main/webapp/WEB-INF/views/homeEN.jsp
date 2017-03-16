@@ -118,7 +118,7 @@
 				</span>
 			</div>
 			<div class=" b b1-block0">
-				<span class="b spanBGT">M-Pulse</span>
+				<span class="b spanBGT">M-Plus</span>
 			</div>
 		</div>
 	</div>
@@ -179,9 +179,7 @@
 					onclick="myFunction()">VR/AR</button> <br> <a href="#"
 				class=""></a>
 				<button type="button" class="button-b2" onclick="myFunction1()">GAMES
-				</button> <br>
-				<button type="button" class="button-b2" onclick="myFunction2()">COUTH</button>
-				<br>
+				</button> 
 			</span>
 		</div>
 		<div class="b b2-block2">
