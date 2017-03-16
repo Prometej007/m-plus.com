@@ -33,11 +33,8 @@
 				<a href="#we" class="navtag">WE</a> <a href="#work" class="navtag">WORK</a>
 				<a href="#blog" class="navtag">BLOG</a> <a href="#gall"
 					class="navtag">GALLARY</a> <a href="#cont" class="navtag">CONTACT</a>
-					<form:form action="logout" method="post">
-		<button>logout</button>
-	</form:form>
 			</div>
-			<a href="#home" class="navlogo">M-Pulse</a>
+			<a href="en" class="navlogo">M-Pulse</a>
 		</div>
 	</nav>
 	<!--  call back-->
