@@ -8,7 +8,7 @@
 
 <link rel="shortcut icon" href="img/logo_m-plus.png" " type="image/png">
 <meta charset="UTF-8">
-<title>M-Pulse</title>
+<title>M-Plus Admin Page</title>
 
 <script src="js/ajax.js"></script>
 <link rel="stylesheet" href="css/menu.css">
@@ -33,6 +33,9 @@
 				<a href="#we" class="navtag">WE</a> <a href="#work" class="navtag">WORK</a>
 				<a href="#blog" class="navtag">BLOG</a> <a href="#gall"
 					class="navtag">GALLARY</a> <a href="#cont" class="navtag">CONTACT</a>
+					<form:form action="logout" method="post">
+		<button>logout</button>
+	</form:form>
 			</div>
 			<a href="#home" class="navlogo">M-Pulse</a>
 		</div>

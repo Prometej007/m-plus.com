@@ -79,7 +79,7 @@
 	<div class="B00">
 		<div class=" b1 ">
 			<div class="b1-block1">
-				<span class="texttitle">Making <mone></mone>y is art and
+				<span class="texttitle">Making <mone></mone> is art and
 					working is art and good business <br>is the <font
 					color="#e2db19"> best art.</font>
 				</span>

@@ -1,4 +1,5 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -199,7 +200,7 @@
 		<span class="spanBG">PIC</span>
 		<div class="b5-block0">
 			<div class="content">
-				<!-- Adding gallery images. We use resized thumbnails here for better performance, but it’s not necessary -->
+				<!-- Adding gallery images. We use resized thumbnails here for better performance, but itâs not necessary -->
 				<div id="galleria">
 					<a
 						href="http://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Locomotives-Roundhouse2.jpg/1000px-Locomotives-Roundhouse2.jpg">

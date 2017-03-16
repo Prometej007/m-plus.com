@@ -34,13 +34,5 @@
     <button type="submit" class="button">Log</button>
    </form:form>
   
- <div>
- <input id="nameUser">
- <input id="emailBot">
- <input id="message">
- <button onclick="messageSave()"></button>
- </div> 
-  
-  
 </div>
 </body>
