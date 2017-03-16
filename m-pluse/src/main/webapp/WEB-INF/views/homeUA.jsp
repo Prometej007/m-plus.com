@@ -24,6 +24,7 @@
 <link rel="stylesheet" href="css/galleria.classic.css">
 <link href="https://fonts.googleapis.com/css?family=Lato:900"
 	rel="stylesheet">
+	<link rel="stylesheet" href="css/styleLanguageButton.css">
 </head>
 <body>
 
@@ -36,10 +37,37 @@
 				<a href="#we" class="navtag">WE</a> <a href="#work" class="navtag">WORK</a>
 				<a href="#blog" class="navtag">BLOG</a> <a href="#gall"
 					class="navtag">GALLARY</a> <a href="#cont" class="navtag">CONTACT</a>
-					<a href="en">EN</a> <a href="ru">RU</a>
+					
 			</div>
 			<a href="#home" class="navlogo">M-Plus</a>
 		</div>
+	</nav>
+		<nav class="nav lang">
+	
+			<div class="wrapper-button-language" id="wrapper-button-language" >
+			<div class="button-language-1" id="button-language-1" style="background:#595958;">
+				<p class="button-language-1-p" id="button-language-1-p">
+					<a  href="ua" class="button-language-1-p-a" id="button-language-1-p-a" style="color:#929491;">
+						UA
+					</a>
+				</p>
+			</div>
+			<div class="button-language-2" id="button-language-2" >
+				<p class="button-language-2-p" id="button-language-2-p">
+					<a href="ru" class="button-language-2-p-a" id="button-language-2-p-a">
+						RU
+					</a>
+				</p>
+			</div>
+			<div class="button-language-3" id="button-language-3" >
+				<p class="button-language-3-p" id="button-language-3-p">
+					<a href="en" class="button-language-3-p-a" id="button-language-3-p-a">
+						EN
+					</a>
+				</p>
+			</div>
+		</div>
+	
 	</nav>
 	<!--  call back-->
 	<div class="navslide"
