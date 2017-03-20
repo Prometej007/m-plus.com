@@ -5,8 +5,8 @@
 
 
 <meta charset="UTF-8">
-<title>M-Plus</title>
- <link rel="shortcut icon" href="img/logo_m-plus.png" type="image/png">
+<title>${LOGO}</title>
+<link rel="shortcut icon" href="img/logo_m-plus.png" type="image/png">
 <script type="text/javascript" src="js/js.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <!--     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script> -->
@@ -32,11 +32,68 @@
 	<nav class="nav">
 		<div class="nav1">
 			<div class="navmenu">
-				<a href="#we" class="navtag">WE</a> <a href="#work" class="navtag">WORK</a>
-				<a href="#blog" class="navtag">BLOG</a> <a href="#gall"
-					class="navtag">GALLARY</a> <a href="#cont" class="navtag">CONTACT</a>
+				<a href="#we" class="navtag">${WE}</a> <a href="#work"
+					class="navtag">${WORK}</a> <a href="#blog" class="navtag">${BLOG}</a>
+				<a href="#gall" class="navtag">${GALLERY}</a> <a href="#cont"
+					class="navtag">${CONTACT}</a>
 			</div>
-			<a href="#home" class="navlogo">M-Plus</a>
+			<a onclick="document.getElementById('logo').style.display='block'"
+				class="navlogo">${LOGO}log</a>
+			<div id="logo" class="modal">
+
+				<div class="modal-content animate">
+					<div class="imgcontainer">
+						<span
+							onclick="document.getElementById('logo').style.display='none'"
+							class="close" title="Close Modal">&times;</span>
+					</div>
+					<div class="imgcontainer">
+						<p>imgcontainer</p>
+					</div>
+
+					<div class="container">
+
+						<input> Text</input>
+					</div>
+
+
+					<div class="container" style="background-color: #f1f1f1">
+
+						<div>
+							<button class="profilebutton"
+								onclick="document.getElementById('logo').style.display='block'"
+								style="">addtext</button>
+
+							<div id="logo" class="modal">
+
+								<div class="modal-content animate">
+									<div class="imgcontainer">
+										<span
+											onclick="document.getElementById('logo').style.display='none'"
+											class="close" title="Close Modal">&times;</span>
+									</div>
+									<div class="imgcontainer">
+										<p>imgcontainer</p>
+									</div>
+
+									<div class="container"></div>
+									<div class="container" style="background-color: #f1f1f1">
+										<button type="button"
+											onclick="document.getElementById('logo').style.display='none'"
+											class="cancelbtn">Cancel</button>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<button type="button"
+							onclick="document.getElementById('logo').style.display='none'"
+							class="cancelbtn">Cancel</button>
+
+					</div>
+				</div>
+			</div>
 		</div>
 	</nav>
 	<!--  call back-->
@@ -45,25 +102,25 @@
 		id="mySidenav">
 		<%-- 		<form:form action="messageCallLeft" modelAttribute="userWrapper"  class="" target="_blank" id="formMessageCallLeft" method="post"> --%>
 		<p class="textbott">
-			Give us a chance <br> <font color="#e2db19">Call us</font>
+			${CUAC} <br> <font color="#e2db19">${CU}</font>
 		</p>
 		<div class="sidenavblock">
 			<div class="">
-				<label class="textbott">Name</label><br> <input class="form1"
-					placeholder="Your name" type="text" required="" name="name"
-					id="nameFormLeft">
+				<label class="textbott">${NAME}</label><br> <input
+					class="form1" placeholder="Your name" type="text" required=""
+					name="name" id="nameFormLeft">
 			</div>
 			<div class="">
-				<label class="textbott">Number or E-mail</label><br> <input
-					class="form1" placeholder="+38(***) or @mail.com" type="tel"
-					required=" " name="phoneOrEmail" id="emailOfPhoneFormLeft">
+				<label class="textbott">${NOE}</label><br> <input class="form1"
+					placeholder="+38(***) or @mail.com" type="tel" required=" "
+					name="phoneOrEmail" id="emailOfPhoneFormLeft">
 			</div>
 		</div>
 
 		<%-- 		</form:form> --%>
 
 		<button type="button" class="button" id="sendFormLeft"
-			onclick="validationEmailOfPhoneFormLeft()">Send</button>
+			onclick="validationEmailOfPhoneFormLeft()">${SEND}</button>
 		<p id="loggerFormLeft"></p>
 		<a href="javascript:void(0)" onclick="closeNav()" class=" " style="">
 			<i class="ibar2"></i>
@@ -79,13 +136,12 @@
 	<div class="B00">
 		<div class=" b1 ">
 			<div class="b1-block1">
-				<span class="texttitle">Making <mone></mone> is art and
-					working is art and good business <br>is the <font
-					color="#e2db19"> best art.</font>
+				<span class="texttitle">${TOPTEXT} <br> <font
+					color="#e2db19"> ${TOPTEXTEND}</font>
 				</span>
 			</div>
 			<div class=" b b1-block0">
-				<span class="b spanBGT">M-Pulse</span>
+				<span class="b spanBGT">${LOGO}</span>
 			</div>
 		</div>
 	</div>
@@ -104,31 +160,31 @@
 		<div class="b b2-block1">
 			<div class="b2-block1-01">
 				<div class="b2-block1-01-00">
-					<span class="b2-font"> VR/AR </span> <br> <a href=""> <img
+					<span class="b2-font"> ${VR_AR} </span> <br> <a href=""> <img
 						src="img/virtual_reality.png" class="B2-iclon" " alt="">
 					</a>
 				</div>
 				<div class="b2-block1-01-01">
-					<span class="b2-font"> G&P </span> <br> <a href=""> <img
+					<span class="b2-font"> ${GP} </span> <br> <a href=""> <img
 						src="img/game_design.png" class="B2-iclon" " alt="">
 					</a>
 				</div>
 			</div>
 			<div class="b2-block1-02">
 				<div class="b2-block1-02-03">
-					<span class="b2-font">SITE</span> <br> <a href=""> <img
+					<span class="b2-font">${SITE}</span> <br> <a href=""> <img
 						src="img/site_design.png" class="B2-iclon" " alt="">
 					</a>
 				</div>
 				<div class="b2-block1-02-04">
 
-					<span class="b2-font">DESIGN</span> <br> <a href=""> <img
+					<span class="b2-font">${DESIGN}</span> <br> <a href=""> <img
 						src="img/design.png" class="B2-iclon" " alt="">
 					</a>
 				</div>
 				<div class="b2-block1-02-05">
-					<span class="b2-font">MARKETING</span> <br> <a href=""> <img
-						src="img/marketing.png" class="B2-iclon" " alt="">
+					<span class="b2-font">${MARKETING}</span> <br> <a href="">
+						<img src="img/marketing.png" class="B2-iclon" " alt="">
 					</a>
 				</div>
 
@@ -140,44 +196,45 @@
 	</div>
 	<!-- block 3-->
 	<div id="work" class=" b3">
-    <div class="b3-block2">
-      <span class="text-b4"> <button type="button" class="button-b2" class="b" onclick="myFunction()"> VR/AR </button>
-          <br>
-          <a href="#"class=""></a>
-        <button type="button" class="button-b2" onclick="myFunction1()">GAMES </button>
-          <br>
-           <button type="button" class="button-b2" onclick="myFunction2()">COUTH</button><br>
-      </span>
-    </div>
-    <div class="b b2-block2">
+		<div class="b3-block2">
+			<span class="text-b4">
+				<button type="button" class="button-b2" class="b"
+					onclick="myFunction()">${VR_AR}</button> <br> <a href="#"
+				class=""></a>
+				<button type="button" class="button-b2" onclick="myFunction1()">${GAMES}
+				</button> <br>
+				<button type="button" class="button-b2" onclick="myFunction2()">${COUTH}</button>
+				<br>
+			</span>
+		</div>
+		<div class="b b2-block2">
 
-       <span class="text1-b2">
-            <font color="#e2db19">OUR</font> <br>
-        PROJECTS <br>
-       </span>
-    </div>
-    <span class="spanBG">WORK</span>
-    <div class="b"></div>
-    <div class="b3-block0"></div>
-    <div id="div3" class="b3-block1">
-       ${game}
-    </div>
-    
+			<span class="text1-b2"> <font color="#e2db19">${OUR}</font> <br>
+				${PROJECT} <br>
+			</span>
+		</div>
+		<span class="spanBG">${WORK}</span>
+		<div class="b"></div>
+		<div class="b3-block0"></div>
+		<div id="div3" class="b3-block1">${game}</div>
 
-</div>
+
+	</div>
 	<!-- block 4-->
 	<div class=" b4">
-		<span class="spanBG">WE</span>
+		<span class="spanBG">${WE}</span>
 		<div class="b"></div>
 		<div class="b4-block3"></div>
 		<div class="b4-block0">
 			<div class="b4-block0-0">
-				<span class="text2-b4">New game called "Be_Touch"  </span>
+				<span class="text2-b4">New game called "Be_Touch" </span>
 				<p class="textpar">Almost made a new game called "Be_Touch".</p>
 			</div>
 			<div class="b4-block0-1">
 				<span class="text2-b4"> Some big updates </span>
-				<p class="textpar">Added menu, made 2 playing modes, added a lot of themes. Fixed lot of bugs, made realistic colliders. The new version of the game is now testing by a closed beta-testing.</p>
+				<p class="textpar">Added menu, made 2 playing modes, added a lot
+					of themes. Fixed lot of bugs, made realistic colliders. The new
+					version of the game is now testing by a closed beta-testing.</p>
 			</div>
 		</div>
 		<div class="b2-block2">
@@ -211,39 +268,40 @@
 		</div>
 		<div class="b b6-block3">
 
-			<span class="text1-b2"> <font color="#e2db19">GALLARY</font> <br>
+			<span class="text1-b2"> <font color="#e2db19">${GALLARY}</font>
+				<br>
 
 			</span>
 		</div>
 	</div>
 	<!-- block 6 -->
 	<div class=" b6">
-		<span class="spanBG">CONTACT</span>
+		<span class="spanBG">${CONTACT}</span>
 		<div class="b6-block0"></div>
 		<!-- call back -->
 		<div class="b6-block1">
 			<div class="end-callback">
 				<%-- 				<form:form action="messageCall" target="_blank" modelAttribute="user" method="post" id="formMessageCall"> --%>
 				<p class="textbott">
-					Give us a chance <br> <font color="#e2db19">Call us</font>
+					${CUAC} <br> <font color="#e2db19">${CU}</font>
 				</p>
 				<div class="sidenavblock1">
 					<div class="sidenavbloc">
-						<label class="text-callbakc">Name</label><br> <input
+						<label class="text-callbakc">${NAME}</label><br> <input
 							class="end-callbackblock" type="text" name="name"
 							id="nameUser-bottom">
 						<div class="">
-							<label class="text-callbakc">Email</label><br> <input
+							<label class="text-callbakc">${EMAILL}</label><br> <input
 								class="end-callbackblock" type="text" name="email"
 								id="email-bottom">
 						</div>
 						<div class="">
-							<label class="text-callbakc">Message</label> <input
+							<label class="text-callbakc">${MASSAGE}</label> <input
 								class="end-callbackmess" name="message" id="message-bottom">
 						</div>
 					</div>
 					<button type="submit" class="button"
-						onclick="validationEmailOfPhoneFormBottom()">Send</button>
+						onclick="validationEmailOfPhoneFormBottom()">${SEND}</button>
 					<p id="loggerFormBottom"></p>
 				</div>
 				<%-- 				</form:form> --%>
@@ -251,8 +309,8 @@
 		</div>
 		<div class="b b2-block2">
 
-			<span class="text1-b2"> <font color="#e2db19">CALL</font> <br>
-				TO <br> ACTION <br>
+			<span class="text1-b2"> <font color="#e2db19">${CALL}</font> <br>
+				${TO} <br> ${ACTION} <br>
 			</span>
 		</div>
 	</div>
@@ -271,16 +329,19 @@
 			</div>
 		</div>
 		<div class="foot1">
-		<a href="ua">UA</a>
- 			<a href="ru">RU</a></div>
-		<div class="foot2"><h2><p class="foot2-p1">Contacts</p></h2>
-			<p class="foot2-p2">Ukr-lviv </p>
- 			<p class="foot2-p3"> Mobile phone: 096-369-03-91</p>
- 			<p class="foot2-p4"> Email: ceo@m-plus.com</p>	
+			<a href="ua">UA</a> <a href="ru">RU</a>
 		</div>
-<!--  		<div class="foot3"> -->
- 			
-<!--  		</div>  -->
+		<div class="foot2">
+			<h2>
+				<p class="foot2-p1">${CONTACT}</p>
+			</h2>
+			<p class="foot2-p2">${LOCATION}</p>
+			<p class="foot2-p3">${PHONE}</p>
+			<p class="foot2-p4">${EMAIL}</p>
+		</div>
+		<!--  		<div class="foot3"> -->
+
+		<!--  		</div>  -->
 	</footer>
 	<script>
 		// Load the classic theme

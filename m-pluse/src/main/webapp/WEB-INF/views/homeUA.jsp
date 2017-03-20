@@ -219,7 +219,7 @@
 				collaborate closely with our partners, assisting them throughout the
 				whole process of developing high quality AAA titles.</h1>
 		</div>
-	</div>
+	
 	<!-- block 5-->
 	<div class="b5">
 		<div class="b4-block3"></div>
