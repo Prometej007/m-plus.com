@@ -96,6 +96,12 @@ public class Email {
 		return goBodyTwo;
 	}
 
+	/**
+	 * 
+	 * @param body
+	 *            - HTML сторінка в якій буде повідомлення. службовий символ
+	 *            повідомлення ~~~
+	 */
 	public void addBody(String body) {
 		this.body = body;
 		createBodyOne();
