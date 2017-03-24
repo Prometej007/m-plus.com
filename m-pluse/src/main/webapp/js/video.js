@@ -117,7 +117,6 @@ function messageSave() {
 	document.getElementById('emailVideo').value = '';
 
 	$.ajax({
-
 		url : 'messageSave?' + $('input[name=csrf_name]').val() + "="
 				+ $('input[name=csrf_value]').val(),
 		method : 'POST',
@@ -125,24 +124,22 @@ function messageSave() {
 		dataType : 'json',
 		data : JSON.stringify(user),
 		success : function(res) {
-
 		}
-
 	})
 
 }
 function closeDoubleClick() {
 	document.getElementById("formmenu").style.display = "none";
 }
-
 function nameFile(name) {
 
-	// document.getElementById('dow').style.display = "block";
 	document.getElementById("download-info-name").style.display = "block";
-
+	document.getElementById("circle").style.right = "0px";
+	document.getElementById("dowblock").style.width = "160px";
 }
 function closeNameFile() {
-	// document.getElementById('dow').style.display = "block";
+	document.getElementById("dowblock").style.width = " 0px";
 	document.getElementById("download-info-name").style.display = "none";
+	document.getElementById("circle").style.right = "160px";
 
 }

@@ -228,7 +228,7 @@
 				style="display: none; position: absolute; left: 47px; z-index: 9;">
 				Завантажити <br> брошру <br> name file
 			</p>
-			<div class="circleright" id="circle"></div>
+			<div class="circleright" id="circle" style="position: absolute;"></div>
 		</div>
 	</div>
 
