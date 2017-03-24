@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ua.m_pluse.dto.DtoUtilMapper;
 import ua.m_pluse.dto.UserDTO;
+import ua.m_pluse.entity.Email;
 import ua.m_pluse.entity.User;
+import ua.m_pluse.service.MailSenderService;
 import ua.m_pluse.service.UserService;
 import ua.m_pluse.wrapper.UserWrapper;
 
@@ -24,6 +26,9 @@ public class SpeñialRestController {
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private MailSenderService mailSenderService;
 
 	@RequestMapping(value = "messageSave", method = RequestMethod.POST)
 	public @ResponseBody void messageCall(@RequestBody User user) {
@@ -81,4 +86,37 @@ public class SpeñialRestController {
 
 		return DtoUtilMapper.userToUserDTO(userService.findAll());
 	}
+	
+	
+//=--=-==-=-=-=-===-=-=-=-=-=-=-=--=-=-=-=MAIL_SENDER--=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+	
+	
+	@RequestMapping(value = "sendEmail",method = RequestMethod.POST)
+	public void sendOneEmail(@RequestBody Email email){
+		email.addBody("<h1>~~~</h1>");
+		email.Send(mailSenderService, "govnishe");
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

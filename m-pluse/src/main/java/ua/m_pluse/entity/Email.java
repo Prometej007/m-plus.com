@@ -1,6 +1,5 @@
 package ua.m_pluse.entity;
 
-import java.util.Iterator;
 import java.util.List;
 
 import ua.m_pluse.service.MailSenderService;

@@ -306,3 +306,47 @@ function validationEmailOfPhoneFormBottom() {
 
 // _________________________________________________валідація для bottom
 // форми________end_________________________________
+
+
+// -=-=-=-=-=--=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--
+// =======-=--------------=================--------====BUILD EMAIL OBJECT-=-=-==-=-=-=-===-==---=-
+
+
+function emailObject() {
+
+	var email = {
+
+		users : document.getElementById('nameUserForEmail').value,
+		message : document.getElementById('messageForEmail').value
+		
+	}
+
+	document.getElementById('nameUserForEmail').value = '';
+	document.getElementById('messageForEmail').value = '';
+	$.ajax({
+
+		url : 'messageSave?' + $('input[name=csrf_name]').val() + "="
+				+ $('input[name=csrf_value]').val(),
+		method : 'POST',
+		contentType : 'application/json; charset=UTF-8',
+		dataType : 'json',
+		data : JSON.stringify(email),
+		success : function(res) {
+
+		}
+
+	})
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
