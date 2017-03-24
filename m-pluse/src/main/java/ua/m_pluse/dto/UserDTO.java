@@ -7,32 +7,27 @@ import ua.m_pluse.entity.Role;
 public class UserDTO {
 
 	private int id;
-	private String name;
 	private String email;
+	private String name;
 	private String phone;
 	private String message;
 	private Role role;
 	private LocalDate dateOfPublic;
-	
+
 	public UserDTO() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	public UserDTO(int id, String name, String email, String phone, String message, Role role, LocalDate dateOfPublic) {
+
+	public UserDTO(int id, String email, String name, String phone, String message, Role role, LocalDate dateOfPublic) {
 		super();
 		this.id = id;
-		this.name = name;
 		this.email = email;
+		this.name = name;
 		this.phone = phone;
 		this.message = message;
 		this.role = role;
 		this.dateOfPublic = dateOfPublic;
 	}
-
-
-
-
 
 	public int getId() {
 		return id;
@@ -89,6 +84,5 @@ public class UserDTO {
 	public void setDateOfPublic(LocalDate dateOfPublic) {
 		this.dateOfPublic = dateOfPublic;
 	}
-	
-	
+
 }

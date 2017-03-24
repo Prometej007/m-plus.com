@@ -52,7 +52,7 @@
 									.find('.spinner');
 							$spinner.fadeOut();
 
-							$preloader.delay(1).fadeOut();
+							$preloader.delay(2500).fadeOut();
 						});
 	</script>
 

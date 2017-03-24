@@ -5,24 +5,40 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 <link rel="shortcut icon" href="img/logo_m-plus.png" " type="image/png">
 <meta charset="UTF-8">
 <title>M-Plus Admin Page</title>
-
+<script src="js/jquery-3.2.0.min.js"></script>
 <script src="js/ajax.js"></script>
 <link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/select.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style1.css">
 <link rel="stylesheet" href="css/stylefooter.css">
 <link rel="stylesheet" href="css/styleicon.css">
 <link rel="stylesheet" href="css/admin.css">
 <link rel="stylesheet" href="css/galleria.classic.css">
+
 <link href="https://fonts.googleapis.com/css?family=Lato:900"
 	rel="stylesheet">
 
 </head>
 <body>
+	<script src="js/multiple-select.js"></script>
+	<script type="text/javascript">
+// 		$("select").multipleSelect();
+		
+	</script>
+	<script type="text/javascript">
+		$(window).on('load', function() {
+			loadUserSelect();
+
+			
+			
+			
+		});
+	</script>
 
 	<input type="hidden" name="csrf_name" value="${_csrf.parameterName}" />
 	<input type="hidden" name="csrf_value" value="${_csrf.token}" />
@@ -255,14 +271,23 @@
 				</div>
 			</div>
 		</div>
-		
+		<!-- 		kuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu    -->
 		<div>
-		
-					
-		
-		
-		</div>
 
+
+			<button id="setSelectsBtn" onclick="setSelectsBtn()">SetSelects</button>
+			<button id="getSelectsBtn" onclick="getSelectsBtn()">GetSelects</button>
+			<select id="userSelect" multiple="multiple" style="width: 200px;">
+
+
+
+
+			</select>
+
+
+
+		</div>
+		<!-- 		kuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu    -->
 		<!-- block 7 -->
 		<footer class="b7">
 			<div class="foot0">
@@ -283,11 +308,7 @@
 		</footer>
 
 		<script>
-			// Load the classic theme
-			Galleria.loadTheme('js/galleria.classic.min.js');
-
-			// Initialize Galleria
-			$('#galleria').galleria();
+			
 		</script>
 
 		<script type="text/javascript" src="js/js.js"></script>
@@ -298,4 +319,5 @@
 			src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script type="text/javascript" src="js/galleria-1.2.2.js"></script>
 		<script type="text/javascript" src="js/js.js"></script>
+		<script type="text/javascript" src="js/multiple-select.js"></script>
 </body>

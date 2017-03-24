@@ -26,7 +26,7 @@ public class SpeñialRestController {
 
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private MailSenderService mailSenderService;
 
@@ -63,14 +63,12 @@ public class SpeñialRestController {
 		}
 	}
 
-	
 	@RequestMapping(value = "loadMessages", method = RequestMethod.POST)
 	public @ResponseBody List<UserDTO> loadMessages(@RequestBody String index) {
 
 		return DtoUtilMapper.userToUserDTO(userService.findAll());
 	}
 
-	
 	@RequestMapping(value = "wasRead", method = RequestMethod.POST)
 	public @ResponseBody List<UserDTO> wasRead(@RequestBody String index) {
 
@@ -86,37 +84,15 @@ public class SpeñialRestController {
 
 		return DtoUtilMapper.userToUserDTO(userService.findAll());
 	}
-	
-	
-//=--=-==-=-=-=-===-=-=-=-=-=-=-=--=-=-=-=MAIL_SENDER--=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-	
+
+	// =--=-==-=-=-=-===-=-=-=-=-=-=-=--=-=-=-=MAIL_SENDER--=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
 	@RequestMapping(value = "loadUserSelect", method = RequestMethod.POST)
 	public @ResponseBody List<UserDTO> loadUserSelect() {
 
 		return DtoUtilMapper.userToUserDTO(userService.findAll());
 	}
-	
-	
-	
-//==========-=-=-=----------=-=-=-=-=-=-=
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	// ==========-=-=-=----------=-=-=-=-=-=-=
+
 }

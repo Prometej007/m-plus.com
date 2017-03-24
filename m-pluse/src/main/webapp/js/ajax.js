@@ -351,16 +351,35 @@ function validationSelect() {
 function loadUserSelect() {
 
 	$.ajax({
-
 		url : 'loadUserSelect?' + $('input[name=csrf_name]').val() + "="
 				+ $('input[name=csrf_value]').val(),
 		method : 'POST',
 		contentType : 'application/json; charset=UTF-8',
 		dataType : 'json',
 		success : function(res) {
+			var all;
+			for (var i = 0; i < res.length; i++) {
 
+				all += "<option value=" + res[i].email + ">" + res[i].email
+						+ "</option>";
+
+			}
+			document.getElementById('userSelect').innerHTML = all;
+			$("select").multipleSelect();
 		}
 
 	})
 
 }
+
+function setSelectsBtn() {
+
+	$("select").multipleSelect("setSelects", [ 1, 2 ]);
+}
+function getSelectsBtn() {
+
+			alert("Selected values: "
+					+ $("select").multipleSelect("getSelects"));
+			alert("Selected texts: "
+					+ $("select").multipleSelect("getSelects", "text"));
+		}
