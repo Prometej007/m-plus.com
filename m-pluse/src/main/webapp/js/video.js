@@ -12,8 +12,8 @@ function playVideoPresentation() {
 }
 function closeVideoPresentation() {
 
-	document.getElementById('dowbutt').style.right = "10%";
-	document.getElementById('dowbutt').style.bottom = "10%";
+	document.getElementById('dowbutt').style.right = "6%";
+	document.getElementById('dowbutt').style.bottom = "2%";
 	document.getElementById('dowbutt').style.display = "block";
 	document.getElementById("formmenu").style.display = "none";
 
@@ -84,8 +84,8 @@ function sendEmail(name, href) {
 		messageSave();
 		closeDownload();
 		closeVideoPresentation();
-		document.getElementById('dowbutt').style.right = "10%";
-		document.getElementById('dowbutt').style.bottom = "10%";
+		document.getElementById('dowbutt').style.right = "6%";
+		document.getElementById('dowbutt').style.bottom = "2%";
 		document.getElementById('dowbutt').style.display = "block";
 	} else {
 		// log
@@ -93,8 +93,8 @@ function sendEmail(name, href) {
 }
 function closeDownload() {
 	closeVideoPresentation();
-	document.getElementById('dowbutt').style.right = "10%";
-	document.getElementById('dowbutt').style.bottom = "10%";
+	document.getElementById('dowbutt').style.right = "6%";
+	document.getElementById('dowbutt').style.bottom = "2%";
 	document.getElementById('dowbutt').style.display = "block";
 	document.getElementById("formmenu").style.display = "none";
 
@@ -134,12 +134,12 @@ function closeDoubleClick() {
 function nameFile(name) {
 
 	document.getElementById("download-info-name").style.display = "block";
-	document.getElementById("circle").style.right = "0px";
-	document.getElementById("dowblock").style.width = "160px";
+	document.getElementById("circle").style.display = "block";
+	document.getElementById("dowblock").style.display = "block";
 }
 function closeNameFile() {
-	document.getElementById("dowblock").style.width = " 0px";
+	document.getElementById("dowblock").style.display = " none";
 	document.getElementById("download-info-name").style.display = "none";
-	document.getElementById("circle").style.right = "160px";
+	document.getElementById("circle").style.display = "none";
 
 }

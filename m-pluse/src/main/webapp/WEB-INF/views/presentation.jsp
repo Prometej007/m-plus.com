@@ -217,18 +217,22 @@
 	</div>
 
 	<div class="dowbutt" id="dowbutt">
-		<div class="dowblock" id="dowblock">
+		<a href="#" title="file name"><img class="dow" id="dow"
+			src="img/Download-Icon.png" alt="" onclick="startEmail();"
+			onmouseover="nameFile('name file')" onmouseout="closeNameFile()"
+			style="z-index: 100;"></a>
+		<div class="dowblock" id="dowblock"
+			style="display: none; position: absolute; right: 31px;">
 
-			<a href="#" title="file name"><img class="dow" id="dow"
-				src="img/Download-Icon.png" alt="" onclick="startEmail();"
-				onmouseover="nameFile('name file')" onmouseout="closeNameFile()"></a>
+
 
 
 			<p id="download-info-name"
 				style="display: none; position: absolute; left: 47px; z-index: 9;">
 				Завантажити <br> брошру <br> name file
 			</p>
-			<div class="circleright" id="circle" style="position: absolute;"></div>
+			<div class="circleright" id="circle"
+				style="display: none; position: absolute; right: -32px;"></div>
 		</div>
 	</div>
 

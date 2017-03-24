@@ -17,6 +17,7 @@
 <script type="text/javascript" src="js/ajax.js"></script>
 <script type="text/javascript" src="js/LanguageButton.js"></script>
 
+<link rel="stylesheet" media="all" href="css/animate.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style1.css">
 <link rel="stylesheet" href="css/stylefooter.css">
@@ -26,6 +27,11 @@
 	rel="stylesheet">
 <link rel="stylesheet" href="css/styleLanguageButton.css">
 <link rel="stylesheet" href="css/download.css">
+<script src="js/wow.min.js"></script>
+<script>
+	new WOW().init();
+</script>
+
 </head>
 <body>
 	<script type="text/javascript">
@@ -46,16 +52,16 @@
 									.find('.spinner');
 							$spinner.fadeOut();
 
-							$preloader.delay(2500).fadeOut();
+							$preloader.delay(1).fadeOut();
 						});
 	</script>
 
 	<input type="hidden" name="csrf_name" value="${_csrf.parameterName}" />
 	<input type="hidden" name="csrf_value" value="${_csrf.token}" />
-	
-	
-	
-	
+
+
+
+
 	<div id="page-preloader" class="page-preloader"
 		style="height: 100%; width: 100%; background-image: url(img/pattern.png); background-repeat: no-repeat;">
 
@@ -178,14 +184,14 @@
 	<!--  first block -->
 	<div class="B00">
 		<div class=" b1 ">
-			<div class="b1-block1">
-				<span class="texttitle">Making <mone></mone> is art and
-					working is art and good business <br>is the <font
-					color="#e2db19"> best art.</font>
+			<div class="b1-block1 bounceInLeft wow">
+				<span class="texttitle bounceInLeft wow">Making <mone></mone>
+					is art and working is art and good business <br>is the <font
+					color="#e2db19" class="bounceInLeft wow"> best art.</font>
 				</span>
 			</div>
-			<div class=" b b1-block0">
-				<span class="b spanBGT">M-Plus</span>
+			<div class=" b b1-block0 ">
+				<span class="b spanBGT bounceInLeft wow">M-Plus</span>
 			</div>
 		</div>
 	</div>
@@ -196,37 +202,37 @@
 		</div>
 		<div class="b b2-block2">
 
-			<span class="text1-b2"> <font color="#e2db19">WHAT</font> <br>
-				WE <br> DO <br>
+			<span class="text1-b2 bounceInLeft wow"> <font color="#e2db19">WHAT</font>
+				<br> WE <br> DO <br>
 			</span>
 		</div>
 		<span class="spanBG">CREAT</span>
-		<div class="b b2-block1">
-			<div class="b2-block1-01">
-				<div class="b2-block1-01-00">
+		<div class="b b2-block1 bounceInLeft wow">
+			<div class="b2-block1-01 bounceInLeft wow">
+				<div class="b2-block1-01-00 bounceInLeft wow">
 					<span class="b2-font"> VR/AR </span> <br> <a href=""> <img
 						src="img/virtual_reality.png" class="B2-iclon" " alt="">
 					</a>
 				</div>
-				<div class="b2-block1-01-01">
+				<div class="b2-block1-01-01 bounceInLeft wow">
 					<span class="b2-font"> G&P </span> <br> <a href=""> <img
 						src="img/game_design.png" class="B2-iclon" " alt="">
 					</a>
 				</div>
 			</div>
-			<div class="b2-block1-02">
+			<div class="b2-block1-02 bounceInLeft wow">
 				<div class="b2-block1-02-03">
 					<span class="b2-font">SITE</span> <br> <a href=""> <img
 						src="img/site_design.png" class="B2-iclon" " alt="">
 					</a>
 				</div>
-				<div class="b2-block1-02-04">
+				<div class="b2-block1-02-04 bounceInLeft wow">
 
 					<span class="b2-font">DESIGN</span> <br> <a href=""> <img
 						src="img/design.png" class="B2-iclon" " alt="">
 					</a>
 				</div>
-				<div class="b2-block1-02-05">
+				<div class="b2-block1-02-05 bounceInLeft wow">
 					<span class="b2-font">MARKETING</span> <br> <a href=""> <img
 						src="img/marketing.png" class="B2-iclon" " alt="">
 					</a>
@@ -240,43 +246,46 @@
 	</div>
 	<!-- block 3-->
 	<div id="work" class=" b3">
-		<div class="b3-block2">
-			<span class="text-b4">
-				<button type="button" class="button-b2" class="b"
+		<div class="b3-block2 ">
+			<span class="text-b4 bounceInLeft wow">
+				<button type="button" class="button-b2 bounceInLeft wow" class="b"
 					onclick="myFunction()">VR/AR</button> <br> <a href="#"
 				class=""></a>
-				<button type="button" class="button-b2" onclick="myFunction1()">GAMES
-				</button>
+				<button type="button" class="button-b2 bounceInLeft wow"
+					onclick="myFunction1()">GAMES</button>
 			</span>
 		</div>
-		<div class="b b2-block2">
+		<div class="b b2-block2 bounceInLeft wow">
 
-			<span class="text1-b2"> <font color="#e2db19">OUR</font> <br>
-				PROJECTS <br>
+			<span class="text1-b2 bounceInLeft wow"> <font color="#e2db19">OUR</font>
+				<br> PROJECTS <br>
 			</span>
 		</div>
-		<span class="spanBG">WORK</span>
-		<div class="b"></div>
+		<span class="spanBG bounceInLeft wow">WORK</span>
+		<div class="b bounceInLeft wow"></div>
 		<div class="b3-block0"></div>
-		<div id="div3" class="b3-block1">${game}</div>
+		<div id="div3" class="b3-block1 bounceInLeft wow">${game}</div>
 
 
 	</div>
 	<!-- block 4-->
 	<div class=" b4">
-		<span class="spanBG">WE</span>
+		<span class="spanBG bounceInLeft wow">WE</span>
 		<div class="b"></div>
-		<div class="b4-block3"></div>
-		<div class="b4-block0">
-			<div class="b4-block0-0">
-				<span class="text2-b4">New game called "Be_Touch" </span>
-				<p class="textpar">Almost made a new game called "Be_Touch".</p>
+		<div class="b4-block3 bounceInLeft wow"></div>
+		<div class="b4-block0 bounceInLeft wow">
+			<div class="b4-block0-0 bounceInLeft wow">
+				<span class="text2-b4 bounceInLeft wow">New game called
+					"Be_Touch" </span>
+				<p class="textpar bounceInLeft wow">Almost made a new game
+					called "Be_Touch".</p>
 			</div>
-			<div class="b4-block0-1">
-				<span class="text2-b4"> Some big updates </span>
-				<p class="textpar">Added menu, made 2 playing modes, added a lot
-					of themes. Fixed lot of bugs, made realistic colliders. The new
-					version of the game is now testing by a closed beta-testing.</p>
+			<div class="b4-block0-1 bounceInLeft wow">
+				<span class="text2-b4 bounceInLeft wow"> Some big updates </span>
+				<p class="textpar bounceInLeft wow">Added menu, made 2 playing
+					modes, added a lot of themes. Fixed lot of bugs, made realistic
+					colliders. The new version of the game is now testing by a closed
+					beta-testing.</p>
 			</div>
 		</div>
 		<div class="b2-block2">
@@ -297,7 +306,7 @@
 		<div class="b5-block0">
 			<div class="content">
 				<!-- Adding gallery images. We use resized thumbnails here for better performance, but it’s not necessary -->
-				<div id="galleria">
+				<div class="bounceInLeft wow" id="galleria">
 					<a
 						href="http://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Locomotives-Roundhouse2.jpg/1000px-Locomotives-Roundhouse2.jpg">
 						<img title="Locomotives Roundhouse"
@@ -308,41 +317,42 @@
 
 			</div>
 		</div>
-		<div class="b b6-block3">
+		<div class="b b6-block3 bounceInLeft wow">
 
-			<span class="text1-b2"> <font color="#e2db19">GALLARY</font> <br>
+			<span class="text1-b2 "> <font color="#e2db19">GALLARY</font>
+				<br>
 
 			</span>
 		</div>
 	</div>
 	<!-- block 6 -->
 	<div class=" b6">
-		<span class="spanBG">CONTACT</span>
+		<span class="spanBG bounceInLeft wow">CONTACT</span>
 		<div class="b6-block0"></div>
 		<!-- call back -->
-		<div class="b6-block1">
-			<div class="end-callback">
+		<div class="b6-block1 bounceInLeft wow">
+			<div class="end-callback bounceInLeft wow">
 				<%-- 				<form:form action="messageCall" target="_blank" modelAttribute="user" method="post" id="formMessageCall"> --%>
 				<p class="textbott">
 					Give us a chance <br> <font color="#e2db19">Call us</font>
 				</p>
 				<div class="sidenavblock1">
 					<div class="sidenavbloc">
-						<label class="text-callbakc">Name</label><br> <input
-							class="end-callbackblock" type="text" name="name"
+						<label class="text-callbakc bounceInLeft wow">Name</label><br>
+						<input class="end-callbackblock" type="text" name="name"
 							id="nameUser-bottom">
 						<div class="">
-							<label class="text-callbakc">Email</label><br> <input
-								class="end-callbackblock" type="text" name="email"
-								id="email-bottom">
+							<label class="text-callbakc bounceInLeft wow">Email</label><br>
+							<input class="end-callbackblock bounceInLeft wow" type="text"
+								name="email" id="email-bottom">
 						</div>
 						<div class="">
-							<label class="text-callbakc">Message</label>
+							<label class="text-callbakc bounceInLeft wow">Message</label>
 							<textarea class="end-callbackmess" name="message"
 								id="message-bottom"></textarea>
 						</div>
 					</div>
-					<button type="submit" class="button"
+					<button type="submit" class="button bounceInLeft wow"
 						onclick="validationEmailOfPhoneFormBottom()">Send</button>
 					<p id="loggerFormBottom"></p>
 				</div>
@@ -357,29 +367,32 @@
 		</div>
 	</div>
 	<!-- block 7 -->
-	<footer class="b7">
-		<div class="foot0">
+	<footer class="b7 ">
+		<div class="foot0 bounceInLeft wow">
 			<H1
 				style="font-size: 33px; color: rgb(226, 219, 25); font-family: 'Montserrat', sans-serif;; text-align: left">Follow
 				us:</H1>
 			<div class="row">
-				<i class="entypo-facebook" style="width: 40px; height: 40px;"></i> <i
-					class="entypo-twitter" style="width: 40px; height: 40px;"></i> <i
-					class="entypo-gplus" style="width: 40px; height: 40px;"></i> <i
-					class="entypo-pinterest" style="width: 40px; height: 40px;"></i> <i
-					class="entypo-dribbble" style="width: 40px; height: 40px;"></i>
+				<i class="entypo-facebook bounceInLeft wow"
+					style="width: 40px; height: 40px;"></i> <i
+					class="entypo-twitter bounceInLeft wow"
+					style="width: 40px; height: 40px;"></i> <i
+					class="entypo-gplus bounceInLeft wow"
+					style="width: 40px; height: 40px;"></i> <i
+					class="entypo-pinterest bounceInLeft wow"
+					style="width: 40px; height: 40px;"></i> <i
+					class="entypo-dribbble bounceInLeft wow"
+					style="width: 40px; height: 40px;"></i>
 			</div>
 		</div>
-		<div class="foot1">
-			<a href="ua">UA</a> <a href="ru">RU</a>
-		</div>
-		<div class="foot2">
+		<div class="foot1"></div>
+		<div class="foot2 bounceInLeft wow">
 			<h2>
-				<p class="foot2-p1">Contacts</p>
+				<p class="foot2-p1 bounceInLeft wow">Contacts</p>
 			</h2>
-			<p class="foot2-p2">Ukr-lviv</p>
-			<p class="foot2-p3">Mobile phone: 096-369-03-91</p>
-			<p class="foot2-p4">Email: ceo@m-plus.com</p>
+			<p class="foot2-p2 bounceInLeft wow">Ukr-lviv</p>
+			<p class="foot2-p3 bounceInLeft wow">Mobile phone: 096-369-03-91</p>
+			<p class="foot2-p4 bounceInLeft wow">Email: ceo@m-plus.com</p>
 		</div>
 		<!--  		<div class="foot3"> -->
 

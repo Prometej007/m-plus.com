@@ -157,12 +157,12 @@ footer {
 
 
 .dow:hover{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     vertical-align: middle;
     transition-duration: 0.3s;
     transition-property: transform;
-    transform: scale(1.4);
+    transform: scale(1.2);
 }
 .dowblock{
     background-color: #ffc000;
