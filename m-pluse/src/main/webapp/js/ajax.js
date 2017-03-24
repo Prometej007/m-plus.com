@@ -343,7 +343,7 @@ function loadUserSelect() {
 
 	$.ajax({
 
-		url : 'messageSave?' + $('input[name=csrf_name]').val() + "="
+		url : 'loadUserSelect?' + $('input[name=csrf_name]').val() + "="
 				+ $('input[name=csrf_value]').val(),
 		method : 'POST',
 		contentType : 'application/json; charset=UTF-8',
