@@ -31,10 +31,11 @@ public class Email {
 	 * 
 	 */
 	public void Send(MailSenderService sender, String theme) {
-
+		System.out.println("kurvaaaaaaaaaaaaaaaaaaaaaa");
 		for (User user : users) {
 			if (user.getEmail() != null) {
 				sender.sendMail(theme, bodyOne + message + bodyTwo, user.getEmail());
+				System.out.println(bodyOne + message + bodyTwo + "pizda");
 			}
 		}
 
@@ -106,6 +107,30 @@ public class Email {
 		createBodyOne();
 		createBodyTwo();
 
+	}
+
+	public String getBody() {
+		return body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+	}
+
+	public String getBodyOne() {
+		return bodyOne;
+	}
+
+	public void setBodyOne(String bodyOne) {
+		this.bodyOne = bodyOne;
+	}
+
+	public String getBodyTwo() {
+		return bodyTwo;
+	}
+
+	public void setBodyTwo(String bodyTwo) {
+		this.bodyTwo = bodyTwo;
 	}
 
 	public List<User> getUsers() {

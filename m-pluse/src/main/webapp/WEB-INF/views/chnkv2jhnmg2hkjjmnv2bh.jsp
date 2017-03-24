@@ -27,16 +27,12 @@
 <body>
 	<script src="js/multiple-select.js"></script>
 	<script type="text/javascript">
-// 		$("select").multipleSelect();
-		
+		// 		$("select").multipleSelect();
 	</script>
 	<script type="text/javascript">
 		$(window).on('load', function() {
 			loadUserSelect();
 
-			
-			
-			
 		});
 	</script>
 
@@ -279,14 +275,31 @@
 			<button id="getSelectsBtn" onclick="getSelectsBtn()">GetSelects</button>
 			<select id="userSelect" multiple="multiple" style="width: 200px;">
 
-
-
+			
 
 			</select>
 
 
 
 		</div>
+		
+		
+		<div>
+		
+		
+			<textarea rows="" cols="" id="messageForEmail"></textarea>
+			<button onclick="emailObject()">SEND EMAILS</button>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</div>
+			
 		<!-- 		kuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu    -->
 		<!-- block 7 -->
 		<footer class="b7">

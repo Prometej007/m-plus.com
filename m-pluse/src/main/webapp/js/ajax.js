@@ -25,6 +25,8 @@
 //
 //}
 
+var selectionsUser = [];
+
 function deleteMessage(index) {
 
 	$.ajax({
@@ -313,29 +315,66 @@ function validationEmailOfPhoneFormBottom() {
 
 function emailObject() {
 
-	var email = {
+	var userInSelect = $("#userSelect").multipleSelect("getSelects");
 
-		users : document.getElementById('nameUserForEmail').value,
-		message : document.getElementById('messageForEmail').value
+	var massUsers = [];
 
-	}
+	for (var i = 0; i < userInSelect.length; i++) {
 
-	document.getElementById('nameUserForEmail').value = '';
-	document.getElementById('messageForEmail').value = '';
-	$.ajax({
+		for (var j = 0; j < selectionsUser.length; j++) {
 
-		url : 'sendEmail?' + $('input[name=csrf_name]').val() + "="
-				+ $('input[name=csrf_value]').val(),
-		method : 'POST',
-		contentType : 'application/json; charset=UTF-8',
-		dataType : 'json',
-		data : JSON.stringify(email),
-		success : function(res) {
+			if (userInSelect[i] == selectionsUser[j].email) {
 
+				massUsers.push(selectionsUser[j]);
+
+			}
 		}
 
-	})
+	}
+	// for (var j = 0; j < massUsers.length; j++) {
 
+	// alert(massUsers[j].email);
+	// }
+	var messagsss = document.getElementById('messageForEmail').value
+
+	for (var i = 0; i < massUsers.length; i++) {
+
+		var user = {
+
+			email : massUsers[i].email,
+			message : messagsss
+
+		}
+		// {
+		//
+		//			
+		//			
+		// users : userInSelect,
+		// message : document.getElementById('messageForEmail').value
+		//
+		// }
+		// alert(email.message);
+		// for (var j = 0; j < email.users.length; j++) {
+		//
+		// alert(email.users[j].email);
+		// }
+		// alert(email.users.length);
+		// alert(users[0].email);
+		document.getElementById('messageForEmail').value = '';
+		$.ajax({
+
+			url : 'sendEmail?' + $('input[name=csrf_name]').val() + "="
+					+ $('input[name=csrf_value]').val(),
+			method : 'POST',
+			contentType : 'application/json; charset=UTF-8',
+			dataType : 'json',
+			data : JSON.stringify(user),
+			success : function(res) {
+
+			}
+
+		})
+	}
 }
 
 function validationSelect() {
@@ -358,6 +397,7 @@ function loadUserSelect() {
 		dataType : 'json',
 		success : function(res) {
 			var all;
+			selectionsUser = res;
 			for (var i = 0; i < res.length; i++) {
 
 				all += "<option value=" + res[i].email + ">" + res[i].email
@@ -377,9 +417,9 @@ function setSelectsBtn() {
 	$("select").multipleSelect("setSelects", [ 1, 2 ]);
 }
 function getSelectsBtn() {
-
-			alert("Selected values: "
-					+ $("select").multipleSelect("getSelects"));
-			alert("Selected texts: "
-					+ $("select").multipleSelect("getSelects", "text"));
-		}
+	var temp = $("select").multipleSelect("getSelects");
+	for (var i = 0; i < temp.length; i++) {
+		alert("Selected values: " + temp[i]);
+	}
+	alert("Selected texts: " + $("select").multipleSelect("getSelects", "text"));
+}

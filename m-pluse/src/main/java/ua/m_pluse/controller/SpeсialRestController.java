@@ -87,6 +87,17 @@ public class SpeñialRestController {
 
 	// =--=-==-=-=-=-===-=-=-=-=-=-=-=--=-=-=-=MAIL_SENDER--=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
+	@RequestMapping(value = "sendEmail", method = RequestMethod.POST)
+	public void sendEmail(@RequestBody User user) {
+		String theme="dadad";
+		String mailBody="kuuuuuurvAZadfsffffffffffffffffddddddddddddd";
+		System.out.println("pizda");
+		
+		System.out.println(user.getEmail());
+		mailSenderService.sendMail(theme, mailBody, user.getEmail());
+
+	}
+
 	@RequestMapping(value = "loadUserSelect", method = RequestMethod.POST)
 	public @ResponseBody List<UserDTO> loadUserSelect() {
 
