@@ -28,6 +28,9 @@
 </head>
 <body>
 
+
+
+
 	<input type="hidden" name="csrf_name" value="${_csrf.parameterName}" />
 	<input type="hidden" name="csrf_value" value="${_csrf.token}" />
 	<!-- nav bar -->
@@ -264,8 +267,8 @@
 								id="email-bottom">
 						</div>
 						<div class="">
-							<label class="text-callbakc">Сообщение</label> <input
-								class="end-callbackmess" name="message" id="message-bottom">
+							<label class="text-callbakc">Сообщение</label><p> <textarea
+								class="end-callbackmess" name="message" id="message-bottom" type=""></textarea></p>
 						</div>
 					</div>
 					<button type="submit" class="button"

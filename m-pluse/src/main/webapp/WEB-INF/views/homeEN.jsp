@@ -25,11 +25,80 @@
 <link href="https://fonts.googleapis.com/css?family=Lato:900"
 	rel="stylesheet">
 <link rel="stylesheet" href="css/styleLanguageButton.css">
+<link rel="stylesheet" href="css/download.css">
 </head>
 <body>
+	<script type="text/javascript">
+		function pause(n) {
+			today = new Date()
+			today2 = today
+			while ((today2 - today) <= n) {
+				today2 = new Date()
+			}
+		}
+
+		$(window)
+				.on(
+						'load',
+						function() {
+
+							var $preloader = $('#page-preloader'), $spinner = $preloader
+									.find('.spinner');
+							$spinner.fadeOut();
+
+							$preloader.delay(2500).fadeOut();
+						});
+	</script>
 
 	<input type="hidden" name="csrf_name" value="${_csrf.parameterName}" />
 	<input type="hidden" name="csrf_value" value="${_csrf.token}" />
+	
+	
+	
+	
+	<div id="page-preloader" class="page-preloader"
+		style="height: 100%; width: 100%; background-image: url(img/pattern.png); background-repeat: no-repeat;">
+
+
+
+		<div id="large-header" class="large-header"></div>
+
+		<div class="contpre">
+			<span class="spinner"> </span>
+			<svg class="animtext" viewBox="0 0 800 600">
+  <symbol id="s-text">
+    <text text-anchor="middle" x="50%" y="35%" class="text--line">
+     M-Plus
+    </text>
+    <text text-anchor="middle" x="50%" y="68%" class="text--line2">
+      
+    </text>
+    
+  </symbol>
+  
+  <g class="g-ants">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text"
+					class="text-copy"></use>     
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text"
+					class="text-copy"></use>     
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text"
+					class="text-copy"></use>     
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text"
+					class="text-copy"></use>     
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text"
+					class="text-copy"></use>     
+  </g>
+  
+  
+</svg>
+
+			</center>
+
+			</span>
+
+		</div>
+
+	</div>
 	<!-- nav bar -->
 	<nav class="nav">
 		<div class="nav1">
@@ -38,40 +107,38 @@
 				<a href="#blog" class="navtag">BLOG</a> <a href="#gall"
 					class="navtag">GALLARY</a> <a href="#cont" class="navtag">CONTACT</a>
 			</div>
-		<a href="#home" class="navlogo">M-Plus</a>
+			<a href="#home" class="navlogo">M-Plus</a>
 
 
 		</div>
-	
+
 	</nav>
 	<nav class="nav lang">
-	
-			<div class="wrapper-button-language" id="wrapper-button-language">
+
+		<div class="wrapper-button-language" id="wrapper-button-language">
 			<div class="button-language-1" id="button-language-1">
 				<p class="button-language-1-p" id="button-language-1-p">
-					<a href="ua" class="button-language-1-p-a" id="button-language-1-p-a" >
-						UA
-					</a>
+					<a href="ua" class="button-language-1-p-a"
+						id="button-language-1-p-a"> UA </a>
 				</p>
 			</div>
-			<div class="button-language-2" id="button-language-2" >
+			<div class="button-language-2" id="button-language-2">
 				<p class="button-language-2-p" id="button-language-2-p">
-					<a href="ru" class="button-language-2-p-a" id="button-language-2-p-a">
-						RU
-					</a>
+					<a href="ru" class="button-language-2-p-a"
+						id="button-language-2-p-a"> RU </a>
 				</p>
 			</div>
-			<div class="button-language-3" id="button-language-3" style="background:#595958;">
+			<div class="button-language-3" id="button-language-3"
+				style="background: #595958;">
 				<p class="button-language-3-p" id="button-language-3-p">
-					 <a href="en" class="button-language-3-p-a" id="button-language-3-p-a"  style="color:#929491;">
-						EN
-					</a>
+					<a href="en" class="button-language-3-p-a"
+						id="button-language-3-p-a" style="color: #929491;"> EN </a>
 				</p>
 			</div>
 		</div>
-	
+
 	</nav>
-	
+
 	<!--  call back-->
 	<div class="navslide"
 		style="display: none; padding-top: 13%; right: 0; z-index: 10;"
@@ -179,7 +246,7 @@
 					onclick="myFunction()">VR/AR</button> <br> <a href="#"
 				class=""></a>
 				<button type="button" class="button-b2" onclick="myFunction1()">GAMES
-				</button> 
+				</button>
 			</span>
 		</div>
 		<div class="b b2-block2">
@@ -270,8 +337,9 @@
 								id="email-bottom">
 						</div>
 						<div class="">
-							<label class="text-callbakc">Message</label> <input
-								class="end-callbackmess" name="message" id="message-bottom">
+							<label class="text-callbakc">Message</label>
+							<textarea class="end-callbackmess" name="message"
+								id="message-bottom"></textarea>
 						</div>
 					</div>
 					<button type="submit" class="button"

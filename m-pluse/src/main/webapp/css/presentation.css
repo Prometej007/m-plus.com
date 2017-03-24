@@ -1,0 +1,229 @@
+BODY, HTML {
+	height: auto;
+	min-width: 1600px;
+}
+
+.wrapper-video-presentation {
+	width: 100%;
+	height: 100%;
+	min-width: 1300px;
+	min-height: 551px;
+}
+
+.play-button-presentation {
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	width: 100px;
+	height: 100px;
+	background: green;
+	width: 100px;
+	background: rgba(255, 255, 255, 0);
+	border-radius: 75%;
+}
+
+.play-button-presentation:hover {
+	width: 150px;
+	height: 150px;
+	top: 14%;
+	left: 49%;
+}
+
+.close-button-presentation {
+	position: absolute;
+	display: none;
+	top: 10%;
+	left: 70%;
+	width: auto;
+	height: auto;
+	color: red;
+	top: 2%;
+}
+
+.close-button-presentation a {
+	background: rgba(255, 255, 255, 0);
+	color: red;
+	top: 5%;
+	font-size: 5em;
+}
+
+.close-button-presentation a:hover {
+	font-size: 6em;
+}
+
+.background-presentation {
+	width: 100%;
+	height: 100%;
+	background: grey;
+	opacity: 0.5;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.video-player {
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: 100%;
+	z-index: -100;
+	/*transform: translateX(-50%) translateY(-50%);*/
+}
+
+.body-presentation {
+	width: 100%;
+	height: auto;
+	margin-top: -4px;
+	min-height: 1480px;
+	background: #63686b;
+	margin-top: -4px;
+}
+
+.body-presentation div {
+	min-height: 148px;
+	width: 50%;
+}
+
+.body-presentation-p-left {
+	margin-left: 50%;
+	width: 50%;
+	float: left;
+	width: 50%;
+}
+
+.body-presentation-p-right {
+	margin-right: 50%;
+	width: 50%;
+	float: right;
+}
+
+footer {
+	margin-top: -20px;
+}
+
+.div-vidoe-text {
+	position: absolute;
+	left: 18%;
+	top: 10%;
+	width: 450px;
+	height: 500px;
+}
+
+.download-a-div {
+	width: 150px;
+	height: 50px;
+}
+
+.download-a {
+	width: 150px;
+	height: 50px;
+	width: 150px;
+	z-index: 100;
+}
+
+.download {
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+}
+
+.dowbutt{
+    position: fixed;
+    right: 6%;
+    bottom: 2%;
+    height: 121px;
+    width: 200px;
+    z-index: 10;
+
+}
+/*button*/
+.dowbutt{
+    position: fixed;
+    right: 6%;
+    bottom: 2%;
+    height: 121px;
+    width: 200px;
+    z-index: 10;
+
+}
+.dow{
+    background-position: center;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: -20%;
+    z-index: 11;
+}
+
+
+.dow:hover{
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transform: scale(1.4);
+}
+.dowblock{
+    background-color: #ffc000;
+    height: 80px;
+    width: 160px;
+    z-index: 11;
+
+}
+
+/*form*/
+.form0{
+    background-size: contain;
+    background-image: url("http://www.partitaiva24.it/wp-content/uploads/2016/08/abstract-polygon-art-yellow.png");
+    box-shadow: #1f1f1f 11px -20px 6px 6000px;
+    right: 35%;
+    height: 300px;
+    width: 500px;
+    background-color: rgba(112, 116, 116, 0.81);
+    position: fixed;
+    top: 17%;
+    z-index: 10;
+}
+
+.circleright{
+    background-color: #ffc000;
+    background-position: right;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    right: 0;
+}
+.formmenu{
+    position: relative;
+    left: 33%;
+    top: 20%;
+}
+.buttyes{
+    width: 55px;
+    margin-left: 56px;
+    height: 29px;
+    background-color: #00cf04;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s;
+    cursor: pointer;
+}
+.buttno{
+    width: 55px;
+    height: 29px;
+    background-color: #d00e00;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 60px;
+    margin-left: 0px;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s;
+    cursor: pointer;
+    border: none;
+}

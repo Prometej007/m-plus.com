@@ -29,11 +29,11 @@ public class AdminController {
 	@Autowired
 	public GameService gameService;
 
-//	@RequestMapping("loginpage")
-//	public String loginpage() {
-//
-//		return "loginpage";
-//	}
+	// @RequestMapping("loginpage")
+	// public String loginpage() {
+	//
+	// return "loginpage";
+	// }
 
 	@RequestMapping("logout")
 	public String logout() {
@@ -50,20 +50,39 @@ public class AdminController {
 		model.addAttribute("games", gameService.findAll());
 		model.addAttribute("game", new Game());
 		for (User user : userService.findAll()) {
-			if (user.getRole() == Role.ROLE_ONREAD) {
-				all += "	<button onclick=\"document.getElementById('message"+user.getId()+"').style.display='block'\" style='width: auto;'>"+user.getName()+"</button><div id='message"+user.getId()+"' class='modal'><div class='modal-content animate'><div class='imgcontainer'><span onclick=\"document.getElementById('message"+user.getId()+"').style.display='none'\" class='close' title='Close Modal'>&times;</span></div><div class='container'>";
-				all += "<div class='box'>" + user.getName() ;
-				all += "<div class='box'>" + user.getMessage() + "</div><br>";
-				all += "<div class='box'>" + user.getMessage() + "</div><br>";
-				all += "<div class='box'>" + user.getEmail() + "</div><br>";
-				all += "<div class='box'>" + user.getDateOfPublic() + "</div><br>";
-				all += "</div><div class='container' style='background-color: #f1f1f1'><button type='button'onclick=\"document.getElementById('message"+user.getId()+"').style.display='none'\" class='cancelbtn'>Cancel</button>"+ "<a href='' onclick=\"deleteMessage(" + user.getId()
-						+ ")\"> delete </a></div><br>"+"</div></div></div>";
+
+			if (user.getRole() == Role.ROLE_ONREAD && user.getName() != null) {
+				all += "	<button onclick=\"document.getElementById('message" + user.getId()
+						+ "').style.display='block'\" style='width: auto;'>" + user.getName()
+						+ "</button><div id='message" + user.getId()
+						+ "' class='modal'><div class='modal-content animate'><div class='imgcontainer'><span onclick=\"document.getElementById('message"
+						+ user.getId()
+						+ "').style.display='none'\" class='close' title='Close Modal'>&times;</span></div><div class='container'>";
+				all += "<div class='box'> name: [ " + user.getName() + " ] </div>";
+				if (user.getMessage() != null) {
+					all += "<div class='box'> Massage [ " + user.getMessage() + " ] </div><br>";
+				}
+				if (user.getPhone() != null) {
+
+					all += "<div class='box'> Phone: [ " + user.getPhone() + " ] </div><br>";
+				}
+				if (user.getEmail() != (null)) {
+
+					all += "<div class='box'> Email: [ " + user.getEmail() + " ] </div><br>";
+				}
+				if (user.getDateOfPublic() != (null)) {
+
+					all += "<div class='box'> date [ " + user.getDateOfPublic() + " ] </div><br>";
+				}
+				all += "</div><div class='container' style='background-color: #f1f1f1'><button type='button'onclick=\"document.getElementById('message"
+						+ user.getId() + "').style.display='none'\" class='cancelbtn'>Cancel</button>"
+						+ "<a href='' onclick=\"deleteMessage(" + user.getId() + ")\"> delete </a></div><br>"
+						+ "</div></div></div>";
 				;
 			}
 		}
 		for (User user : userService.findAll()) {
-			if (user.getRole() == Role.ROLE_WASREAD) {
+			if (user.getRole() == Role.ROLE_WASREAD && user.getName() != null) {
 
 				all += "<div class='box'>" + user.getName() + "<a href='' onclick='deleteMessage(" + user.getId()
 						+ ")'> delete </a></div><br>";

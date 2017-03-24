@@ -267,8 +267,8 @@
 								id="email-bottom">
 						</div>
 						<div class="">
-							<label class="text-callbakc">Message</label> <input
-								class="end-callbackmess" name="message" id="message-bottom">
+							<label class="text-callbakc">Message</label> <textarea
+								class="end-callbackmess" name="message" id="message-bottom"></textarea>
 						</div>
 					</div>
 					<button type="submit" class="button"
