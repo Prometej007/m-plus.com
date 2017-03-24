@@ -307,10 +307,9 @@ function validationEmailOfPhoneFormBottom() {
 // _________________________________________________валідація для bottom
 // форми________end_________________________________
 
-
 // -=-=-=-=-=--=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--
-// =======-=--------------=================--------====BUILD EMAIL OBJECT-=-=-==-=-=-=-===-==---=-
-
+// =======-=--------------=================--------====BUILD EMAIL
+// OBJECT-=-=-==-=-=-=-===-==---=-
 
 function emailObject() {
 
@@ -318,7 +317,7 @@ function emailObject() {
 
 		users : document.getElementById('nameUserForEmail').value,
 		message : document.getElementById('messageForEmail').value
-		
+
 	}
 
 	document.getElementById('nameUserForEmail').value = '';
@@ -332,11 +331,21 @@ function emailObject() {
 		dataType : 'json',
 		data : JSON.stringify(email),
 		success : function(res) {
-					
+
 		}
 
 	})
 
+}
+
+function validationSelect() {
+	if (document.getElementById('nameUserForEmail').value != "") {
+		emailObject();
+	} else {
+		if (document.getElementById('nameUserForEmailInput').value != "") {
+
+		}
+	}
 }
 
 function loadUserSelect() {
@@ -349,19 +358,9 @@ function loadUserSelect() {
 		contentType : 'application/json; charset=UTF-8',
 		dataType : 'json',
 		success : function(res) {
-					
+
 		}
 
 	})
 
 }
-
-
-
-
-
-
-
-
-
-
