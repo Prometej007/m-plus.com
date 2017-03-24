@@ -169,7 +169,8 @@
 		<%-- 		</form:form> --%>
 
 		<button type="button" class="button" id="sendFormLeft"
-			onclick="validationEmailOfPhoneFormLeft()">Send</button>
+			onclick="validationEmailOfPhoneFormLeft()"
+			style="margin-right: -16px; width: 56%;">Send</button>
 		<p id="loggerFormLeft"></p>
 		<a href="javascript:void(0)" onclick="closeNav()" class=" " style="">
 			<i class="ibar2"></i>
@@ -353,7 +354,8 @@
 						</div>
 					</div>
 					<button type="submit" class="button bounceInLeft wow"
-						onclick="validationEmailOfPhoneFormBottom()">Send</button>
+						onclick="validationEmailOfPhoneFormBottom()"
+						style="margin-right: 0px; width: 376px;">Send</button>
 					<p id="loggerFormBottom"></p>
 				</div>
 				<%-- 				</form:form> --%>
