@@ -66,7 +66,7 @@ public class SpeñialRestController {
 	
 	@RequestMapping(value = "loadMessages", method = RequestMethod.POST)
 	public @ResponseBody List<UserDTO> loadMessages(@RequestBody String index) {
-		System.out.println("tut");
+
 		return DtoUtilMapper.userToUserDTO(userService.findAll());
 	}
 
@@ -90,14 +90,11 @@ public class SpeñialRestController {
 	
 //=--=-==-=-=-=-===-=-=-=-=-=-=-=--=-=-=-=MAIL_SENDER--=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 	
-	
-	@RequestMapping(value = "sendEmail",method = RequestMethod.POST)
-	public void sendOneEmail(@RequestBody Email email){
-		email.addBody("<h1>~~~</h1>");
-		email.Send(mailSenderService, "govnishe");
-		
+	@RequestMapping(value = "loadUserSelect", method = RequestMethod.POST)
+	public @ResponseBody List<UserDTO> loadUserSelect() {
+
+		return DtoUtilMapper.userToUserDTO(userService.findAll());
 	}
-	
 	
 	
 	

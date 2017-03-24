@@ -325,21 +325,36 @@ function emailObject() {
 	document.getElementById('messageForEmail').value = '';
 	$.ajax({
 
-		url : 'messageSave?' + $('input[name=csrf_name]').val() + "="
+		url : 'sendEmail?' + $('input[name=csrf_name]').val() + "="
 				+ $('input[name=csrf_value]').val(),
 		method : 'POST',
 		contentType : 'application/json; charset=UTF-8',
 		dataType : 'json',
 		data : JSON.stringify(email),
 		success : function(res) {
-
+					
 		}
 
 	})
 
 }
 
+function loadUserSelect() {
 
+	$.ajax({
+
+		url : 'messageSave?' + $('input[name=csrf_name]').val() + "="
+				+ $('input[name=csrf_value]').val(),
+		method : 'POST',
+		contentType : 'application/json; charset=UTF-8',
+		dataType : 'json',
+		success : function(res) {
+					
+		}
+
+	})
+
+}
 
 
 
