@@ -1,12 +1,10 @@
 package ua.m_pluse.controller;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -89,19 +87,21 @@ public class SpeñialRestController {
 
 	@RequestMapping(value = "sendEmail", method = RequestMethod.POST)
 	public void sendEmail(@RequestBody User user) {
-		String theme="dadad";
-		String mailBody="kuuuuuurvAZadfsffffffffffffffffddddddddddddd";
-		System.out.println("pizda");
-		
-		System.out.println(user.getEmail());
-		mailSenderService.sendMail(theme, mailBody, user.getEmail());
+		String theme = "dadad";
+		String mailBody = "<div style='width:500px;height:500px;color:red;background:black;'>~~~</div>";
+		Email email = new Email(user, user.getMessage());
+		email.addBody(mailBody);
+		email.Send(mailSenderService, theme);
+
+		// mailSenderService.sendMail(theme, mailBody, user2.getEmail());
 
 	}
 
 	@RequestMapping(value = "loadUserSelect", method = RequestMethod.POST)
 	public @ResponseBody List<UserDTO> loadUserSelect() {
+		List<UserDTO> listReturn = new ArrayList();
 
-		return DtoUtilMapper.userToUserDTO(userService.findAll());
+		return DtoUtilMapper.userToUserDTO(userService.returnAllEmail());
 	}
 
 	// ==========-=-=-=----------=-=-=-=-=-=-=

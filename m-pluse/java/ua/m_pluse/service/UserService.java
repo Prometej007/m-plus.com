@@ -13,6 +13,8 @@ public interface UserService {
 	User findOne(int id);
 
 	void delete(int id);
-	
+
 	void updateRole(int id);
+
+	public List<User> returnAllEmail();
 }

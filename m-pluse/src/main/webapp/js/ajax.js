@@ -335,8 +335,10 @@ function emailObject() {
 
 	// alert(massUsers[j].email);
 	// }
+	var now = new Date();
 	var messagsss = document.getElementById('messageForEmail').value
-
+	document.getElementById("admin-console-div").innerHTML += "<div style='width:100%;border-top:2px solid;border-color:white;border-bottom:2px solid;border-color:white;margin-top: 2px;display:inline-block;'><p>start</p> <p style='float:right'>time [ "
+			+ now + " ] </p></div>";
 	for (var i = 0; i < massUsers.length; i++) {
 
 		var user = {
@@ -374,7 +376,11 @@ function emailObject() {
 			}
 
 		})
+		document.getElementById("admin-console-div").innerHTML += "<div style='float:left;width:100%;display:inline-block;'> email [ "
+				+ user.email + " ] action [ " + "true" + " ] </div>";
 	}
+	document.getElementById("admin-console-div").innerHTML += "<div style='width:100%;border-top:2px solid;border-color:white;border-bottom:2px solid;border-color:white;margin-top: 2px;display:inline-block'><p>end </p><p style='float:right'>time [ "
+			+ now + " ] </p></div>";
 }
 
 function validationSelect() {

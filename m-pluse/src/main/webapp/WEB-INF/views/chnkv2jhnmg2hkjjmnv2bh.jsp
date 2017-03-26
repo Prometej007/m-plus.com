@@ -275,32 +275,70 @@
 			<button id="getSelectsBtn" onclick="getSelectsBtn()">GetSelects</button>
 			<select id="userSelect" multiple="multiple" style="width: 200px;">
 
-			
+
 
 			</select>
 
 
 
 		</div>
-		
-		
+
+
 		<div>
-		
-		
+
+
 			<textarea rows="" cols="" id="messageForEmail"></textarea>
 			<button onclick="emailObject()">SEND EMAILS</button>
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
+
 		</div>
-			
+
 		<!-- 		kuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu    -->
+
+
+		<!-- console start -->
+
+		<div>
+			<button class="profilebutton"
+				onclick="document.getElementById('console').style.display='block'"
+				style="">console</button>
+
+			<div id="console" class="modal">
+
+				<div class="modal-content animate">
+					<div class="imgcontainer">
+						<span
+							onclick="document.getElementById('console').style.display='none'"
+							class="close" title="Close Modal">&times;</span>
+					</div>
+					<div class="imgcontainer">
+						<p>imgcontainer</p>
+					</div>
+
+
+					<div class="container">
+
+						<div id="admin-console-div"
+							style="overflow: scroll; margin: auto; width: 80%; height: 500px; max-width: 80%; max-height: 500px; background: black; color: white;"></div>
+					</div>
+					<div class="container" style="background-color: #f1f1f1">
+						<button type="button"
+							onclick="document.getElementById('console').style.display='none'"
+							class="cancelbtn">Cancel</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- console end -->
 		<!-- block 7 -->
 		<footer class="b7">
 			<div class="foot0">

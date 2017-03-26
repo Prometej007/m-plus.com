@@ -2,6 +2,7 @@ package ua.m_pluse.serviceImpl;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,34 @@ public class UserServiceImpl implements UserService {
 		User user = userDao.findOne(id);
 		user.setRole(Role.ROLE_WASREAD);
 		userDao.save(user);
+	}
+
+	public List<User> returnAllEmail() {
+		List<User> list = new ArrayList<User>();
+		List<User> listUser = userDao.findAll();
+		for (User user : listUser) {
+			boolean check = false;
+			if (list.size() != 0 && user.getEmail() != null) {
+
+				for (User userL : list) {
+					if (!(userL.getEmail().equals(user.getEmail())) && !check) {
+
+					} else {
+						check = true;
+					}
+				}
+				if (!check) {
+					list.add(user);
+				}
+			} else if (list.size() == 0 && user.getEmail() != null) {
+				if (user.getEmail() != null) {
+
+					list.add(user);
+				}
+			}
+		}
+
+		return list;
 	}
 
 	public List<User> researchUser(String research) {

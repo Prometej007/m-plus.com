@@ -6,7 +6,7 @@ import ua.m_pluse.service.MailSenderService;
 
 public class Email {
 
-	private List<User> users;
+	private User user;
 	private String message;
 	private String body;
 	private String bodyOne;
@@ -16,9 +16,9 @@ public class Email {
 
 	}
 
-	public Email(List<User> users, String message) {
+	public Email(User user, String message) {
 		super();
-		this.users = users;
+		this.user = user;
 		this.message = message;
 	}
 
@@ -31,12 +31,10 @@ public class Email {
 	 * 
 	 */
 	public void Send(MailSenderService sender, String theme) {
-		System.out.println("kurvaaaaaaaaaaaaaaaaaaaaaa");
-		for (User user : users) {
-			if (user.getEmail() != null) {
-				sender.sendMail(theme, bodyOne + message + bodyTwo, user.getEmail());
-				System.out.println(bodyOne + message + bodyTwo + "pizda");
-			}
+
+		if (user.getEmail() != null) {
+			sender.sendMail(theme, bodyOne + message + bodyTwo, user.getEmail());
+
 		}
 
 	}
@@ -104,8 +102,8 @@ public class Email {
 	 */
 	public void addBody(String body) {
 		this.body = body;
-		createBodyOne();
-		createBodyTwo();
+		this.bodyOne = createBodyOne();
+		this.bodyTwo = createBodyTwo();
 
 	}
 
@@ -133,12 +131,12 @@ public class Email {
 		this.bodyTwo = bodyTwo;
 	}
 
-	public List<User> getUsers() {
-		return users;
+	public User getUsers() {
+		return user;
 	}
 
-	public void setUsers(List<User> users) {
-		this.users = users;
+	public void setUsers(User users) {
+		this.user = users;
 	}
 
 	public String getMessage() {
@@ -154,7 +152,7 @@ public class Email {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((message == null) ? 0 : message.hashCode());
-		result = prime * result + ((users == null) ? 0 : users.hashCode());
+		result = prime * result + ((user == null) ? 0 : user.hashCode());
 		return result;
 	}
 
@@ -172,17 +170,17 @@ public class Email {
 				return false;
 		} else if (!message.equals(other.message))
 			return false;
-		if (users == null) {
-			if (other.users != null)
+		if (user == null) {
+			if (other.user != null)
 				return false;
-		} else if (!users.equals(other.users))
+		} else if (!user.equals(other.user))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Email [users=" + users + ", message=" + message + "]";
+		return "Email [users=" + user + ", message=" + message + "]";
 	}
 
 }
