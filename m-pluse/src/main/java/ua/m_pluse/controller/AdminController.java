@@ -44,7 +44,7 @@ public class AdminController {
 
 	@RequestMapping("logout")
 	public String logout() {
-		admin=null;
+		admin = null;
 		return "redirect:/";
 	}
 
@@ -103,20 +103,12 @@ public class AdminController {
 
 	}
 
-	@RequestMapping(value = "loginprocesing", method = RequestMethod.POST)
-	public String log(@RequestParam MultipartFile image, @RequestParam String name) {
-
-		imageService.saveImg(image, name);
-
-		return "redirect:/chnkv2jhnmg2hkjjmnv2bh";
-	}
-
 	@RequestMapping(value = "saveGame", method = RequestMethod.POST)
 	public String saveGame(@RequestParam MultipartFile game, @RequestParam String name, @RequestParam String pathA) {
 
 		gameService.saveGame(game, name, pathA);
 
-		return "redirect:/chnkv2jhnmg2hkjjmnv2bh";
+		return "redirect:/admin" + admin + "";
 	}
 
 	@RequestMapping(value = "deleteImg/{id}", method = RequestMethod.GET)
@@ -124,7 +116,7 @@ public class AdminController {
 
 		imageService.delete(Integer.parseInt(id));
 
-		return "redirect:/chnkv2jhnmg2hkjjmnv2bh";
+		return "redirect:/admin" + admin + "";
 	}
 
 	@RequestMapping(value = "deleteGame/{id}", method = RequestMethod.GET)
@@ -132,7 +124,7 @@ public class AdminController {
 
 		gameService.delete(Integer.parseInt(id));
 
-		return "redirect:/chnkv2jhnmg2hkjjmnv2bh";
+		return "redirect:/admin" + admin + "";
 	}
 
 }
