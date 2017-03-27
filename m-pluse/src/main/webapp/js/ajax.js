@@ -60,7 +60,8 @@ function deleteMessage(index) {
 }
 
 function wasRead(index) {
-
+	var allRead = "";
+	var allNoRead = "";
 	$.ajax({
 
 		url : 'wasRead?' + $('input[name=csrf_name]').val() + "="
@@ -70,24 +71,65 @@ function wasRead(index) {
 		dataType : 'json',
 		data : '' + index,
 		success : function(res) {
-
-			var all = '';
-
-			for (var i = 0; i < res.length; i++) {
-				var index = res[i].id;
-				all += '<div class="box">' + res[i].name
-						+ '<a onclick="deleteMessage(' + index
-						+ ')"> delete </div><br>';
-				all += '<div class="box">' + res[i].message + '></div><br>';
-				all += '<div class="box">' + res[i].phone + '></div><br>';
-				all += '<div class="box">' + res[i].email + '></div><br>';
-				all += '<div class="box">' + res[i].dateOfPublic
-						+ '></div><br>';
-			}
-			document.getElementById('allMessages').innerHTML = all;
-
+			onRead();
+			wasReadL();
 		}
 	})
+
+}
+
+function wasReadL() {
+
+	$
+			.ajax({
+
+				url : 'loadMessagesWasRead?' + $('input[name=csrf_name]').val()
+						+ "=" + $('input[name=csrf_value]').val(),
+				method : 'POST',
+				contentType : 'application/json; charset=UTF-8',
+				dataType : 'json',
+				success : function(res) {
+					var allRead = "";
+					for (var i = 0; i < res.length; i++) {
+
+						// alert("update wasRead");
+						allRead += "<button class=\"profilebutton\"";
+						allRead += "onclick=\"document.getElementById('message"
+								+ res[i].id + "').style.display='block';\"";
+						allRead += "style=\"\">" + res[i].name + "</button>	";
+
+					}
+					document.getElementById("wasreadmessagebutton").innerHTML = allRead;
+				}
+			})
+
+}
+function onRead() {
+	var allNoRead = "";
+	$
+			.ajax({
+
+				url : 'loadMessagesoneread?' + $('input[name=csrf_name]').val()
+						+ "=" + $('input[name=csrf_value]').val(),
+				method : 'POST',
+				contentType : 'application/json; charset=UTF-8',
+				dataType : 'json',
+				success : function(res) {
+
+					for (var i = 0; i < res.length; i++) {
+						// alert("update onRead");
+						allNoRead += "<button class=\"profilebutton\"";
+						allNoRead += "onclick=\"document.getElementById('message"
+								+ res[i].id
+								+ "').style.display='block';wasRead("
+								+ res[i].id + ")\"";
+						allNoRead += "	style=\"\">" + res[i].name
+								+ "</button>	";
+
+					}
+					document.getElementById("onreadmessagebutton").innerHTML = allNoRead;
+				}
+			})
 
 }
 
@@ -336,7 +378,9 @@ function emailObject() {
 	// alert(massUsers[j].email);
 	// }
 	var now = new Date();
-	var messagsss = document.getElementById('messageForEmail').value
+	var messagsss = document.getElementById('messageForEmail').value;
+	var theme = document.getElementById("theme-email").value;
+	var emailbody = document.getElementById("emailbodyinput").value;
 	document.getElementById("admin-console-div").innerHTML += "<div style='width:100%;border-top:2px solid;border-color:white;border-bottom:2px solid;border-color:white;margin-top: 2px;display:inline-block;'><p>start</p> <p style='float:right'>time [ "
 			+ now + " ] </p></div>";
 	for (var i = 0; i < massUsers.length; i++) {
@@ -344,7 +388,9 @@ function emailObject() {
 		var user = {
 
 			email : massUsers[i].email,
-			message : messagsss
+			message : messagsss,
+			name : theme,
+			phone : emailbody
 
 		}
 		// {
@@ -363,6 +409,7 @@ function emailObject() {
 		// alert(email.users.length);
 		// alert(users[0].email);
 		document.getElementById('messageForEmail').value = '';
+		document.getElementById("theme-email").value = '';
 		$.ajax({
 
 			url : 'sendEmail?' + $('input[name=csrf_name]').val() + "="
@@ -376,6 +423,7 @@ function emailObject() {
 			}
 
 		})
+
 		document.getElementById("admin-console-div").innerHTML += "<div style='float:left;width:100%;display:inline-block;'> email [ "
 				+ user.email + " ] action [ " + "true" + " ] </div>";
 	}
@@ -429,3 +477,5 @@ function getSelectsBtn() {
 	}
 	alert("Selected texts: " + $("select").multipleSelect("getSelects", "text"));
 }
+
+

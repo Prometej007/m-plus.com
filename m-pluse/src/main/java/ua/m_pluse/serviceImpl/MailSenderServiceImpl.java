@@ -40,8 +40,7 @@ public class MailSenderServiceImpl implements MailSenderService {
 		try {
 			MimeMessage message = new MimeMessage(session);
 			MimeMessageHelper helper = new MimeMessageHelper(message, true);
-			
-			
+
 			helper.setFrom(new InternetAddress(USERNAME));
 
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(email));

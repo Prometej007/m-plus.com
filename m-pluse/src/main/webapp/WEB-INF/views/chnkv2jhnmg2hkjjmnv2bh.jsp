@@ -38,6 +38,8 @@
 
 	<input type="hidden" name="csrf_name" value="${_csrf.parameterName}" />
 	<input type="hidden" name="csrf_value" value="${_csrf.token}" />
+	<input type="hidden" name="name" value="${user-password}" />
+	<input type="hidden" name="password" value="${user-name}" />
 	<!-- nav bar -->
 	<nav class="nav">
 		<div class="nav1">
@@ -45,6 +47,14 @@
 				<a href="#we" class="navtag">WE</a> <a href="#work" class="navtag">WORK</a>
 				<a href="#blog" class="navtag">BLOG</a> <a href="#gall"
 					class="navtag">GALLARY</a> <a href="#cont" class="navtag">CONTACT</a>
+						<div>
+					
+					<form:form action="logout" method="get" >
+			
+					<button class="button">LogOut</button>
+					</form:form>
+					
+					</div>
 			</div>
 			<a href="en" class="navlogo">M-Pulse</a>
 		</div>
@@ -236,18 +246,202 @@
 
 	</div>
 
+
+
+
+	<div>
+		<button class="profilebutton"
+			onclick="document.getElementById('Message').style.display='block'"
+			style="">Message</button>
+		<div id="Message" class="modal">
+			<div class="modal-content animate">
+				<div class="imgcontainer">
+
+					<span
+						onclick="document.getElementById('Message').style.display='none'"
+						class="close" title="Close Modal">&times;</span>
+				</div>
+				<div class="imgcontainer">
+					<p>imgcontainer</p>
+				</div>
+
+				<div class="container">
+					<div id="allMessages">
+						<c:forEach var="message" items="${WASREADMESSAGE}">
+
+
+							<div>
+
+
+								<div id="message${message.id}" class="modal">
+
+									<div class="modal-content animate">
+										<div class="imgcontainer">
+											<span
+												onclick="document.getElementById('message${message.id}').style.display='none'"
+												class="close" title="Close Modal">&times;</span>
+										</div>
+										<div class="imgcontainer">
+											<p>imgcontainer</p>
+										</div>
+
+
+										<div class="container" style="color: black;">
+
+											<div>
+
+												<p>name : [ ${message.name} ]</p>
+
+
+											</div>
+											<div>
+
+												<p>email : [ ${message.email} ]</p>
+
+
+											</div>
+											<div>
+
+												<p>phone : [ ${message.phone} ]</p>
+
+
+
+											</div>
+											<div>
+
+												<p>message : [ ${message.message} ]</p>
+
+
+
+											</div>
+
+
+
+										</div>
+										<div class="container" style="background-color: #f1f1f1">
+											<button type="button"
+												onclick="document.getElementById('message${message.id}').style.display='none'"
+												class="cancelbtn">Cancel</button>
+
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+
+						</c:forEach>
+						<div id="wrapperreadmessagebutton">
+							<div id="onreadmessagebutton">
+								<c:forEach var="message" items="${ONREADMESSAGE}">
+
+									<button class="profilebutton"
+										onclick="document.getElementById('message${message.id}').style.display='block';wasRead(${message.id});"
+										style="">${message.name}</button>
+
+								</c:forEach>
+							</div>
+							<div id="wasreadmessagebutton">
+								<c:forEach var="message" items="${WASREADMESSAGE}">
+									<button class="profilebutton"
+										onclick="document.getElementById('message${message.id}').style.display='block'"
+										style="">${message.name}</button>
+								</c:forEach>
+							</div>
+						</div>
+						<c:forEach var="message" items="${ONREADMESSAGE}">
+
+
+
+
+							<div id="message${message.id}" class="modal">
+
+								<div class="modal-content animate">
+									<div class="imgcontainer">
+										<span
+											onclick="document.getElementById('message${message.id}').style.display='none'"
+											class="close" title="Close Modal">&times;</span>
+									</div>
+									<div class="imgcontainer">
+										<p>imgcontainer</p>
+									</div>
+
+
+									<div class="container" style="color: black;">
+
+										<div>
+
+											<p>name : [ ${message.name} ]</p>
+
+
+										</div>
+										<div>
+
+											<p>email : [ ${message.email} ]</p>
+
+
+										</div>
+										<div>
+
+											<p>phone : [ ${message.phone} ]</p>
+
+
+
+										</div>
+										<div>
+
+											<p>message : [ ${message.message} ]</p>
+
+
+
+										</div>
+
+
+
+									</div>
+									<div class="container" style="background-color: #f1f1f1">
+										<button type="button"
+											onclick="document.getElementById('message${message.id}').style.display='none'"
+											class="cancelbtn">Cancel</button>
+
+									</div>
+								</div>
+
+							</div>
+						</c:forEach>
+						<div class="container" style="background-color: #f1f1f1">
+							<button type="button"
+								onclick="document.getElementById('Message').style.display='none'"
+								class="cancelbtn">Canceleee</button>
+
+						</div>
+					</div>
+
+
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+
+	<!-- 		kuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu    -->
+
+
 	<div>
 		<div>
 			<button class="profilebutton"
-				onclick="document.getElementById('Message').style.display='block'"
-				style="">Message</button>
-
-			<div id="Message" class="modal">
-
+				onclick="document.getElementById('emailsander').style.display='block'"
+				style="">Email Sander</button>
+			<div id="emailsander" class="modal">
 				<div class="modal-content animate">
 					<div class="imgcontainer">
 						<span
-							onclick="document.getElementById('Message').style.display='none'"
+							onclick="document.getElementById('emailsander').style.display='none'"
 							class="close" title="Close Modal">&times;</span>
 					</div>
 					<div class="imgcontainer">
@@ -255,120 +449,148 @@
 					</div>
 
 					<div class="container">
-						<div id="allMessages">${message}</div>
+						<div style="width: 50px; height: 50px; color: black;">mail :</div>
+						<div>
 
-					</div>
-					<div class="container" style="background-color: #f1f1f1">
-						<button type="button"
-							onclick="document.getElementById('Message').style.display='none'"
-							class="cancelbtn">Cancel</button>
+							<select id="userSelect" multiple="multiple" style="width: 200px;">
+							</select>
+						</div>
 
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 		kuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu    -->
-		<div>
+						<div style="width: 50px; height: 50px; color: black;">theme-email
+							:</div>
+						<div>
 
+							<textarea rows="" cols="" id="theme-email"></textarea>
 
-			<button id="setSelectsBtn" onclick="setSelectsBtn()">SetSelects</button>
-			<button id="getSelectsBtn" onclick="getSelectsBtn()">GetSelects</button>
-			<select id="userSelect" multiple="multiple" style="width: 200px;">
+							<div style="width: 50px; height: 50px; color: black;">message
+								:</div>
+							<div>
 
+								<textarea rows="" cols="" id="messageForEmail"></textarea>
 
+								<button onclick="emailObject()">SEND EMAILS</button>
+							</div>
 
-			</select>
+						</div>
+						<div class="container" style="background-color: #f1f1f1">
+							<button type="button"
+								onclick="document.getElementById('emailsander').style.display='none'"
+								class="cancelbtn">Cancel</button>
+							<!-- ------mailbodydownload start -->
+							<div>
+								<button class="profilebutton"
+									onclick="document.getElementById('emailbody').style.display='block'"
+									style="">emailbody</button>
+								<div id="emailbody" class="modal">
+									<div class="modal-content animate">
+										<div class="imgcontainer">
+											<span
+												onclick="document.getElementById('emailbody').style.display='none'"
+												class="close" title="Close Modal">&times;</span>
+										</div>
+										<div class="imgcontainer">
+											<p>imgcontainer</p>
+										</div>
 
+										<div class="container">
+											<div style="width: 50px; height: 50px; color: black;">email-body
+												:</div>
+											<div>
 
-
-		</div>
-
-
-		<div>
-
-
-			<textarea rows="" cols="" id="messageForEmail"></textarea>
-			<button onclick="emailObject()">SEND EMAILS</button>
-
-
-
-
-
-
-
-
-
-		</div>
-
-		<!-- 		kuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu    -->
-
-
-		<!-- console start -->
-
-		<div>
-			<button class="profilebutton"
-				onclick="document.getElementById('console').style.display='block'"
-				style="">console</button>
-
-			<div id="console" class="modal">
-
-				<div class="modal-content animate">
-					<div class="imgcontainer">
-						<span
-							onclick="document.getElementById('console').style.display='none'"
-							class="close" title="Close Modal">&times;</span>
-					</div>
-					<div class="imgcontainer">
-						<p>imgcontainer</p>
-					</div>
+												<textarea rows="" cols="" id="emailbodyinput"
+													id="emailbodyinput"><div>~~~</div></textarea>
 
 
-					<div class="container">
+											</div>
+											<div class="container" style="background-color: #f1f1f1">
+												<button type="button"
+													onclick="document.getElementById('emailbody').style.display='none'"
+													class="cancelbtn">Cancel</button>
 
-						<div id="admin-console-div"
-							style="overflow: scroll; margin: auto; width: 80%; height: 500px; max-width: 80%; max-height: 500px; background: black; color: white;"></div>
-					</div>
-					<div class="container" style="background-color: #f1f1f1">
-						<button type="button"
-							onclick="document.getElementById('console').style.display='none'"
-							class="cancelbtn">Cancel</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- ------mailbodydownload end -->
 
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
 
-		<!-- console end -->
-		<!-- block 7 -->
-		<footer class="b7">
-			<div class="foot0">
-				<H1
-					style="font-size: 33px; color: rgb(226, 219, 25); font-family: 'Montserrat', sans-serif;; text-align: left">Follow
-					us:</H1>
-				<div class="row">
-					<i class="entypo-facebook" style="width: 40px; height: 40px;"></i>
-					<i class="entypo-twitter" style="width: 40px; height: 40px;"></i> <i
-						class="entypo-gplus" style="width: 40px; height: 40px;"></i> <i
-						class="entypo-pinterest" style="width: 40px; height: 40px;"></i> <i
-						class="entypo-dribbble" style="width: 40px; height: 40px;"></i>
+
+				<!-- 		kuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu    -->
+
+
+				<!-- console start -->
+
+				<div>
+					<button class="profilebutton"
+						onclick="document.getElementById('console').style.display='block'"
+						style="">console</button>
+
+					<div id="console" class="modal">
+
+						<div class="modal-content animate">
+							<div class="imgcontainer">
+								<span
+									onclick="document.getElementById('console').style.display='none'"
+									class="close" title="Close Modal">&times;</span>
+							</div>
+							<div class="imgcontainer">
+								<p>imgcontainer</p>
+							</div>
+
+
+							<div class="container">
+
+								<div id="admin-console-div"
+									style="overflow: scroll; margin: auto; width: 80%; height: 500px; max-width: 80%; max-height: 500px; background: black; color: white;"></div>
+							</div>
+							<div class="container" style="background-color: #f1f1f1">
+								<button type="button"
+									onclick="document.getElementById('console').style.display='none'"
+									class="cancelbtn">Cancel</button>
+
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="foot1">Contacts</div>
-			<div class="foot2">Lockation</div>
-			<div class="foot3">Some Text</div>
-		</footer>
+				
+				
 
-		<script>
-			
-		</script>
+				<!-- console end -->
+				<!-- block 7 -->
+				<footer class="b7">
+					<div class="foot0">
+						<H1
+							style="font-size: 33px; color: rgb(226, 219, 25); font-family: 'Montserrat', sans-serif;; text-align: left">Follow
+							us:</H1>
+						<div class="row">
+							<i class="entypo-facebook" style="width: 40px; height: 40px;"></i>
+							<i class="entypo-twitter" style="width: 40px; height: 40px;"></i>
+							<i class="entypo-gplus" style="width: 40px; height: 40px;"></i> <i
+								class="entypo-pinterest" style="width: 40px; height: 40px;"></i>
+							<i class="entypo-dribbble" style="width: 40px; height: 40px;"></i>
+						</div>
+					</div>
+					<div class="foot1">Contacts</div>
+					<div class="foot2">Lockation</div>
+					<div class="foot3">Some Text</div>
+				
+				</footer>
 
-		<script type="text/javascript" src="js/js.js"></script>
-		<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>-->
-		<script type="text/javascript" src="js/js1.js"></script>
-		<script type="text/javascript" src="js/galleria.classic.js"></script>
-		<script
-			src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script type="text/javascript" src="js/galleria-1.2.2.js"></script>
-		<script type="text/javascript" src="js/js.js"></script>
-		<script type="text/javascript" src="js/multiple-select.js"></script>
+				<script>
+					
+				</script>
+
+				<script type="text/javascript" src="js/js.js"></script>
+				<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>-->
+				<script type="text/javascript" src="js/js1.js"></script>
+				<script type="text/javascript" src="js/galleria.classic.js"></script>
+				<script
+					src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+				<script type="text/javascript" src="js/galleria-1.2.2.js"></script>
+				<script type="text/javascript" src="js/js.js"></script>
+				<script type="text/javascript" src="js/multiple-select.js"></script>
 </body>
