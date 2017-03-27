@@ -111,6 +111,14 @@ public class AdminController {
 		return "redirect:/admin" + admin + "";
 	}
 
+	@RequestMapping(value = "saveImg", method = RequestMethod.POST)
+	public String saveImg(@RequestParam MultipartFile image, @RequestParam String name) {
+
+		imageService.saveImg(image, name);
+
+		return "redirect:/admin" + admin + "";
+	}
+
 	@RequestMapping(value = "deleteImg/{id}", method = RequestMethod.GET)
 	public String deleteImg(@PathVariable String id) {
 
