@@ -18,6 +18,7 @@ import ua.m_pluse.entity.Role;
 import ua.m_pluse.entity.User;
 import ua.m_pluse.service.MailSenderService;
 import ua.m_pluse.service.UserService;
+import ua.m_pluse.statistic.Statistic;
 import ua.m_pluse.wrapper.UserWrapper;
 
 @RestController
@@ -33,6 +34,19 @@ public class SpeñialRestController {
 	public @ResponseBody void messageCall(@RequestBody User user) {
 		user.setDateOfPublic(LocalDate.now());
 		userService.save(user);
+
+	}
+
+	@RequestMapping(value = "statisticadddownloadarar", method = RequestMethod.POST)
+	public @ResponseBody void addDownloadAR() {
+		Statistic.downloadPresentationAR++;
+		System.out.println("AR");
+	}
+
+	@RequestMapping(value = "statisticadddownloadarsite", method = RequestMethod.POST)
+	public @ResponseBody void addDownloadSite() {
+		Statistic.downloadPresentationSite++;
+		System.out.println("AR");
 	}
 
 	@RequestMapping(value = "messageCall", method = RequestMethod.POST)

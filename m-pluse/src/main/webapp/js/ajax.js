@@ -1,30 +1,3 @@
-// function () {
-//
-//    $.ajax({
-//
-//        url: 'loadMessages?' + $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
-//        method: 'POST',
-//        contentType: 'application/json; charset=UTF-8',
-//        dataType: 'json',
-//        success: function (res) {
-//
-//            var all = "";
-//            document.getElementById('allMessages').innerHTML=res.length;
-//            for (var i = 0; i < res.length; i++) {
-//                var index = res[i].id;
-//                all += '<div class="box">'+res[i].name +'<a onclick="deleteMessage(' + index + ')"> delete </div><br>';
-// 
-//            }
-//            document.getElementById('allMessages').innerHTML = all;
-//        },
-//    	error: function (errormessage) {
-//    		
-//    	alert(errormessage);
-//    	}
-//    })
-//
-//}
-
 var selectionsUser = [];
 
 function deleteMessage(index) {
@@ -393,21 +366,7 @@ function emailObject() {
 			phone : emailbody
 
 		}
-		// {
-		//
-		//			
-		//			
-		// users : userInSelect,
-		// message : document.getElementById('messageForEmail').value
-		//
-		// }
-		// alert(email.message);
-		// for (var j = 0; j < email.users.length; j++) {
-		//
-		// alert(email.users[j].email);
-		// }
-		// alert(email.users.length);
-		// alert(users[0].email);
+
 		document.getElementById('messageForEmail').value = '';
 		document.getElementById("theme-email").value = '';
 		$.ajax({
@@ -477,25 +436,3 @@ function getSelectsBtn() {
 	}
 	alert("Selected texts: " + $("select").multipleSelect("getSelects", "text"));
 }
-
-// var start = Date.now(); // сохранить время начала
-//
-// var timer = setInterval(function() {
-// // вычислить сколько времени прошло с начала анимации
-// var timePassed = Date.now() - start;
-//
-// if (timePassed >= 2000) {
-// clearInterval(timer); // конец через 2 секунды
-// return;
-// }
-//
-// // рисует состояние анимации, соответствующее времени timePassed
-// draw(timePassed);
-//
-// }, 20);
-//
-// // в то время как timePassed идёт от 0 до 2000
-// // left принимает значения от 0 до 400px
-// function draw(timePassed) {
-// train.style.left = timePassed / 5 + 'px';
-// }

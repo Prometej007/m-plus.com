@@ -10,6 +10,34 @@ function playVideoPresentation() {
 	document.getElementById("dow").style.display = "none";
 
 }
+// statisticadddownloadarar
+function addDownloadAR() {
+	$.ajax({
+
+		url : 'statisticadddownloadarar?' + $('input[name=csrf_name]').val()
+				+ "=" + $('input[name=csrf_value]').val(),
+		method : 'POST',
+		contentType : 'application/json; charset=UTF-8',
+		dataType : 'json',
+		success : function(res) {
+
+		}
+	})
+}
+// statisticadddownloadarsite
+function addDownloadSite() {
+	$.ajax({
+
+		url : 'statisticadddownloadarsite?' + $('input[name=csrf_name]').val()
+				+ "=" + $('input[name=csrf_value]').val(),
+		method : 'POST',
+		contentType : 'application/json; charset=UTF-8',
+		dataType : 'json',
+		success : function(res) {
+
+		}
+	})
+}
 function closeVideoPresentation() {
 
 	document.getElementById('dowbutt').style.right = "6%";
@@ -68,7 +96,7 @@ function startEmail() {
 		closeDoubleClick();
 	}
 }
-function sendEmail(name, href) {
+function sendEmail(name, href, type) {
 	var email = document.getElementById('emailVideo').value;
 	var check = true;
 	for (var i = 0; i < email.length; i++) {
@@ -89,6 +117,13 @@ function sendEmail(name, href) {
 		document.getElementById('dowbutt').style.display = "block";
 	} else {
 		// log
+	}
+	if (type == "VR") {
+
+		addDownloadAR();
+	} else if (type == "SITE") {
+
+		addDownloadSite();
 	}
 }
 function closeDownload() {
