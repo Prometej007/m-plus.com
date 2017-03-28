@@ -203,8 +203,8 @@
 		</div>
 		<div class="b b2-block2">
 
-			<span class="text1-b2 bounceInLeft wow"> <font color="#e2db19">WHAT</font>
-				<br> WE <br> DO <br>
+			<span class="text1-b2 bounceInRight wow"> <font
+				color="#e2db19">WHAT</font> <br> WE <br> DO <br>
 			</span>
 		</div>
 		<span class="spanBG">CREAT</span>
