@@ -3,11 +3,23 @@
 .box {
 	color: red;
 }
+
 .table-statistic {
 	color: black;
 	border: 1px solid;
 }
+
 .table-statistic td {
 	color: black;
 	border: 1px solid;
+}
+
+.table-statistic-td-name {
+	width: 200px;
+	height: 25px;
+}
+
+.table-statistic-td-number {
+	width: 200px;
+	height: 25px;
 }

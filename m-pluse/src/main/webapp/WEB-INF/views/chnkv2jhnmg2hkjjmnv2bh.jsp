@@ -17,11 +17,11 @@
 <link rel="stylesheet" href="css/style1.css">
 <link rel="stylesheet" href="css/stylefooter.css">
 <link rel="stylesheet" href="css/styleicon.css">
-<link rel="stylesheet" href="css/admin.css">
 <link rel="stylesheet" href="css/galleria.classic.css">
 
 <link href="https://fonts.googleapis.com/css?family=Lato:900"
 	rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
 
 </head>
 <body>
