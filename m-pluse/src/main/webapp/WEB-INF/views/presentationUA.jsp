@@ -202,17 +202,17 @@
 
 
 	<div class="form0" id="formmenu" style="display: none">
-		<h3 style="position: relative; top: 7%; left: 15%;">Введіть
-			E-mail для завантаження брошури</h3>
+		<h3 style="position: relative; top: 7%;">Введіть E-mail для
+			завантаження брошури</h3>
 		<div class="formmenu">
-			<center>
-				<label>E-mail</label><br> <input class=""
-					style="width: 173px; height: 17px; font-size: 18px;" type="text"
-					name="email" id="emailVideo"> <br>
-				<button type="submit" class="buttno" onclick="closeDownload()">ні</button>
-				<button type="submit" class="buttyes"
-					onclick="sendEmail('play','img/play.jpg')">Так</button>
-			</center>
+
+			<label>E-mail</label><br> <input class=""
+				style="width: 173px; height: 17px; font-size: 18px;" type="text"
+				name="email" id="emailVideo"> <br>
+			<button type="submit" class="buttno" onclick="closeDownload()">ні</button>
+			<button type="submit" class="buttyes"
+				onclick="sendEmail('play','img/play.jpg','VR')">Так</button>
+
 		</div>
 	</div>
 
