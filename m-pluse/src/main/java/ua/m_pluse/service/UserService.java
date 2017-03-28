@@ -4,6 +4,11 @@ import java.util.List;
 
 import ua.m_pluse.entity.User;
 
+/**
+ * @author prometej
+ * @version 1.0
+ */
+
 public interface UserService {
 
 	void save(User user);

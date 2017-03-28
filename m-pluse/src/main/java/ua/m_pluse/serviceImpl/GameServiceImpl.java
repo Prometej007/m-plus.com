@@ -19,25 +19,45 @@ public class GameServiceImpl implements GameService {
 	@Autowired
 	private GameDao gameDao;
 
+	/**
+	 * @param game - object for save
+	 */
 	public void save(Game game) {
 		gameDao.save(game);
 	}
 
+	/**
+	 * @return list of objects Game
+	 */
 	public List<Game> findAll() {
 
 		return gameDao.findAll();
 	}
 
+	/**
+	 * @param id - find 1 object from DB by id
+	 * @return Game object
+	 */
 	public Game findOne(int id) {
 
 		return gameDao.findOne(id);
 	}
-
+	
+	/**
+	 * @param id - delete 1 object from DB by id
+	 */
 	public void delete(int id) {
 
 		gameDao.delete(id);
 
 	}
+	
+	/**
+	 * 
+	 * @param multipartFile - save image for list of games on site
+	 * @param name - name of game
+	 * @param pathA - link for game
+	 */
 	@Transactional
 	public void saveGame(MultipartFile multipartFile, String name, String pathA) {
 

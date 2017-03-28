@@ -6,6 +6,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import ua.m_pluse.entity.Image;
 
+/**
+ * @author prometej
+ * @version 1.0
+ */
 public interface ImageService {
 
 	void save(Image image);
@@ -15,7 +19,7 @@ public interface ImageService {
 	Image findOne(int id);
 
 	void delete(int id);
-
+	
 	void saveImg(MultipartFile multipartFile, String name);
 
 }

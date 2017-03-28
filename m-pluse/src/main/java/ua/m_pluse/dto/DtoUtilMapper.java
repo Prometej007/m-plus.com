@@ -19,7 +19,6 @@ public class DtoUtilMapper {
 	 * @return all users
 	 */
 	
-	
 	public static List<UserDTO> userToUserDTO(List<User> users) {
 		List<UserDTO> userDTOs = new ArrayList<UserDTO>();
 

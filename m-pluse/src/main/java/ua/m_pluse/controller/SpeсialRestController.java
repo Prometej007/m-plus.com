@@ -34,6 +34,7 @@ public class SpeñialRestController {
 	public @ResponseBody void messageCall(@RequestBody User user) {
 		user.setDateOfPublic(LocalDate.now());
 		userService.save(user);
+		System.out.println(user.getMessage());
 
 	}
 
