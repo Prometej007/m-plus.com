@@ -7,9 +7,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * @author prometej
+ * @version 1.0
+ */
+
 @Entity
 public class User {
 
+	/**
+	 * table user in DB for messages from the site
+	 * all other is understand
+	 * 
+	 */
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

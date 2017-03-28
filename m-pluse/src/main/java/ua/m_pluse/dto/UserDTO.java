@@ -4,7 +4,20 @@ import java.time.LocalDate;
 
 import ua.m_pluse.entity.Role;
 
+/**
+ * @author prometej
+ * @version 1.0
+ */
+
 public class UserDTO {
+	
+	
+	/**
+	 * 
+	 * wrapper for class user
+	 * 
+	 */
+	
 
 	private int id;
 	private String email;

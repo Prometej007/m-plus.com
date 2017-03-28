@@ -5,8 +5,28 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * @author prometej
+ * @version 1.0
+ */
+
 @Entity
 public class Game {
+	
+	/**
+	 * 
+	 * table game in DB for list of games on site 
+	 * 
+	 * name - name of game
+	 * 
+	 * path - path for image in DB
+	 * 
+	 * pathA - link for game
+	 * 
+	 */
+	
+	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

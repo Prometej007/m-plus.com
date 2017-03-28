@@ -1,8 +1,13 @@
 package ua.m_pluse.entity;
 
-import java.util.List;
-
 import ua.m_pluse.service.MailSenderService;
+
+
+/**
+ * 
+ * @author prometej
+ * @version 1.0
+ */
 
 public class Email {
 

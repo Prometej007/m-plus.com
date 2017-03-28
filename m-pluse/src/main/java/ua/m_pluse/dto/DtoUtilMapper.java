@@ -1,13 +1,25 @@
 package ua.m_pluse.dto;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import ua.m_pluse.entity.Role;
 import ua.m_pluse.entity.User;
 
+/**
+ * @author prometej
+ * @version 1.0
+ */
+
 public class DtoUtilMapper {
+	
+	/**
+	 * wrapper
+	 * @param users 
+	 * @return all users
+	 */
+	
+	
 	public static List<UserDTO> userToUserDTO(List<User> users) {
 		List<UserDTO> userDTOs = new ArrayList<UserDTO>();
 
@@ -22,6 +34,13 @@ public class DtoUtilMapper {
 		}
 		return userDTOs;
 	}
+	
+	
+	/**
+	 * wrapper
+	 * @param users
+	 * @return users with role ROLE_WASREAD(almost read messages)
+	 */
 	
 	public static List<UserDTO> userToUserDTOWasRead(List<User> users) {
 		List<UserDTO> userDTOs = new ArrayList<UserDTO>();
@@ -38,6 +57,11 @@ public class DtoUtilMapper {
 		return userDTOs;
 	}
 	
+	/**
+	 * wrapper
+	 * @param users
+	 * @return users with role ROLE_ONREAD(new messages)
+	 */
 	public static List<UserDTO> userToUserDTOOnRead(List<User> users) {
 		List<UserDTO> userDTOs = new ArrayList<UserDTO>();
 

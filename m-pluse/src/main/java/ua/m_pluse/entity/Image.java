@@ -5,8 +5,29 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * 
+ * @author prometej
+ * @version 1.0
+ */
+
 @Entity
 public class Image {
+	
+	/**
+	 * 
+	 * 
+	 * table image in DB for gallery
+	 * 
+	 * name - name of the image in gallery
+	 * 
+	 * path - path of image in DB  
+	 * 
+	 * 
+	 */
+	
+	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

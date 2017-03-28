@@ -4,6 +4,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import ua.m_pluse.entity.Image;
 
-public interface ImageDao extends JpaRepository<Image, Integer> {
+/**
+ * @author prometej
+ * @version 1.0
+ */
 
+public interface ImageDao extends JpaRepository<Image, Integer> {
+	/**
+	 * work with BD requests 
+	 * all main methods (save,delete,findAll,findOne)
+	 * 
+	 */
 }
