@@ -129,23 +129,23 @@
 	<nav class="nav lang">
 
 		<div class="wrapper-button-language" id="wrapper-button-language">
-			<div class="button-language-1" id="button-language-1">
+			<div class="button-language-1" id="button-language-1"
+				style="background: #595958;">
 				<p class="button-language-1-p" id="button-language-1-p">
-					<a href="ua" class="button-language-1-p-a"
-						id="button-language-1-p-a"> UA </a>
+					<a href="presentationUAVR" class="button-language-1-p-a"
+						id="button-language-1-p-a" style="color: #929491;"> UA </a>
 				</p>
 			</div>
 			<div class="button-language-2" id="button-language-2">
 				<p class="button-language-2-p" id="button-language-2-p">
-					<a href="ru" class="button-language-2-p-a"
+					<a href="presentationRUVR" class="button-language-2-p-a"
 						id="button-language-2-p-a"> RU </a>
 				</p>
 			</div>
-			<div class="button-language-3" id="button-language-3"
-				style="background: #595958;">
+			<div class="button-language-3" id="button-language-3">
 				<p class="button-language-3-p" id="button-language-3-p">
-					<a href="en" class="button-language-3-p-a"
-						id="button-language-3-p-a" style="color: #929491;"> EN </a>
+					<a href="presentationENVR" class="button-language-3-p-a"
+						id="button-language-3-p-a"> EN </a>
 				</p>
 			</div>
 		</div>
@@ -211,7 +211,7 @@
 				name="email" id="emailVideo"> <br>
 			<button type="submit" class="buttno" onclick="closeDownload()">ні</button>
 			<button type="submit" class="buttyes"
-				onclick="sendEmail('play','img/play.jpg','VR')">Так</button>
+				onclick="sendEmail('VR/AR','presentation/VR_AR.compressed.pdf','VR')">Так</button>
 
 		</div>
 	</div>

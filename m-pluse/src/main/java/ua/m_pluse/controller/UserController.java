@@ -126,25 +126,25 @@ public class UserController {
 		return "homeEN";
 	}
 
-	@RequestMapping(value = { "presentationEN" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "presentationENVR" }, method = RequestMethod.GET)
 	public String presentationEN(Model model) {
 		Statistic.presentationSiteEN++;
 
-		return "presentationEN";
+		return "presentationENVR";
 	}
 
-	@RequestMapping(value = { "presentationUA" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "presentationUAVR" }, method = RequestMethod.GET)
 	public String presentationUA(Model model) {
 		Statistic.presentationSiteUA++;
 
-		return "presentationUA";
+		return "presentationUAVR";
 	}
 
-	@RequestMapping(value = { "presentationRU" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "presentationRUVR" }, method = RequestMethod.GET)
 	public String presentationRU(Model model) {
 		Statistic.presentationSiteRU++;
 
-		return "presentationRU";
+		return "presentationRUVR";
 	}
 
 }

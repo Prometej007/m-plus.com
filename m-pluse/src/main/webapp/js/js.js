@@ -4,19 +4,21 @@
 function openNav() {
 	document.getElementById("mySidenav").style.display = "block";
 	document.getElementById("mySidenav").style.zIndex = "9";
-	var start = Date.now(); // сохранить время начала
-
-	var timer = setInterval(function() {
-		// вычислить сколько времени прошло из opts.duration
-		var timePassed = Date.now() - start;
-
-		document.getElementById("mySidenav").style.width = (timePassed / 30)
-				+ "%";
-
-		if (timePassed > 1000)
-			clearInterval(timer);
-
-	}, 1);
+	document.getElementById("mySidenav").style.width = "40%";
+	document.getElementById("mySidenav").style.left = "60%";
+	// var start = Date.now(); // сохранить время начала
+	//
+	// var timer = setInterval(function() {
+	// // вычислить сколько времени прошло из opts.duration
+	// var timePassed = Date.now() - start;
+	//
+	// document.getElementById("mySidenav").style.width = (timePassed / 30)
+	// + "%";
+	//
+	// if (timePassed > 1000)
+	// clearInterval(timer);
+	//
+	// }, 1);
 
 }
 function animation(i) {
@@ -40,6 +42,8 @@ function closeNav() {
 
 	document.getElementById("mySidenav").style.zIndex = "8";
 	document.getElementById("mySidenav").style.width = "0px";
+	document.getElementById("mySidenav").style.width = "40%";
+	document.getElementById("mySidenav").style.left = "140%";
 	//
 	// var start = Date.now(); // сохранить время начала
 	//
