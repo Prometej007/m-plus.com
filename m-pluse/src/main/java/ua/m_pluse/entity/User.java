@@ -98,6 +98,7 @@ public class User {
 	public void setDateOfPublic(LocalDate dateOfPublic) {
 		this.dateOfPublic = dateOfPublic;
 	}
+	
 
 	@Override
 	public int hashCode() {

@@ -18,6 +18,7 @@ import ua.m_pluse.entity.Game;
 import ua.m_pluse.entity.Image;
 import ua.m_pluse.entity.Role;
 import ua.m_pluse.entity.User;
+import ua.m_pluse.service.FileAdminService;
 import ua.m_pluse.service.GameService;
 import ua.m_pluse.service.ImageService;
 import ua.m_pluse.service.UserService;
@@ -36,6 +37,9 @@ public class AdminController {
 
 	@Autowired
 	public GameService gameService;
+	
+	@Autowired
+	protected FileAdminService fileAdminService; 
 
 	@RequestMapping("loginpage")
 	public String loginpage() {
@@ -77,6 +81,7 @@ public class AdminController {
 				model.addAttribute("presentationVREN", Statistic.presentationVREN);
 				model.addAttribute("presentationVRRU", Statistic.presentationVRRU);
 				model.addAttribute("presentationVRUA", Statistic.presentationVRUA);
+				model.addAttribute("files", fileAdminService.findAll());
 
 				/* Statistic end */
 				model.addAttribute("imgs", imageService.findAll());
@@ -114,7 +119,6 @@ public class AdminController {
 
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String saveImg(Model model, @RequestParam("password") String password, @RequestParam("name") String name) {
-		System.out.println(password + "pizda" + name);
 		if (password.equals("admin") && name.equals("admin")) {
 			String uuid = UUID.randomUUID().toString();
 			admin = uuid;
@@ -137,6 +141,13 @@ public class AdminController {
 	public String saveImg(@RequestParam MultipartFile image, @RequestParam String name) {
 
 		imageService.saveImg(image, name);
+
+		return "redirect:/admin" + admin + "";
+	}
+	@RequestMapping(value = "saveFile", method = RequestMethod.POST)
+	public String saveFile(@RequestParam MultipartFile file, @RequestParam String name) {
+
+		fileAdminService.saveFile(file, name);
 
 		return "redirect:/admin" + admin + "";
 	}

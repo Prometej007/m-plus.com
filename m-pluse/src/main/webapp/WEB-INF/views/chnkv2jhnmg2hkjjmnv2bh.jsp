@@ -565,85 +565,177 @@
 									</div>
 								</div>
 								<!-- ------mailbodydownload end -->
+								<div class="container" style="background-color: #f1f1f1">
 
+
+
+
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		<button class="profilebutton"
+			onclick="document.getElementById('File').style.display='block'"
+			style="">add File</button>
+
+		<div id="File" class="modal">
+
+			<div class="modal-content animate">
+				<div class="imgcontainer">
+					<span
+						onclick="document.getElementById('File').style.display='none'"
+						class="close" title="Close Modal">&times;</span>
+				</div>
+				<div class="imgcontainer">
+					<p>imgcontainer</p>
+				</div>
+
+				<div class="container">
+					<form:form
+						action="./saveFile?${_csrf.parameterName}=${_csrf.token}"
+						method="post" enctype="multipart/form-data">
+						<input type="file" name="file">
+						<input type="text" name="name" placeholder="Name">
+						<button>save file</button>
+					</form:form>
+				</div>
+				<div class="container" style="background-color: #f1f1f1">
+					<button type="button"
+						onclick="document.getElementById('File').style.display='none'"
+						class="cancelbtn">Cancel</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
 
 
-				<!-- 		kuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu    -->
 
 
-				<!-- console start -->
-
-				<div>
-					<button class="profilebutton"
-						onclick="document.getElementById('console').style.display='block'"
-						style="">console</button>
-
-					<div id="console" class="modal">
-
-						<div class="modal-content animate">
-							<div class="imgcontainer">
-								<span
-									onclick="document.getElementById('console').style.display='none'"
-									class="close" title="Close Modal">&times;</span>
-							</div>
-							<div class="imgcontainer">
-								<p>imgcontainer</p>
-							</div>
+	<!-- 		kuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu    -->
 
 
-							<div class="container">
+	<!-- console start -->
 
-								<div id="admin-console-div"
-									style="overflow: scroll; margin: auto; width: 80%; height: 500px; max-width: 80%; max-height: 500px; background: black; color: white;"></div>
-							</div>
-							<div class="container" style="background-color: #f1f1f1">
-								<button type="button"
-									onclick="document.getElementById('console').style.display='none'"
-									class="cancelbtn">Cancel</button>
+	<div>
+		<button class="profilebutton"
+			onclick="document.getElementById('console').style.display='block'"
+			style="">console</button>
 
-							</div>
-						</div>
-					</div>
+		<div id="console" class="modal">
+
+			<div class="modal-content animate">
+				<div class="imgcontainer">
+					<span
+						onclick="document.getElementById('console').style.display='none'"
+						class="close" title="Close Modal">&times;</span>
+				</div>
+				<div class="imgcontainer">
+					<p>imgcontainer</p>
 				</div>
 
 
+				<div class="container">
 
-				<!-- console end -->
-				<!-- block 7 -->
-				<footer class="b7">
-					<div class="foot0">
-						<H1
-							style="font-size: 33px; color: rgb(226, 219, 25); font-family: 'Montserrat', sans-serif;; text-align: left">Follow
-							us:</H1>
-						<div class="row">
-							<i class="entypo-facebook" style="width: 40px; height: 40px;"></i>
-							<i class="entypo-twitter" style="width: 40px; height: 40px;"></i>
-							<i class="entypo-gplus" style="width: 40px; height: 40px;"></i> <i
-								class="entypo-pinterest" style="width: 40px; height: 40px;"></i>
-							<i class="entypo-dribbble" style="width: 40px; height: 40px;"></i>
+					<div id="admin-console-div"
+						style="overflow: scroll; margin: auto; width: 80%; height: 500px; max-width: 80%; max-height: 500px; background: black; color: white;"></div>
+				</div>
+				<div class="container" style="background-color: #f1f1f1">
+					<button type="button"
+						onclick="document.getElementById('console').style.display='none'"
+						class="cancelbtn">Cancel</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div>
+		<button class="profilebutton"
+			onclick="document.getElementById('PATH').style.display='block'"
+			style="">File</button>
+
+		<div id="PATH" class="modal">
+
+			<div class="modal-content animate">
+				<div class="imgcontainer">
+					<span
+						onclick="document.getElementById('PATH').style.display='none'"
+						class="close" title="Close Modal">&times;</span>
+				</div>
+				<div class="imgcontainer">
+					<p>imgcontainer</p>
+				</div>
+
+				<div class="container">
+
+
+					<c:forEach var="file" items="${files}">
+
+						<div style="color: black;">
+							<div>
+								<div style="width: 30%; height: 50px; display: inline-block;">
+									<p>${file.name}</p>
+								</div>
+								<div style="width: 30%; height: 50px; display: inline-block;">
+									<p>download${file.id}</p>
+								</div>
+								<a style="width: 30%; height: 50px; display: inline-block;"
+									href="deleteFile/${file.id}">&times;</a>
+							</div>
+
 						</div>
-					</div>
-					<div class="foot1">Contacts</div>
-					<div class="foot2">Lockation</div>
-					<div class="foot3">Some Text</div>
 
-				</footer>
+					</c:forEach>
 
-				<script>
+				</div>
+				<div class="container" style="background-color: #f1f1f1">
+					<button type="button"
+						onclick="document.getElementById('PATH').style.display='none'"
+						class="cancelbtn">Cancel</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- console end -->
+	<!-- block 7 -->
+	<footer class="b7">
+		<div class="foot0">
+			<H1
+				style="font-size: 33px; color: rgb(226, 219, 25); font-family: 'Montserrat', sans-serif;; text-align: left">Follow
+				us:</H1>
+			<div class="row">
+				<i class="entypo-facebook" style="width: 40px; height: 40px;"></i> <i
+					class="entypo-twitter" style="width: 40px; height: 40px;"></i> <i
+					class="entypo-gplus" style="width: 40px; height: 40px;"></i> <i
+					class="entypo-pinterest" style="width: 40px; height: 40px;"></i> <i
+					class="entypo-dribbble" style="width: 40px; height: 40px;"></i>
+			</div>
+		</div>
+		<div class="foot1">Contacts</div>
+		<div class="foot2">Lockation</div>
+		<div class="foot3">Some Text</div>
+
+	</footer>
+
+	<script>
 					
 				</script>
 
-				<script type="text/javascript" src="js/js.js"></script>
-				<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>-->
-				<script type="text/javascript" src="js/js1.js"></script>
-				<script type="text/javascript" src="js/galleria.classic.js"></script>
-				<script
-					src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-				<script type="text/javascript" src="js/galleria-1.2.2.js"></script>
-				<script type="text/javascript" src="js/js.js"></script>
-				<script type="text/javascript" src="js/multiple-select.js"></script>
+	<script type="text/javascript" src="js/js.js"></script>
+	<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>-->
+	<script type="text/javascript" src="js/js1.js"></script>
+	<script type="text/javascript" src="js/galleria.classic.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="js/galleria-1.2.2.js"></script>
+	<script type="text/javascript" src="js/js.js"></script>
+	<script type="text/javascript" src="js/multiple-select.js"></script>
 </body>
