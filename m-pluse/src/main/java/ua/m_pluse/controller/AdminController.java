@@ -21,6 +21,7 @@ import ua.m_pluse.entity.User;
 import ua.m_pluse.service.GameService;
 import ua.m_pluse.service.ImageService;
 import ua.m_pluse.service.UserService;
+import ua.m_pluse.statistic.Statistic;
 
 @Controller
 public class AdminController {
@@ -57,6 +58,27 @@ public class AdminController {
 				List<User> listOnred = new ArrayList<User>();
 				List<User> listWastead = new ArrayList<User>();
 				String all = "";
+				/* Statistic start */
+				/*
+				 * name modelAttribute homeEN homeRU homeUA
+				 * downloadPresentationAR downloadPresentationSite
+				 * presentationSiteEN presentationSiteRU presentationSiteUA
+				 * presentationVREN presentationVRRU presentationVRUA
+				 */
+
+				model.addAttribute("homeEN", Statistic.homeEN);
+				model.addAttribute("homeRU", Statistic.homeRU);
+				model.addAttribute("homeUA", Statistic.homeUA);
+				model.addAttribute("downloadPresentationAR", Statistic.downloadPresentationAR);
+				model.addAttribute("downloadPresentationSite", Statistic.downloadPresentationSite);
+				model.addAttribute("presentationSiteEN", Statistic.presentationSiteEN);
+				model.addAttribute("presentationSiteRU", Statistic.presentationSiteRU);
+				model.addAttribute("presentationSiteUA", Statistic.presentationSiteUA);
+				model.addAttribute("presentationVREN", Statistic.presentationVREN);
+				model.addAttribute("presentationVRRU", Statistic.presentationVRRU);
+				model.addAttribute("presentationVRUA", Statistic.presentationVRUA);
+
+				/* Statistic end */
 				model.addAttribute("imgs", imageService.findAll());
 				model.addAttribute("img", new Image());
 				model.addAttribute("info", new User());

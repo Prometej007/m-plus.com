@@ -47,14 +47,14 @@
 				<a href="#we" class="navtag">WE</a> <a href="#work" class="navtag">WORK</a>
 				<a href="#blog" class="navtag">BLOG</a> <a href="#gall"
 					class="navtag">GALLARY</a> <a href="#cont" class="navtag">CONTACT</a>
-						<div>
-					
-					<form:form action="logout" method="get" >
-			
-					<button class="button">LogOut</button>
+				<div>
+
+					<form:form action="logout" method="get">
+
+						<button class="button">LogOut</button>
 					</form:form>
-					
-					</div>
+
+				</div>
 			</div>
 			<a href="en" class="navlogo">M-Pulse</a>
 		</div>
@@ -68,7 +68,60 @@
 	</div>
 	<div>
 		<div>
+			<!-- 			homeEN homeRU homeUA downloadPresentationAR downloadPresentationSite -->
+			<!-- 			presentationSiteEN presentationSiteRU presentationSiteUA -->
+			<!-- 			presentationVREN presentationVRRU presentationVRUA -->
+			<div class="statistic">
 
+				<table class="table-statistic">
+					<tr>
+						<td class="table-statistic-td-name">homeUA</td>
+						<td class="table-statistic-td-number">${homeUA}</td>
+					</tr>
+					<tr>
+						<td class="table-statistic-td-name">homeEN</td>
+						<td class="table-statistic-td-number">${homeEN}</td>
+					</tr>
+					<tr>
+						<td class="table-statistic-td-name">homeRU</td>
+						<td class="table-statistic-td-number">${homeRU}</td>
+					</tr>
+					<tr>
+						<td class="table-statistic-td-name">downloadPresentationAR</td>
+						<td class="table-statistic-td-number">${downloadPresentationAR}</td>
+					</tr>
+					<tr>
+						<td class="table-statistic-td-name">downloadPresentationSite</td>
+						<td class="table-statistic-td-number">${downloadPresentationSite}</td>
+					</tr>
+					<tr>
+						<td class="table-statistic-td-name">presentationSiteEN</td>
+						<td class="table-statistic-td-number">${presentationSiteEN}</td>
+					</tr>
+					<tr>
+						<td class="table-statistic-td-name">presentationSiteRU</td>
+						<td class="table-statistic-td-number">${presentationSiteRU}</td>
+					</tr>
+					<tr>
+						<td class="table-statistic-td-name">presentationSiteUA</td>
+						<td class="table-statistic-td-number">${presentationSiteUA}</td>
+					</tr>
+					<tr>
+						<td class="table-statistic-td-name">presentationVREN</td>
+						<td class="table-statistic-td-number">${presentationVREN}</td>
+					</tr>
+					<tr>
+						<td class="table-statistic-td-name">presentationVRRU</td>
+						<td class="table-statistic-td-number">${presentationVRRU}</td>
+					</tr>
+					<tr>
+						<td class="table-statistic-td-name">presentationVRUA</td>
+						<td class="table-statistic-td-number">${presentationVRUA}</td>
+					</tr>
+
+				</table>
+
+			</div>
 
 			<br>
 
@@ -556,8 +609,8 @@
 						</div>
 					</div>
 				</div>
-				
-				
+
+
 
 				<!-- console end -->
 				<!-- block 7 -->
@@ -577,7 +630,7 @@
 					<div class="foot1">Contacts</div>
 					<div class="foot2">Lockation</div>
 					<div class="foot3">Some Text</div>
-				
+
 				</footer>
 
 				<script>

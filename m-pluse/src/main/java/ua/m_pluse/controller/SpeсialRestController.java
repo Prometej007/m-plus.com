@@ -70,7 +70,7 @@ public class SpeñialRestController {
 
 	@RequestMapping(value = "wasRead", method = RequestMethod.POST)
 	public @ResponseBody List<UserDTO> wasRead(@RequestBody String index) {
-		System.out.println("1");
+
 		userService.updateRole(Integer.parseInt(index));
 
 		return DtoUtilMapper.userToUserDTO(userService.findAll());
@@ -86,14 +86,12 @@ public class SpeñialRestController {
 
 	@RequestMapping(value = "loadMessagesWasRead", method = RequestMethod.POST)
 	public @ResponseBody List<UserDTO> loadMessagesWasRead() {
-		System.out.println("3");
 
 		return DtoUtilMapper.userToUserDTOWasRead(userService.findAll());
 	}
 
 	@RequestMapping(value = "loadMessagesoneread", method = RequestMethod.POST)
 	public @ResponseBody List<UserDTO> loadMessagesoneread() {
-		System.out.println("2");
 
 		return DtoUtilMapper.userToUserDTOOnRead(userService.findAll());
 	}

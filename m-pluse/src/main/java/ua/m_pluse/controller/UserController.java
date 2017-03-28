@@ -13,6 +13,7 @@ import ua.m_pluse.entity.Image;
 import ua.m_pluse.service.GameService;
 import ua.m_pluse.service.ImageService;
 import ua.m_pluse.service.UserService;
+import ua.m_pluse.statistic.Statistic;
 
 @Controller
 public class UserController {
@@ -28,6 +29,7 @@ public class UserController {
 
 	@RequestMapping(value = "ua", method = RequestMethod.GET)
 	public String homeUA(Model model/* , @PathVariable String languageTeg */) {
+		Statistic.homeUA++;
 		// ________________________________________________TextLoading_____________________Start_______________________________
 
 		// textService.findByLanguageTeg(languageTeg);
@@ -60,6 +62,7 @@ public class UserController {
 
 	@RequestMapping(value = "ru", method = RequestMethod.GET)
 	public String homeRU(Model model/* , @PathVariable String languageTeg */) {
+		Statistic.homeRU++;
 		// ________________________________________________TextLoading_____________________Start_______________________________
 
 		// textService.findByLanguageTeg(languageTeg);
@@ -92,6 +95,7 @@ public class UserController {
 
 	@RequestMapping(value = { "/", "en" }, method = RequestMethod.GET)
 	public String homeEN(Model model/* , @PathVariable String languageTeg */) {
+		Statistic.homeEN++;
 		// ________________________________________________TextLoading_____________________Start_______________________________
 
 		// textService.findByLanguageTeg(languageTeg);
@@ -121,10 +125,26 @@ public class UserController {
 		model.addAttribute("game", gameString);
 		return "homeEN";
 	}
-	@RequestMapping(value = {"presentation" }, method = RequestMethod.GET)
-	public String presentation(Model model/* , @PathVariable String languageTeg */) {
-	
-		return "presentation";
+
+	@RequestMapping(value = { "presentationEN" }, method = RequestMethod.GET)
+	public String presentationEN(Model model) {
+		Statistic.presentationSiteEN++;
+
+		return "presentationEN";
+	}
+
+	@RequestMapping(value = { "presentationUA" }, method = RequestMethod.GET)
+	public String presentationUA(Model model) {
+		Statistic.presentationSiteUA++;
+
+		return "presentationUA";
+	}
+
+	@RequestMapping(value = { "presentationRU" }, method = RequestMethod.GET)
+	public String presentationRU(Model model) {
+		Statistic.presentationSiteRU++;
+
+		return "presentationRU";
 	}
 
 }

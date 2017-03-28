@@ -3,3 +3,11 @@
 .box {
 	color: red;
 }
+.table-statistic {
+	color: black;
+	border: 1px solid;
+}
+.table-statistic td {
+	color: black;
+	border: 1px solid;
+}
