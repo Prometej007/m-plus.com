@@ -211,7 +211,7 @@
 					name="email" id="emailVideo"> <br>
 				<button type="submit" class="buttno" onclick="closeDownload()">ні</button>
 				<button type="submit" class="buttyes"
-					onclick="sendEmail('play','img/play.jpg','VR')">Так</button>
+					onclick="sendEmail('play','presentation/VR_AR.compressed.pdf','VR')">Так</button>
 			</center>
 		</div>
 	</div>
