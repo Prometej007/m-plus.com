@@ -127,6 +127,12 @@ public class AdminController {
 
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String saveImg(Model model, @RequestParam("password") String password, @RequestParam("name") String name) {
+
+		if (!lock) {
+			if (Statistic.localDateTime.getDayOfYear() < LocalDateTime.now().getDayOfYear()) {
+				lock = true;
+			}
+		}
 		if (password.equals("admin") && name.equals("admin") && lock) {
 			String uuid = UUID.randomUUID().toString();
 			admin = uuid;
@@ -134,14 +140,14 @@ public class AdminController {
 			return "redirect:/admin" + admin + "";
 
 		} else {
-			if (Statistic.indexLocking <= 3) {
+			if (Statistic.indexLocking <= 3 && lock) {
 
 				Statistic.indexLocking++;
 			}
-			if (Statistic.indexLocking >= 3) {
+			if (Statistic.indexLocking >= 3 && lock) {
 
 				Statistic.lockTime = LocalDateTime.now().getHour();
-
+				Statistic.localDateTime = LocalDateTime.now();
 				lock = false;
 				Statistic.indexLocking = 0;
 			}
