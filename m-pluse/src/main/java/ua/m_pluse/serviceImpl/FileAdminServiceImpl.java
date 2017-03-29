@@ -52,10 +52,8 @@ public class FileAdminServiceImpl implements FileAdminService {
 		String uuid = UUID.randomUUID().toString();
 		FileAdmin fileAdmin = null;
 		try {
-			fileAdmin = new FileAdmin(name,
-					new StringModification().overrideString(InetAddress.getLocalHost() + ":8080/m-pluse/"
-							+ "resources/AdminFiles/" + uuid + "/" + multipartFile.getOriginalFilename(),
-							"DESKTOP-0MKJDAG"));
+			fileAdmin = new FileAdmin(name, new StringModification().overrideString(InetAddress.getLocalHost()
+					+ ":8080/m-pluse/" + "resources/AdminFiles/" + uuid + "/" + multipartFile.getOriginalFilename()));
 		} catch (UnknownHostException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
