@@ -136,20 +136,23 @@ public class SpeñialRestController {
 	}
 
 	// ==========-=-=-=----------=-=-=-=-=-=-=
-	
-	
+
 	@RequestMapping(value = "sendEmailForUnlock", method = RequestMethod.POST)
 	public void sendEmailForUnlock() throws UnknownHostException {
-		
-		String uuidUnlock = UUID.randomUUID().toString();
-		Statistic.linkUnlock= uuidUnlock;
-		
-		mailSenderService.sendMail("Unlock this shit", "click to unlock admin page (TOP SECRET)"+"<a href='"
-				+ new StringModification().overrideString(InetAddress.getLocalHost() + ":8080/m-pluse/"
-				+"unlockConfirm/"+uuidUnlock+"'>link</a>"), "anazariks@gmail.com");
-		
-	
+		if (AdminController.lock == false) {
+
+			String uuidUnlock = UUID.randomUUID().toString();
+			Statistic.linkUnlock = uuidUnlock;
+
+			mailSenderService
+					.sendMail("Unlock this shit",
+							"click to unlock admin page (TOP SECRET)" + "<a href='"
+									+ new StringModification().overrideString(InetAddress.getLocalHost()
+											+ ":8080/m-pluse/" + "unlockConfirm/" + uuidUnlock + "'>link</a>"),
+							"anazariks@gmail.com");
+
+		}
+
 	}
-	
 
 }

@@ -82,9 +82,13 @@ $(document)
 				});
 function startDownload() {
 
+	// document.getElementById("dow").style.display = "block";
+	// document.getElementById("dowbutt").style.bottom = "50%";
+	// document.getElementById("dowbutt").style.right = "50%";
+
 	document.getElementById("dow").style.display = "block";
-	document.getElementById("dowbutt").style.bottom = "50%";
-	document.getElementById("dowbutt").style.right = "50%";
+	document.getElementById("dowbutt").style.bottom = "10%";
+	document.getElementById("dowbutt").style.right = "10%";
 
 }
 function startEmail() {
