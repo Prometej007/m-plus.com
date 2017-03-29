@@ -12,17 +12,26 @@ public class FileAdmin {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-
+	private String publicPath;
 	private String path;
 
 	public FileAdmin() {
 
 	}
 
-	public FileAdmin(String name, String path) {
-		super();
+	public FileAdmin(String name, String path, String publicPath) {
+
+		this.publicPath = publicPath;
 		this.name = name;
 		this.path = path;
+	}
+
+	public String getPublicPath() {
+		return publicPath;
+	}
+
+	public void setPublicPath(String publicPath) {
+		this.publicPath = publicPath;
 	}
 
 	public int getId() {

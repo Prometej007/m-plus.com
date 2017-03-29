@@ -578,41 +578,7 @@
 			</div>
 		</div>
 	</div>
-	<div>
-		<button class="profilebutton"
-			onclick="document.getElementById('File').style.display='block'"
-			style="">add File</button>
 
-		<div id="File" class="modal">
-
-			<div class="modal-content animate">
-				<div class="imgcontainer">
-					<span
-						onclick="document.getElementById('File').style.display='none'"
-						class="close" title="Close Modal">&times;</span>
-				</div>
-				<div class="imgcontainer">
-					<p>imgcontainer</p>
-				</div>
-
-				<div class="container">
-					<form:form
-						action="./saveFile?${_csrf.parameterName}=${_csrf.token}"
-						method="post" enctype="multipart/form-data">
-						<input type="file" name="file">
-						<input type="text" name="name" placeholder="Name">
-						<button>save file</button>
-					</form:form>
-				</div>
-				<div class="container" style="background-color: #f1f1f1">
-					<button type="button"
-						onclick="document.getElementById('File').style.display='none'"
-						class="cancelbtn">Cancel</button>
-
-				</div>
-			</div>
-		</div>
-	</div>
 
 
 
@@ -672,7 +638,7 @@
 					<p>imgcontainer</p>
 				</div>
 
-				<div class="container">
+				<div class="container" id="fileContainer">
 
 
 					<c:forEach var="file" items="${files}">
@@ -683,18 +649,55 @@
 									<p>${file.name}</p>
 								</div>
 								<div style="width: 30%; height: 50px; display: inline-block;">
-									<p>download${file.id}</p>
+									<p>${file.publicPath}${file.id}</p>
 								</div>
-								<a style="width: 30%; height: 50px; display: inline-block;"
-									href="deleteFile/${file.id}">&times;</a>
+								<a onclick="deleteFile('${file.id}')"
+									style="width: 30%; height: 50px; display: inline-block;"
+									href="#">&times;</a>
 							</div>
 
 						</div>
 
 					</c:forEach>
 
-				</div>
-				<div class="container" style="background-color: #f1f1f1">
+
+					<div class="container" style="background-color: #f1f1f1">
+						<div>
+							<button class="profilebutton"
+								onclick="document.getElementById('File').style.display='block'"
+								style="">add File</button>
+
+							<div id="File" class="modal">
+
+								<div class="modal-content animate">
+									<div class="imgcontainer">
+										<span
+											onclick="document.getElementById('File').style.display='none'"
+											class="close" title="Close Modal">&times;</span>
+									</div>
+									<div class="imgcontainer">
+										<p>imgcontainer</p>
+									</div>
+
+									<div class="container">
+										<form:form
+											action="./saveFile?${_csrf.parameterName}=${_csrf.token}"
+											method="post" enctype="multipart/form-data">
+											<input type="file" name="file">
+											<input type="text" name="name" placeholder="Name">
+											<button>save file</button>
+										</form:form>
+									</div>
+									<div class="container" style="background-color: #f1f1f1">
+										<button type="button"
+											onclick="document.getElementById('File').style.display='none'"
+											class="cancelbtn">Cancel</button>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					<button type="button"
 						onclick="document.getElementById('PATH').style.display='none'"
 						class="cancelbtn">Cancel</button>

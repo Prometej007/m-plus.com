@@ -17,8 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import ua.m_pluse.dto.DtoUtilMapper;
 import ua.m_pluse.dto.UserDTO;
 import ua.m_pluse.entity.Email;
-import ua.m_pluse.entity.Role;
+import ua.m_pluse.entity.FileAdmin;
 import ua.m_pluse.entity.User;
+import ua.m_pluse.service.FileAdminService;
 import ua.m_pluse.service.MailSenderService;
 import ua.m_pluse.service.UserService;
 import ua.m_pluse.statistic.Statistic;
@@ -30,6 +31,9 @@ public class SpeñialRestController {
 
 	@Autowired
 	private UserService userService;
+
+	@Autowired
+	private FileAdminService fileAdminService;
 
 	@Autowired
 	private MailSenderService mailSenderService;
@@ -101,6 +105,14 @@ public class SpeñialRestController {
 		userService.delete(Integer.parseInt(index));
 
 		return DtoUtilMapper.userToUserDTO(userService.findAll());
+	}
+
+	@RequestMapping(value = "deleteFile", method = RequestMethod.POST)
+	public @ResponseBody List<FileAdmin> deletefile(@RequestBody String index) {
+
+		fileAdminService.delete(Integer.parseInt(index));
+
+		return fileAdminService.findAll();
 	}
 
 	@RequestMapping(value = "loadMessagesWasRead", method = RequestMethod.POST)

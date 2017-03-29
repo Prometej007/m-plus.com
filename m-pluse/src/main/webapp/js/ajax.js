@@ -437,4 +437,42 @@ function getSelectsBtn() {
 	alert("Selected texts: " + $("select").multipleSelect("getSelects", "text"));
 }
 
+function deleteFile(index) {
 
+	$
+			.ajax({
+
+				url : 'deleteFile?' + $('input[name=csrf_name]').val() + "="
+						+ $('input[name=csrf_value]').val(),
+				method : 'POST',
+				contentType : 'application/json; charset=UTF-8',
+				dataType : 'json',
+				data : '' + index,
+				success : function(res) {
+
+					var all = '';
+
+					for (var i = 0; i < res.length; i++) {
+
+						all += "	<div style=\"color: black;\">";
+						all += "<div>";
+						all += "<div style=\"width: 30%; height: 50px; display: inline-block;\">";
+						all += "	<p>" + res[i].name + "</p>";
+						all += "	</div>";
+						all += "	<div style=\"width: 30%; height: 50px; display: inline-block;\">";
+						all += "	<p>download" + res[i].publicPath + ""
+								+ res[i].id + "</p>";
+						all += "</div>"
+						all += "<a onclick=\"deleteFile('" + res[i].id + "')\"";
+						all += "	style=\"width: 30%; height: 50px; display: inline-block;\"";
+						all += "	href=\"#\">&times;</a>";
+						all += "</div>";
+						all += "</div>";
+
+					}
+					document.getElementById('fileContainer').innerHTML = all;
+
+				}
+			})
+
+}
