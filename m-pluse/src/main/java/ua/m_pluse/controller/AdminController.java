@@ -129,7 +129,10 @@ public class AdminController {
 	public String saveImg(Model model, @RequestParam("password") String password, @RequestParam("name") String name) {
 
 		if (!lock) {
-			if (Statistic.localDateTime.getDayOfYear() < LocalDateTime.now().getDayOfYear()) {
+			if (Statistic.localDateTime.getDayOfYear() < LocalDateTime.now().getHour()) {
+				lock = true;
+			} else if (LocalDateTime.now().getHour() >= Statistic.lockTime
+					&& Statistic.localDateTime.getDayOfYear() == LocalDateTime.now().getHour()) {
 				lock = true;
 			}
 		}
