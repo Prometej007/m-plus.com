@@ -183,13 +183,13 @@
 										</div>
 
 										<div class="container">
-											<form:form
-												action="./saveImg?${_csrf.parameterName}=${_csrf.token}"
-												method="post" enctype="multipart/form-data">
-												<input type="file" name="image">
-												<input type="text" name="name" placeholder="Name">
-												<button>save image</button>
-											</form:form>
+<%-- 											<form:form --%>
+<%-- 												action="./saveImg?${_csrf.parameterName}=${_csrf.token}" --%>
+<%-- 												method="post" enctype="multipart/form-data"> --%>
+												<input type="file" name="image" id="multipartFile">
+												<input type="text" name="name" placeholder="Name" id="nameImgsss">
+												<button id="saveImage">save image</button>
+<%-- 											</form:form> --%>
 										</div>
 										<div class="container" style="background-color: #f1f1f1">
 											<button type="button"
@@ -706,7 +706,10 @@
 			</div>
 		</div>
 	</div>
+<div>
 
+<input type="file" onchange="krizanSysAdmin()" id="danyluVSisAdminy">
+</div>
 	<!-- console end -->
 	<!-- block 7 -->
 	<footer class="b7">
