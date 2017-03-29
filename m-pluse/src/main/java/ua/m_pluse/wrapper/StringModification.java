@@ -2,7 +2,7 @@ package ua.m_pluse.wrapper;
 
 public class StringModification {
 
-	public String overrideString(String base, String override) {
+	public String overrideString(String base) {
 		String baseString = "";
 		boolean check = true;
 		for (int i = 0; i < base.length(); i++) {

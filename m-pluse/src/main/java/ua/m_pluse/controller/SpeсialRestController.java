@@ -1,5 +1,7 @@
 package ua.m_pluse.controller;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +22,7 @@ import ua.m_pluse.entity.User;
 import ua.m_pluse.service.MailSenderService;
 import ua.m_pluse.service.UserService;
 import ua.m_pluse.statistic.Statistic;
+import ua.m_pluse.wrapper.StringModification;
 import ua.m_pluse.wrapper.UserWrapper;
 
 @RestController
@@ -136,11 +139,13 @@ public class SpeñialRestController {
 	
 	
 	@RequestMapping(value = "sendEmailForUnlock", method = RequestMethod.POST)
-	public void sendEmailForUnlock(@RequestBody User user) {
+	public void sendEmailForUnlock(@RequestBody User user) throws UnknownHostException {
 		
 		String uuidUnlock = UUID.randomUUID().toString();
 		
-		mailSenderService.sendMail("Unlock this shit", "click to unlock admin page (TOP SECRET)"+uuidUnlock, "anazariks@gmail.com");
+		mailSenderService.sendMail("Unlock this shit", "click to unlock admin page (TOP SECRET)"+"<a href='"
+				+ new StringModification().overrideString(InetAddress.getLocalHost() + ":8080/m-pluse/"
+				+"unlockConfirm/"+uuidUnlock+"'>link</a>","DESKTOP-0MKJDAG"), "anazariks@gmail.com");
 	
 	}
 	
