@@ -17,7 +17,7 @@ public class StringModification {
 
 			}
 		}
-		System.out.println("----------------------" + baseString);
+
 		return "http://" + baseString;
 	}
 

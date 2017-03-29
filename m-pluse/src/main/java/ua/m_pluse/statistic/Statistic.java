@@ -1,7 +1,11 @@
 package ua.m_pluse.statistic;
 
-public class Statistic {
+import java.sql.Date;
+import java.util.GregorianCalendar;
 
+public class Statistic {
+	public static int indexLocking = 0;
+	public static int lockTime = 0;
 	public static int homeEN = 0;
 	public static int homeUA = 0;
 	public static int homeRU = 0;

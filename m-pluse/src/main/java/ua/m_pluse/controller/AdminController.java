@@ -1,6 +1,11 @@
 package ua.m_pluse.controller;
 
+import java.text.MessageFormat.Field;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.UUID;
 
@@ -13,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.mysql.fabric.xmlrpc.base.Data;
 
 import ua.m_pluse.entity.Game;
 import ua.m_pluse.entity.Image;
@@ -27,6 +34,7 @@ import ua.m_pluse.statistic.Statistic;
 @Controller
 public class AdminController {
 
+	protected static boolean lock = true;
 	protected static String admin;
 
 	@Autowired
@@ -37,9 +45,9 @@ public class AdminController {
 
 	@Autowired
 	public GameService gameService;
-	
+
 	@Autowired
-	protected FileAdminService fileAdminService; 
+	protected FileAdminService fileAdminService;
 
 	@RequestMapping("loginpage")
 	public String loginpage() {
@@ -119,11 +127,25 @@ public class AdminController {
 
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String saveImg(Model model, @RequestParam("password") String password, @RequestParam("name") String name) {
-		if (password.equals("admin") && name.equals("admin")) {
+		if (password.equals("admin") && name.equals("admin") && lock) {
 			String uuid = UUID.randomUUID().toString();
 			admin = uuid;
+			Statistic.indexLocking = 0;
 			return "redirect:/admin" + admin + "";
+
 		} else {
+			if (Statistic.indexLocking <= 3) {
+
+				Statistic.indexLocking++;
+			}
+			if (Statistic.indexLocking >= 3) {
+
+				Statistic.lockTime = LocalDateTime.now().getHour();
+
+				lock = false;
+				Statistic.indexLocking = 0;
+			}
+
 			return "loginpage";
 		}
 
@@ -144,6 +166,7 @@ public class AdminController {
 
 		return "redirect:/admin" + admin + "";
 	}
+
 	@RequestMapping(value = "saveFile", method = RequestMethod.POST)
 	public String saveFile(@RequestParam MultipartFile file, @RequestParam String name) {
 
