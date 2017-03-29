@@ -147,7 +147,7 @@
 
 	<!--  call back-->
 	<div class="navslide"
-		style="display: none; padding-top: 13%; right: 0; z-index: 10; width: 0px"
+		style="position: fixed; display: none; padding-top: 13%; right: 0; z-index: 10; width: 40%; left: 140%"
 		id="mySidenav">
 		<%-- 		<form:form action="messageCallLeft" modelAttribute="userWrapper"  class="" target="_blank" id="formMessageCallLeft" method="post"> --%>
 		<p class="textbott">

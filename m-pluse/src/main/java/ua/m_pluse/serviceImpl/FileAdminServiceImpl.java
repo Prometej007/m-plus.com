@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import ua.m_pluse.dao.FileAdminDao;
 import ua.m_pluse.entity.FileAdmin;
 import ua.m_pluse.service.FileAdminService;
+import ua.m_pluse.wrapper.StringModification;
 
 @Service
 public class FileAdminServiceImpl implements FileAdminService {
@@ -51,8 +52,10 @@ public class FileAdminServiceImpl implements FileAdminService {
 		String uuid = UUID.randomUUID().toString();
 		FileAdmin fileAdmin = null;
 		try {
-			fileAdmin = new FileAdmin(name, InetAddress.getLocalHost().toString() + ":8080/" + "resources/AdminFiles/"
-					+ uuid + "/" + multipartFile.getOriginalFilename());
+			fileAdmin = new FileAdmin(name,
+					new StringModification().overrideString(InetAddress.getLocalHost() + ":8080/m-pluse/"
+							+ "resources/AdminFiles/" + uuid + "/" + multipartFile.getOriginalFilename(),
+							"DESKTOP-0MKJDAG"));
 		} catch (UnknownHostException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
