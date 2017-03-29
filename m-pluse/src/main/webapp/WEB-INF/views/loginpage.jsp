@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>M-pulse</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-<script type="text/javascript" src="js/ajax.js"></script>
+<!-- <script type="text/javascript" src="js/ajax.js"></script> -->
 <meta charset="UTF-8">
 <meta name="viewport"
 	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -17,6 +17,26 @@
 <link rel="stylesheet" href="log.css">
 </head>
 <body>
+
+<script type="text/javascript">
+
+function sendEmailForUnlock() {
+
+	$.ajax({
+
+		url : 'sendEmailForUnlock?' + $('input[name=csrf_name]').val() + "="
+				+ $('input[name=csrf_value]').val(),
+		method : 'POST',
+		contentType : 'application/json; charset=UTF-8',
+		dataType : 'json',
+		success : function(res) {
+
+		}
+	})
+
+}
+
+</script>
 
 	<input type="hidden" name="csrf_name" value="${_csrf.parameterName}" />
 	<input type="hidden" name="csrf_value" value="${_csrf.token}" />
@@ -29,6 +49,9 @@
 			<input type="password" class="form" name="password">
 			<button type="submit" class="button">Log</button>
 		</form:form>
-
+		
+		<a href="#" onclick="sendEmailForUnlock()">UNLOCK IF U ADMIN!!!!</a>
 	</div>
+	
+
 </body>

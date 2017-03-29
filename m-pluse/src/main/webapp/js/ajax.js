@@ -436,3 +436,5 @@ function getSelectsBtn() {
 	}
 	alert("Selected texts: " + $("select").multipleSelect("getSelects", "text"));
 }
+
+

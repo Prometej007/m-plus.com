@@ -201,10 +201,13 @@ public class AdminController {
 		return "redirect:/admin" + admin + "";
 	}
 	
-	@RequestMapping(value = "unlockConfirm", method = RequestMethod.POST)
-	public String UnlockConfirm(@RequestBody User user) {
+	@RequestMapping(value = "unlockConfirm/{uuidUnlock}", method = RequestMethod.GET)
+	public String UnlockConfirm(@PathVariable String uuidUnlock) {
 		
-		
+		if(Statistic.linkUnlock!=null && Statistic.linkUnlock.equals(uuidUnlock)){
+			Statistic.indexLocking=0;
+			lock=true;
+		}
 		
 		
 		return "redirect:/admin" + admin + "";

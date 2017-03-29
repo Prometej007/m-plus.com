@@ -18,7 +18,7 @@ public class StringModification {
 			}
 		}
 
-		return "http://" + baseString;
+		return "http:/" + baseString;
 	}
 
 }
