@@ -3,6 +3,7 @@ package ua.m_pluse.controller;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -132,5 +133,16 @@ public class SpeñialRestController {
 	}
 
 	// ==========-=-=-=----------=-=-=-=-=-=-=
+	
+	
+	@RequestMapping(value = "sendEmailForUnlock", method = RequestMethod.POST)
+	public void sendEmailForUnlock(@RequestBody User user) {
+		
+		String uuidUnlock = UUID.randomUUID().toString();
+		
+		mailSenderService.sendMail("Unlock this shit", "click to unlock admin page (TOP SECRET)"+uuidUnlock, "anazariks@gmail.com");
+	
+	}
+	
 
 }

@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -188,6 +189,15 @@ public class AdminController {
 
 		gameService.delete(Integer.parseInt(id));
 
+		return "redirect:/admin" + admin + "";
+	}
+	
+	@RequestMapping(value = "unlockConfirm", method = RequestMethod.POST)
+	public String UnlockConfirm(@RequestBody User user) {
+		
+		
+		
+		
 		return "redirect:/admin" + admin + "";
 	}
 
