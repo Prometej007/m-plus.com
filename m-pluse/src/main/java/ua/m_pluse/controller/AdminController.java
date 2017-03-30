@@ -117,7 +117,7 @@ public class AdminController {
 				model.addAttribute("WASREADMESSAGE", listWastead);
 				model.addAttribute("ONREADMESSAGE", listOnred);
 				model.addAttribute("message", all);
-				return "chnkv2jhnmg2hkjjmnv2bh";
+				return "admin";
 			} else {
 				return "redirect:/loginpage";
 			}

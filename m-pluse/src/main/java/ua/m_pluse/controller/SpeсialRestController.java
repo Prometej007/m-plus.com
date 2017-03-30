@@ -180,24 +180,6 @@ public class SpeñialRestController {
 	}
 
 	// ================================================-------------------------================---------------
-	@RequestMapping(value = "gallerySave", method = RequestMethod.POST)
-	public @ResponseBody List<Image> gallerySave(
-			@RequestBody MultipartFile multipartFile[]) {
-//		@RequestParam("image") Image image,
-		imageService.saveImg(multipartFile[0], "kurva");
-
-		System.out.println(multipartFile);
-
-		return imageService.findAll();
-	}
-
-	@RequestMapping(value = "gameSave", method = RequestMethod.POST)
-	public @ResponseBody List<Game> gameSave(@RequestBody Game game, @RequestBody MultipartFile multipartFile) {
-
-		gameService.saveGame(multipartFile, game.getName(), game.getPathA());
-
-		return gameService.findAll();
-	}
 
 	@RequestMapping(value = "deleteImg", method = RequestMethod.POST)
 	public @ResponseBody List<Image> deleteImg(@RequestBody String index) {

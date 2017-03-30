@@ -477,68 +477,13 @@ function deleteFile(index) {
 
 }
 
-
-
-
-//---------------------------------------------------------DELETE GAME&IMG------------------------------------------
-var files;
-$(document)
-.on(
-        "change",
-        "#multipartFile",
-        function(event) {
-         files=event.target.files;
-        })
-
-$(document)
-.on(
-        "click",
-        "#saveImage",
-        function() {
-        gallerySave();
-        })
-
-
-function gallerySave() {
-	alert(files[0]);
-	var multipartFile = new FormData();
-	multipartFile.append("multipartFile", files);
-
-//	var image = {
-//		
-//		name : document.getElementById('nameImgsss').value,
-//		
-//		
-//	}
-
-//	document.getElementById('').value = '';
-//	document.getElementById('').value = '';
-
-	$.ajax({
-
-		dataType : 'json',
-		url : 'gallerySave?' + $('input[name=csrf_name]').val() + "="
-		+ $('input[name=csrf_value]').val(),
-        data : multipartFile,
-        type : "POST",
-        enctype: 'multipart/form-data',
-        processData: false, 
-        contentType:false,
-		success : function(res) {
-
-		}
-
-	})
-
-}
-
-
-
+// ---------------------------------------------------------DELETE
+// GAME&IMG------------------------------------------
 
 function gameSave() {
 
 	var game = {
-		
+
 		name : document.getElementById('').value,
 		pathA : document.getElementById('').value
 
@@ -554,7 +499,7 @@ function gameSave() {
 		method : 'POST',
 		contentType : 'application/json; charset=UTF-8',
 		dataType : 'json',
-		data : JSON.stringify(game,multipartFile),
+		data : JSON.stringify(game, multipartFile),
 		success : function(res) {
 
 		}
@@ -563,74 +508,50 @@ function gameSave() {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
 function deleteImg(index) {
 
-	$
-			.ajax({
+	$.ajax({
 
-				url : 'deleteImg?' + $('input[name=csrf_name]').val() + "="
-						+ $('input[name=csrf_value]').val(),
-				method : 'POST',
-				contentType : 'application/json; charset=UTF-8',
-				dataType : 'json',
-				data : '' + index,
-				success : function(res) {
+		url : 'deleteImg?' + $('input[name=csrf_name]').val() + "="
+				+ $('input[name=csrf_value]').val(),
+		method : 'POST',
+		contentType : 'application/json; charset=UTF-8',
+		dataType : 'json',
+		data : '' + index,
+		success : function(res) {
 
-					var all = '';
+			var all = '';
 
-					for (var i = 0; i < res.length; i++) {
+			for (var i = 0; i < res.length; i++) {
 
-				
+			}
+			document.getElementById('').innerHTML = all;
 
-					}
-					document.getElementById('').innerHTML = all;
-
-				}
-			})
+		}
+	})
 
 }
-
 
 function deleteGame(index) {
 
-	$
-			.ajax({
+	$.ajax({
 
-				url : 'deleteGame?' + $('input[name=csrf_name]').val() + "="
-						+ $('input[name=csrf_value]').val(),
-				method : 'POST',
-				contentType : 'application/json; charset=UTF-8',
-				dataType : 'json',
-				data : '' + index,
-				success : function(res) {
+		url : 'deleteGame?' + $('input[name=csrf_name]').val() + "="
+				+ $('input[name=csrf_value]').val(),
+		method : 'POST',
+		contentType : 'application/json; charset=UTF-8',
+		dataType : 'json',
+		data : '' + index,
+		success : function(res) {
 
-					var all = '';
+			var all = '';
 
-					for (var i = 0; i < res.length; i++) {
+			for (var i = 0; i < res.length; i++) {
 
-				
+			}
+			document.getElementById('').innerHTML = all;
 
-					}
-					document.getElementById('').innerHTML = all;
-
-				}
-			})
+		}
+	})
 
 }
-
-
-
-
-
-
