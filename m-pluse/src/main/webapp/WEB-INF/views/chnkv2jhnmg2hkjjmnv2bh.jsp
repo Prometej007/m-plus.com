@@ -136,7 +136,7 @@
 					onclick="document.getElementById('GalleryImage').style.display='block'"
 					style="">Gallery</button>
 
-				<div id="GalleryImage" class="modal">
+				<div id="GalleryImage" class="modal" ${GalleryImage.string}>
 
 					<div class="modal-content animate">
 						<div class="imgcontainer">
@@ -170,7 +170,7 @@
 									onclick="document.getElementById('addphoto').style.display='block'"
 									style="">addphoto</button>
 
-								<div id="addphoto" class="modal">
+								<div id="addphoto" class="modal" >
 
 									<div class="modal-content animate">
 										<div class="imgcontainer">
@@ -218,7 +218,7 @@
 				onclick="document.getElementById('Game').style.display='block'"
 				style="">Game</button>
 
-			<div id="Game" class="modal">
+			<div id="Game" class="modal" ${GameFromSave.string}>
 
 				<div class="modal-content animate">
 					<div class="imgcontainer">
@@ -626,7 +626,7 @@
 			onclick="document.getElementById('PATH').style.display='block'"
 			style="">File</button>
 
-		<div id="PATH" class="modal">
+		<div id="PATH" class="modal" ${FileFromSave.string} }>
 
 			<div class="modal-content animate">
 				<div class="imgcontainer">
@@ -667,7 +667,7 @@
 								onclick="document.getElementById('File').style.display='block'"
 								style="">add File</button>
 
-							<div id="File" class="modal">
+							<div id="File" class="modal" >
 
 								<div class="modal-content animate">
 									<div class="imgcontainer">

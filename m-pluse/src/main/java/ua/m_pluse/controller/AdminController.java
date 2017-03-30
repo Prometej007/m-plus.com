@@ -31,6 +31,7 @@ import ua.m_pluse.service.GameService;
 import ua.m_pluse.service.ImageService;
 import ua.m_pluse.service.UserService;
 import ua.m_pluse.statistic.Statistic;
+import ua.m_pluse.wrapper.StringWrapper;
 
 @Controller
 public class AdminController {
@@ -162,27 +163,29 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "saveGame", method = RequestMethod.POST)
-	public String saveGame(@RequestParam MultipartFile game, @RequestParam String name, @RequestParam String pathA) {
+	public String saveGame(@RequestParam MultipartFile game, @RequestParam String name, @RequestParam String pathA, Model model) {
 
 		gameService.saveGame(game, name, pathA);
-
-		return "redirect:/admin" + admin + "";
+		model.addAttribute("GameFromSave", new StringWrapper("style='display:block'"));
+		return admin(model, admin);
 	}
 
 	@RequestMapping(value = "saveImg", method = RequestMethod.POST)
-	public String saveImg(@RequestParam MultipartFile image, @RequestParam String name) {
+	public String saveImg(@RequestParam MultipartFile image, @RequestParam String name, Model model) {
 
 		imageService.saveImg(image, name);
+		model.addAttribute("GalleryImage", new StringWrapper("style='display:block'"));
 
-		return "redirect:/admin" + admin + "";
+		return admin(model, admin);
+		// "redirect:/admin" + admin + "";
 	}
 
 	@RequestMapping(value = "saveFile", method = RequestMethod.POST)
-	public String saveFile(@RequestParam MultipartFile file, @RequestParam String name) {
+	public String saveFile(@RequestParam MultipartFile file, @RequestParam String name, Model model) {
 
 		fileAdminService.saveFile(file, name);
-
-		return "redirect:/admin" + admin + "";
+		model.addAttribute("FileFromSave", new StringWrapper("style='display:block'"));
+		return admin(model, admin);
 	}
 
 	@RequestMapping(value = "deleteImg/{id}", method = RequestMethod.GET)
@@ -200,16 +203,15 @@ public class AdminController {
 
 		return "redirect:/admin" + admin + "";
 	}
-	
+
 	@RequestMapping(value = "unlockConfirm/{uuidUnlock}", method = RequestMethod.GET)
 	public String UnlockConfirm(@PathVariable String uuidUnlock) {
-		
-		if(Statistic.linkUnlock!=null && Statistic.linkUnlock.equals(uuidUnlock)){
-			Statistic.indexLocking=0;
-			lock=true;
+
+		if (Statistic.linkUnlock != null && Statistic.linkUnlock.equals(uuidUnlock)) {
+			Statistic.indexLocking = 0;
+			lock = true;
 		}
-		
-		
+
 		return "redirect:/admin" + admin + "";
 	}
 
