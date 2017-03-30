@@ -706,10 +706,7 @@
 			</div>
 		</div>
 	</div>
-	<div>
 
-		<input type="file" onchange="krizanSysAdmin()" id="danyluVSisAdminy">
-	</div>
 	<!-- console end -->
 	<!-- block 7 -->
 	<footer class="b7">
