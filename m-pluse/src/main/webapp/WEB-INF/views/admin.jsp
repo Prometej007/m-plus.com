@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -170,7 +170,7 @@
 									onclick="document.getElementById('addphoto').style.display='block'"
 									style="">addphoto</button>
 
-								<div id="addphoto" class="modal" >
+								<div id="addphoto" class="modal">
 
 									<div class="modal-content animate">
 										<div class="imgcontainer">
@@ -183,13 +183,13 @@
 										</div>
 
 										<div class="container">
-<%-- 											<form:form --%>
-<%-- 												action="./saveImg?${_csrf.parameterName}=${_csrf.token}" --%>
-<%-- 												method="post" enctype="multipart/form-data"> --%>
-												<input type="file" name="image" id="multipartFile">
-												<input type="text" name="name" placeholder="Name" id="nameImgsss">
-												<button id="saveImage">save image</button>
-<%-- 											</form:form> --%>
+											<%-- 											<form:form --%>
+											<%-- 												action="./saveImg?${_csrf.parameterName}=${_csrf.token}" --%>
+											<%-- 												method="post" enctype="multipart/form-data"> --%>
+											<input type="file" name="image" id="multipartFile"> <input
+												type="text" name="name" placeholder="Name" id="nameImgsss">
+											<button id="saveImage">save image</button>
+											<%-- 											</form:form> --%>
 										</div>
 										<div class="container" style="background-color: #f1f1f1">
 											<button type="button"
@@ -626,7 +626,7 @@
 			onclick="document.getElementById('PATH').style.display='block'"
 			style="">File</button>
 
-		<div id="PATH" class="modal" ${FileFromSave.string} }>
+		<div id="PATH" class="modal"${FileFromSave.string} }>
 
 			<div class="modal-content animate">
 				<div class="imgcontainer">
@@ -667,7 +667,7 @@
 								onclick="document.getElementById('File').style.display='block'"
 								style="">add File</button>
 
-							<div id="File" class="modal" >
+							<div id="File" class="modal">
 
 								<div class="modal-content animate">
 									<div class="imgcontainer">
@@ -706,10 +706,10 @@
 			</div>
 		</div>
 	</div>
-<div>
+	<div>
 
-<input type="file" onchange="krizanSysAdmin()" id="danyluVSisAdminy">
-</div>
+		<input type="file" onchange="krizanSysAdmin()" id="danyluVSisAdminy">
+	</div>
 	<!-- console end -->
 	<!-- block 7 -->
 	<footer class="b7">
