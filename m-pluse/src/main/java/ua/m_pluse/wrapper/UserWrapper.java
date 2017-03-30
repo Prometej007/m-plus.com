@@ -1,7 +1,13 @@
 package ua.m_pluse.wrapper;
-
+/**
+ * @author prometej
+ * @version 1.0
+ */
 public class UserWrapper {
 	
+	/**
+	 * like StringWrapper
+	 */
 	private String name;
 	private String phoneOrEmail;
 

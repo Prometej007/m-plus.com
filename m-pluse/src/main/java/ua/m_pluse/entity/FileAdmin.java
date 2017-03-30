@@ -5,6 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * @author prometej
+ * @version 1.0
+ */
 @Entity
 public class FileAdmin {
 

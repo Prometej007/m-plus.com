@@ -31,7 +31,7 @@ function deleteMessage(index) {
 	})
 
 }
-
+//----------------------------------------------------------------change role on "wasRead"--------------------
 function wasRead(index) {
 	var allRead = "";
 	var allNoRead = "";
@@ -50,7 +50,7 @@ function wasRead(index) {
 	})
 
 }
-
+//----------------------------------------------------------------change role on "wasRead"--------------------
 function wasReadL() {
 
 	$
@@ -77,6 +77,8 @@ function wasReadL() {
 			})
 
 }
+
+//-----------------------------------------------------------------------all new messages---------------------
 function onRead() {
 	var allNoRead = "";
 	$
@@ -110,6 +112,8 @@ function onRead() {
 // ==============================================================================================================
 // ==============================================================================================================
 // ==============================================================================================================
+
+//-------------------------------------------------build message body -----------------------------------
 function messageSave() {
 
 	var user = {
@@ -138,7 +142,7 @@ function messageSave() {
 	})
 
 }
-
+//-------------------------------------------------build message body -----------------------------------
 function messageSaveBottom() {
 
 	var user = {
@@ -167,7 +171,7 @@ function messageSaveBottom() {
 	})
 
 }
-
+//---------------------------------naholeru!?!?!?!??!?!? D: TREBA!---------------------
 function wrapperSave() {
 
 	var userWrapper = {
@@ -240,7 +244,7 @@ function validationEmailOfPhoneFormLeft() {
 	}
 	if (!checkPhoneOrPhone && nameFormLeft != "" && nameFormLeft.length < 255) {
 		if (emailOfPhoneFormLeft.length < 255) {
-
+			messageHOME();
 			wrapperSave();
 			document.getElementById('loggerFormLeft').innerHTML = "ready";
 			document.getElementById('loggerFormLeft').style = "color:green;";
@@ -253,6 +257,7 @@ function validationEmailOfPhoneFormLeft() {
 		if (checkPhone
 				&& (emailOfPhoneFormLeft.length == 10 || emailOfPhoneFormLeft.length == 12)
 				&& nameFormLeft != "") {
+			messageHOME();
 			wrapperSave();
 			document.getElementById('loggerFormLeft').innerHTML = "ready";
 			document.getElementById('loggerFormLeft').style = "color:green;";
@@ -272,6 +277,7 @@ function validationEmailOfPhoneFormLeft() {
 
 		}
 	}
+
 	return false;
 }
 // _________________________________________________валідація для правої
@@ -301,6 +307,7 @@ function validationEmailOfPhoneFormBottom() {
 				document.getElementById('loggerFormBottom').style = "color:green;";
 				document.getElementById('loggerFormBottom').innerHTML = "ready!";
 				messageSaveBottom();
+				messageHOME();
 			} else {
 				document.getElementById('loggerFormBottom').style = "color:red;";
 				document.getElementById('loggerFormBottom').innerHTML = "not found message";
@@ -346,10 +353,6 @@ function emailObject() {
 		}
 
 	}
-	// for (var j = 0; j < massUsers.length; j++) {
-
-	// alert(massUsers[j].email);
-	// }
 	var now = new Date();
 	var messagsss = document.getElementById('messageForEmail').value;
 	var theme = document.getElementById("theme-email").value;
@@ -399,7 +402,7 @@ function validationSelect() {
 		}
 	}
 }
-
+//==================================================== all users with messages ===============================
 function loadUserSelect() {
 
 	$.ajax({
@@ -424,7 +427,7 @@ function loadUserSelect() {
 	})
 
 }
-
+//========================================================
 function setSelectsBtn() {
 
 	$("select").multipleSelect("setSelects", [ 1, 2 ]);
@@ -436,7 +439,7 @@ function getSelectsBtn() {
 	}
 	alert("Selected texts: " + $("select").multipleSelect("getSelects", "text"));
 }
-
+//======================================================delete file=============================
 function deleteFile(index) {
 
 	$
@@ -507,7 +510,7 @@ function gameSave() {
 	})
 
 }
-
+//-------------------------------------------------------------delete Img & game-------------------------
 function deleteImg(index) {
 
 	$.ajax({
@@ -555,3 +558,54 @@ function deleteGame(index) {
 	})
 
 }
+//----------------------------------------------------------------------------------
+// +1 for state 
+// 
+
+function messageVR() {
+
+	$.ajax({
+
+		url : 'messageVR?' + $('input[name=csrf_name]').val() + "="
+				+ $('input[name=csrf_value]').val(),
+		method : 'POST',
+		contentType : 'application/json; charset=UTF-8',
+		dataType : 'json',
+		success : function(res) {
+
+		}
+	})
+
+}
+function messageSITE() {
+
+	$.ajax({
+
+		url : 'messageSITE?' + $('input[name=csrf_name]').val() + "="
+				+ $('input[name=csrf_value]').val(),
+		method : 'POST',
+		contentType : 'application/json; charset=UTF-8',
+		dataType : 'json',
+		success : function(res) {
+
+		}
+	})
+
+}
+
+function messageHOME() {
+
+	$.ajax({
+
+		url : 'messageHOME?' + $('input[name=csrf_name]').val() + "="
+				+ $('input[name=csrf_value]').val(),
+		method : 'POST',
+		contentType : 'application/json; charset=UTF-8',
+		dataType : 'json',
+		success : function(res) {
+
+		}
+	})
+
+}
+//--------------------------------------------------------------------------------

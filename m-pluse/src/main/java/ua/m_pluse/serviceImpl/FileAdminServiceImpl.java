@@ -16,6 +16,11 @@ import ua.m_pluse.entity.FileAdmin;
 import ua.m_pluse.service.FileAdminService;
 import ua.m_pluse.wrapper.StringModification;
 
+/**
+ * @author prometej
+ * @version 1.0
+ */
+
 @Service
 public class FileAdminServiceImpl implements FileAdminService {
 
@@ -45,7 +50,9 @@ public class FileAdminServiceImpl implements FileAdminService {
 
 		fileAdminDao.delete(id);
 	}
-
+	/**
+	 * save file for download
+	 */
 	@Override
 	public void saveFile(MultipartFile multipartFile, String name) {
 

@@ -1,26 +1,18 @@
 package ua.m_pluse.controller;
 
-import java.text.MessageFormat.Field;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-
-import com.mysql.fabric.xmlrpc.base.Data;
 
 import ua.m_pluse.entity.Game;
 import ua.m_pluse.entity.Image;
@@ -33,9 +25,16 @@ import ua.m_pluse.service.UserService;
 import ua.m_pluse.statistic.Statistic;
 import ua.m_pluse.wrapper.StringWrapper;
 
+
+/**
+ * @author prometej
+ * @version 1.0
+ */
 @Controller
 public class AdminController {
-
+	/**
+	 * lock admin page
+	 */
 	protected static boolean lock = true;
 	protected static String admin;
 
@@ -50,7 +49,7 @@ public class AdminController {
 
 	@Autowired
 	protected FileAdminService fileAdminService;
-
+	
 	@RequestMapping("loginpage")
 	public String loginpage() {
 
@@ -91,6 +90,9 @@ public class AdminController {
 				model.addAttribute("presentationVREN", Statistic.presentationVREN);
 				model.addAttribute("presentationVRRU", Statistic.presentationVRRU);
 				model.addAttribute("presentationVRUA", Statistic.presentationVRUA);
+				model.addAttribute("messageHome", Statistic.messageHome);
+				model.addAttribute("messageSite", Statistic.messageSite);
+				model.addAttribute("messageVR", Statistic.messageVR);
 				model.addAttribute("files", fileAdminService.findAll());
 
 				/* Statistic end */
@@ -126,8 +128,11 @@ public class AdminController {
 		}
 
 	}
-
-	@RequestMapping(value = "login", method = RequestMethod.GET)
+	
+	/*
+	 * security, 3 tries and block for 3 hours
+	 */
+	@RequestMapping(value = "login", method = RequestMethod.POST)
 	public String saveImg(Model model, @RequestParam("password") String password, @RequestParam("name") String name) {
 
 		if (!lock) {
@@ -163,7 +168,8 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "saveGame", method = RequestMethod.POST)
-	public String saveGame(@RequestParam MultipartFile game, @RequestParam String name, @RequestParam String pathA, Model model) {
+	public String saveGame(@RequestParam MultipartFile game, @RequestParam String name, @RequestParam String pathA,
+			Model model) {
 
 		gameService.saveGame(game, name, pathA);
 		model.addAttribute("GameFromSave", new StringWrapper("style='display:block'"));
@@ -182,7 +188,6 @@ public class AdminController {
 
 	@RequestMapping(value = "saveFile", method = RequestMethod.POST)
 	public String saveFile(@RequestParam MultipartFile file, @RequestParam String name, Model model) {
-
 		fileAdminService.saveFile(file, name);
 		model.addAttribute("FileFromSave", new StringWrapper("style='display:block'"));
 		return admin(model, admin);
@@ -204,6 +209,10 @@ public class AdminController {
 		return "redirect:/admin" + admin + "";
 	}
 
+	
+	/*
+	 * unlock from email
+	 */
 	@RequestMapping(value = "unlockConfirm/{uuidUnlock}", method = RequestMethod.GET)
 	public String UnlockConfirm(@PathVariable String uuidUnlock) {
 

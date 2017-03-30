@@ -118,6 +118,18 @@
 						<td class="table-statistic-td-name">presentationVRUA</td>
 						<td class="table-statistic-td-number">${presentationVRUA}</td>
 					</tr>
+					<tr>
+						<td class="table-statistic-td-name">messageHome</td>
+						<td class="table-statistic-td-number">${messageHome}</td>
+					</tr>
+					<tr>
+						<td class="table-statistic-td-name">messageSite</td>
+						<td class="table-statistic-td-number">${messageSite}</td>
+					</tr>
+					<tr>
+						<td class="table-statistic-td-name">messageVR</td>
+						<td class="table-statistic-td-number">${messageVR}</td>
+					</tr>
 
 				</table>
 

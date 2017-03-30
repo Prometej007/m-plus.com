@@ -5,9 +5,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import javax.annotation.Resources;
-
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +13,12 @@ import org.springframework.web.multipart.MultipartFile;
 import ua.m_pluse.dao.ImageDao;
 import ua.m_pluse.entity.Image;
 import ua.m_pluse.service.ImageService;
+
+/**
+ * @author prometej
+ * @version 1.0
+ */
+
 @Service
 public class ImageServiceImpl implements ImageService {
 

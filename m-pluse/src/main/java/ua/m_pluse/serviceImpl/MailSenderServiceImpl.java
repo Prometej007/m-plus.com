@@ -17,12 +17,22 @@ import org.springframework.stereotype.Service;
 
 import ua.m_pluse.service.MailSenderService;
 
+/**
+ * @author prometej
+ * @version 1.0
+ */
+
 @Service
 public class MailSenderServiceImpl implements MailSenderService {
 
 	private final static String USERNAME = "anazariks@gmail.com";// mail
 	private final static String PASSWORD = "yfpfh1998";// password
 
+	
+	/**
+	 * mailsender what more do u want to know?
+	 * MimeMessageHelper - html page in message
+	 */
 	@Async
 	public void sendMail(String theme, String mailBody, String email) {
 		Properties properties = System.getProperties();
@@ -52,7 +62,6 @@ public class MailSenderServiceImpl implements MailSenderService {
 			}
 		} catch (MessagingException mex) {
 			mex.printStackTrace();
-			System.out.println("You have some problems with connection!");
 		}
 	}
 

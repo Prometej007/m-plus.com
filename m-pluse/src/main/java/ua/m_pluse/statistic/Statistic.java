@@ -1,7 +1,10 @@
 package ua.m_pluse.statistic;
 
 import java.time.LocalDateTime;
-
+/**
+ * @author prometej
+ * @version 1.0
+ */
 public class Statistic {
 	public static String linkUnlock;
 	public static int indexLocking = 0;
@@ -19,7 +22,8 @@ public class Statistic {
 	public static int downloadPresentationAR = 0;
 	public static int downloadPresentationSite = 0;
 
-	public static int messageVR;
-	public static int messageSite;
+	public static int messageVR = 0;
+	public static int messageSite = 0;
+	public static int messageHome = 0;
 
 }

@@ -6,7 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * 
  * @author prometej
  * @version 1.0
  */

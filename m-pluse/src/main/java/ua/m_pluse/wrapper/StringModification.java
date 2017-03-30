@@ -1,7 +1,15 @@
 package ua.m_pluse.wrapper;
-
+/**
+ * @author prometej
+ * @version 1.0
+ */
 public class StringModification {
 
+	/**
+	 * 
+	 * @param base
+	 * @return String for file true download on all platworms of server
+	 */
 	public String overrideString(String base) {
 		String baseString = "";
 		boolean check = true;

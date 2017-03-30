@@ -11,8 +11,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import ua.m_pluse.dao.GameDao;
 import ua.m_pluse.entity.Game;
-import ua.m_pluse.entity.Image;
 import ua.m_pluse.service.GameService;
+
+/**
+ * @author prometej
+ * @version 1.0
+ */
 @Service
 public class GameServiceImpl implements GameService {
 

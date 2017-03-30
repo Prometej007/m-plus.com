@@ -1,7 +1,16 @@
 package ua.m_pluse.wrapper;
 
+
+/**
+ * @author prometej
+ * @version 1.0
+ */
 public class StringWrapper {
 
+	/**
+	 * only for return style="some shit"
+	 */
+	
 	public String string;
 	
 	public StringWrapper() {

@@ -14,14 +14,13 @@ import ua.m_pluse.entity.Image;
 import ua.m_pluse.service.FileAdminService;
 import ua.m_pluse.service.GameService;
 import ua.m_pluse.service.ImageService;
-import ua.m_pluse.service.UserService;
 import ua.m_pluse.statistic.Statistic;
-
+/**
+ * @author prometej
+ * @version 1.0
+ */
 @Controller
 public class UserController {
-
-	@Autowired
-	private UserService userService;
 
 	@Autowired
 	private ImageService imageService;
@@ -35,11 +34,7 @@ public class UserController {
 	@RequestMapping(value = "ua", method = RequestMethod.GET)
 	public String homeUA(Model model/* , @PathVariable String languageTeg */) {
 		Statistic.homeUA++;
-		// ________________________________________________TextLoading_____________________Start_______________________________
-
-		// textService.findByLanguageTeg(languageTeg);
-		// ________________________________________________TextLoading_____________________End__________________________________
-
+		
 		List<Image> gallery = imageService.findAll();
 		List<Game> game = gameService.findAll();
 		String galleryString = "";
@@ -50,7 +45,7 @@ public class UserController {
 					+ image.getPath() + "'></a>";
 
 		}
-		// доробити------------------------------------------------------------------------------------------
+		
 		for (Game gameI : game) {
 
 			gameString += "<div class='b3-block1-0' style='  background-image: url(" + gameI.getPath() + ");'><a href='"
@@ -59,7 +54,7 @@ public class UserController {
 					+ gameI.getName() + "</span></div></div></a></div>";
 
 		}
-		// ____________________________________________________________________________________________________
+	
 		model.addAttribute("gallery", galleryString);
 		model.addAttribute("game", gameString);
 		return "homeUA";
@@ -68,11 +63,7 @@ public class UserController {
 	@RequestMapping(value = "ru", method = RequestMethod.GET)
 	public String homeRU(Model model/* , @PathVariable String languageTeg */) {
 		Statistic.homeRU++;
-		// ________________________________________________TextLoading_____________________Start_______________________________
-
-		// textService.findByLanguageTeg(languageTeg);
-		// ________________________________________________TextLoading_____________________End__________________________________
-
+		
 		List<Image> gallery = imageService.findAll();
 		List<Game> game = gameService.findAll();
 		String galleryString = "";
@@ -83,7 +74,7 @@ public class UserController {
 					+ image.getPath() + "'></a>";
 
 		}
-		// доробити------------------------------------------------------------------------------------------
+		
 		for (Game gameI : game) {
 
 			gameString += "<div class='b3-block1-0' style='  background-image: url(" + gameI.getPath() + ");'><a href='"
@@ -92,7 +83,6 @@ public class UserController {
 					+ gameI.getName() + "</span></div></div></a></div>";
 
 		}
-		// ____________________________________________________________________________________________________
 		model.addAttribute("gallery", galleryString);
 		model.addAttribute("game", gameString);
 		return "homeRU";
@@ -101,10 +91,6 @@ public class UserController {
 	@RequestMapping(value = { "/", "en" }, method = RequestMethod.GET)
 	public String homeEN(Model model/* , @PathVariable String languageTeg */) {
 		Statistic.homeEN++;
-		// ________________________________________________TextLoading_____________________Start_______________________________
-
-		// textService.findByLanguageTeg(languageTeg);
-		// ________________________________________________TextLoading_____________________End__________________________________
 
 		List<Image> gallery = imageService.findAll();
 		List<Game> game = gameService.findAll();
@@ -116,7 +102,7 @@ public class UserController {
 					+ image.getPath() + "'></a>";
 
 		}
-		// доробити------------------------------------------------------------------------------------------
+	
 		for (Game gameI : game) {
 
 			gameString += "<div class='b3-block1-0' style='  background-image: url(" + gameI.getPath() + ");'><a href='"
@@ -125,7 +111,7 @@ public class UserController {
 					+ gameI.getName() + "</span></div></div></a></div>";
 
 		}
-		// ____________________________________________________________________________________________________
+		
 		model.addAttribute("gallery", galleryString);
 		model.addAttribute("game", gameString);
 		return "homeEN";

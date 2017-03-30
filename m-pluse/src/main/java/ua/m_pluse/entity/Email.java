@@ -48,7 +48,6 @@ public class Email {
 
 		String goBodyOne = "";
 
-		String mainBody = "";
 		int goBodyOneIndex = -1;
 
 		for (int i = 0; i < body.length(); i++) {

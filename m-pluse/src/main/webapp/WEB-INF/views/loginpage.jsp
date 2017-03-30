@@ -41,7 +41,7 @@ function sendEmailForUnlock() {
 	<input type="hidden" name="csrf_name" value="${_csrf.parameterName}" />
 	<input type="hidden" name="csrf_value" value="${_csrf.token}" />
 	<div class="block">
-		<form:form action="login" method="GET" >
+		<form:form action="login" method="POST" >
 			<h2 style="background-color: #ffe121">Login</h2>
 			<input type="text" class="form" name="name">
 			<br>
