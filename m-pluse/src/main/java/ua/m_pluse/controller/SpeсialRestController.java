@@ -189,6 +189,22 @@ public class SpeñialRestController {
 		return imageService.findAll();
 	}
 
+	@RequestMapping(value = "messageVR", method = RequestMethod.POST)
+	public @ResponseBody List<Image> messageVR(@RequestBody String index) {
+
+		imageService.delete(Integer.parseInt(index));
+
+		return imageService.findAll();
+	}
+
+	@RequestMapping(value = "messageSITE", method = RequestMethod.POST)
+	public @ResponseBody List<Image> messageSite(@RequestBody String index) {
+
+		imageService.delete(Integer.parseInt(index));
+
+		return imageService.findAll();
+	}
+
 	@RequestMapping(value = "deleteGame", method = RequestMethod.POST)
 	public @ResponseBody List<Game> deleteGame(@RequestBody String index) {
 
