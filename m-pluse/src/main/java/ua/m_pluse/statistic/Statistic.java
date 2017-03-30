@@ -19,4 +19,7 @@ public class Statistic {
 	public static int downloadPresentationAR = 0;
 	public static int downloadPresentationSite = 0;
 
+	public static int messageVR;
+	public static int messageSite;
+
 }
