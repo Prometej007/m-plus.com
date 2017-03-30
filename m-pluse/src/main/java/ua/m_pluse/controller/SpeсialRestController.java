@@ -11,15 +11,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import ua.m_pluse.dto.DtoUtilMapper;
 import ua.m_pluse.dto.UserDTO;
 import ua.m_pluse.entity.Email;
 import ua.m_pluse.entity.FileAdmin;
+import ua.m_pluse.entity.Game;
+import ua.m_pluse.entity.Image;
 import ua.m_pluse.entity.User;
 import ua.m_pluse.service.FileAdminService;
+import ua.m_pluse.service.GameService;
+import ua.m_pluse.service.ImageService;
 import ua.m_pluse.service.MailSenderService;
 import ua.m_pluse.service.UserService;
 import ua.m_pluse.statistic.Statistic;
@@ -28,6 +34,12 @@ import ua.m_pluse.wrapper.UserWrapper;
 
 @RestController
 public class SpeñialRestController {
+
+	@Autowired
+	private ImageService imageService;
+
+	@Autowired
+	private GameService gameService;
 
 	@Autowired
 	private UserService userService;
@@ -165,6 +177,42 @@ public class SpeñialRestController {
 
 		}
 
+	}
+
+	// ================================================-------------------------================---------------
+	@RequestMapping(value = "gallerySave", method = RequestMethod.POST)
+	public @ResponseBody List<Image> gallerySave(
+			@RequestBody MultipartFile multipartFile[]) {
+//		@RequestParam("image") Image image,
+		imageService.saveImg(multipartFile[0], "kurva");
+
+		System.out.println(multipartFile);
+
+		return imageService.findAll();
+	}
+
+	@RequestMapping(value = "gameSave", method = RequestMethod.POST)
+	public @ResponseBody List<Game> gameSave(@RequestBody Game game, @RequestBody MultipartFile multipartFile) {
+
+		gameService.saveGame(multipartFile, game.getName(), game.getPathA());
+
+		return gameService.findAll();
+	}
+
+	@RequestMapping(value = "deleteImg", method = RequestMethod.POST)
+	public @ResponseBody List<Image> deleteImg(@RequestBody String index) {
+
+		imageService.delete(Integer.parseInt(index));
+
+		return imageService.findAll();
+	}
+
+	@RequestMapping(value = "deleteGame", method = RequestMethod.POST)
+	public @ResponseBody List<Game> deleteGame(@RequestBody String index) {
+
+		gameService.delete(Integer.parseInt(index));
+
+		return gameService.findAll();
 	}
 
 }

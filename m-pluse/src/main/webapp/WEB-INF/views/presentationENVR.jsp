@@ -160,6 +160,7 @@
 		</video>
 		<div id="background-presentation" style="width: 100%; height: 100%;"
 			class="background-presentation">
+	<div class	></div>
 			<div class="div-vidoe-text">
 				<h3>TEXT</h3>
 				<p>text text text text text text text text text text text text
