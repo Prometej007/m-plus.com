@@ -19,8 +19,6 @@
 			<property name="hibernate.hikari.minimumIdle" value="20" />
 			<property name="hibernate.hikari.maximumPoolSize" value="100" />
 			<property name="hibernate.hikari.idleTimeout" value="30000" />
-
-
 		</properties>
 	</persistence-unit>
 

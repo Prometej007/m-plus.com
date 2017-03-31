@@ -25,8 +25,8 @@ import ua.m_pluse.service.MailSenderService;
 @Service
 public class MailSenderServiceImpl implements MailSenderService {
 
-	private final static String USERNAME = "anazariks@gmail.com";// mail
-	private final static String PASSWORD = "yfpfh1998";// password
+	private final static String USERNAME = "mail@.com";// mail
+	private final static String PASSWORD = "******";// password
 
 	
 	/**
