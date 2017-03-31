@@ -6,10 +6,7 @@ import java.time.LocalDateTime;
  * @version 1.0
  */
 public class Statistic {
-	public static String linkUnlock;
-	public static int indexLocking = 0;
-	public static int lockTime = 0;
-	public static LocalDateTime localDateTime;
+
 	public static int homeEN = 0;
 	public static int homeUA = 0;
 	public static int homeRU = 0;

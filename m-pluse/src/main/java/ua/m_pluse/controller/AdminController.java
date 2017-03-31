@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import ua.m_pluse.constants.Ñonfiguration;
 import ua.m_pluse.entity.Game;
 import ua.m_pluse.entity.Image;
 import ua.m_pluse.entity.Role;
@@ -24,7 +25,6 @@ import ua.m_pluse.service.ImageService;
 import ua.m_pluse.service.UserService;
 import ua.m_pluse.statistic.Statistic;
 import ua.m_pluse.wrapper.StringWrapper;
-
 
 /**
  * @author prometej
@@ -49,7 +49,7 @@ public class AdminController {
 
 	@Autowired
 	protected FileAdminService fileAdminService;
-	
+
 	@RequestMapping("loginpage")
 	public String loginpage() {
 
@@ -128,7 +128,7 @@ public class AdminController {
 		}
 
 	}
-	
+
 	/*
 	 * security, 3 tries and block for 3 hours
 	 */
@@ -136,30 +136,30 @@ public class AdminController {
 	public String saveImg(Model model, @RequestParam("password") String password, @RequestParam("name") String name) {
 
 		if (!lock) {
-			if (Statistic.localDateTime.getDayOfYear() < LocalDateTime.now().getHour()) {
+			if (Ñonfiguration.localDateTime.getDayOfYear() < LocalDateTime.now().getHour()) {
 				lock = true;
-			} else if (LocalDateTime.now().getHour() >= Statistic.lockTime
-					&& Statistic.localDateTime.getDayOfYear() == LocalDateTime.now().getHour()) {
+			} else if (LocalDateTime.now().getHour() >= Ñonfiguration.lockTime
+					&& Ñonfiguration.localDateTime.getDayOfYear() == LocalDateTime.now().getHour()) {
 				lock = true;
 			}
 		}
-		if (password.equals("admin") && name.equals("admin") && lock) {
+		if (password.equals(Ñonfiguration.ADMIN_PASSWORD) && name.equals(Ñonfiguration.ADMIN_LOGIN) && lock) {
 			String uuid = UUID.randomUUID().toString();
 			admin = uuid;
-			Statistic.indexLocking = 0;
+			Ñonfiguration.indexLocking = 0;
 			return "redirect:/admin" + admin + "";
 
 		} else {
-			if (Statistic.indexLocking <= 3 && lock) {
+			if (Ñonfiguration.indexLocking <= 3 && lock) {
 
-				Statistic.indexLocking++;
+				Ñonfiguration.indexLocking++;
 			}
-			if (Statistic.indexLocking >= 3 && lock) {
+			if (Ñonfiguration.indexLocking >= 3 && lock) {
 
-				Statistic.lockTime = LocalDateTime.now().getHour();
-				Statistic.localDateTime = LocalDateTime.now();
+				Ñonfiguration.lockTime = LocalDateTime.now().getHour();
+				Ñonfiguration.localDateTime = LocalDateTime.now();
 				lock = false;
-				Statistic.indexLocking = 0;
+				Ñonfiguration.indexLocking = 0;
 			}
 
 			return "loginpage";
@@ -209,15 +209,14 @@ public class AdminController {
 		return "redirect:/admin" + admin + "";
 	}
 
-	
 	/*
 	 * unlock from email
 	 */
 	@RequestMapping(value = "unlockConfirm/{uuidUnlock}", method = RequestMethod.GET)
 	public String UnlockConfirm(@PathVariable String uuidUnlock) {
 
-		if (Statistic.linkUnlock != null && Statistic.linkUnlock.equals(uuidUnlock)) {
-			Statistic.indexLocking = 0;
+		if (Ñonfiguration.linkUnlock != null && Ñonfiguration.linkUnlock.equals(uuidUnlock)) {
+			Ñonfiguration.indexLocking = 0;
 			lock = true;
 		}
 
