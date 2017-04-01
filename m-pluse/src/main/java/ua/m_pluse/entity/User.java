@@ -16,11 +16,10 @@ import javax.persistence.Id;
 public class User {
 
 	/**
-	 * table user in DB for messages from the site
-	 * all other is understand
+	 * table user in DB for messages from the site all other is understand
 	 * 
 	 */
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -30,12 +29,13 @@ public class User {
 	private String message;
 	private Role role;
 	private LocalDate dateOfPublic;
+
 	public User() {
 
 	}
 
 	public User(String name, String email, String phone, String message) {
-	
+
 		this.name = name;
 		this.email = email;
 		this.phone = phone;
@@ -81,7 +81,7 @@ public class User {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	
+
 	public Role getRole() {
 		return role;
 	}
@@ -89,7 +89,6 @@ public class User {
 	public void setRole(Role role) {
 		this.role = role;
 	}
-	
 
 	public LocalDate getDateOfPublic() {
 		return dateOfPublic;
@@ -98,7 +97,6 @@ public class User {
 	public void setDateOfPublic(LocalDate dateOfPublic) {
 		this.dateOfPublic = dateOfPublic;
 	}
-	
 
 	@Override
 	public int hashCode() {
@@ -152,5 +150,4 @@ public class User {
 				+ "]";
 	}
 
-	
 }
