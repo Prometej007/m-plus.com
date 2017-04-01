@@ -1,4 +1,4 @@
-package ua.m_pluse.statistic;
+package ua.m_pluse.resource.statistic;
 
 import java.time.LocalDateTime;
 /**

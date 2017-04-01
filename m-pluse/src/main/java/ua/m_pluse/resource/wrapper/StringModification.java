@@ -1,4 +1,4 @@
-package ua.m_pluse.wrapper;
+package ua.m_pluse.resource.wrapper;
 /**
  * @author prometej
  * @version 1.0

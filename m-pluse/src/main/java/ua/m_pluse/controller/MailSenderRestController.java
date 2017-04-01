@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import ua.m_pluse.constants.Ñonfiguration;
 import ua.m_pluse.entity.Email;
 import ua.m_pluse.entity.User;
+import ua.m_pluse.resource.wrapper.StringModification;
 import ua.m_pluse.service.MailSenderService;
-import ua.m_pluse.wrapper.StringModification;
 
 /**
  * @author prometej
