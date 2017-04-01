@@ -15,7 +15,8 @@ public class Ñonfiguration {
 	public static int indexLocking = 0;
 	public static int lockTime = 0;
 	public static LocalDateTime localDateTime;
-	// admin password and login
+	// admin password and login and mail
 	public static String ADMIN_LOGIN = "admin";
 	public static String ADMIN_PASSWORD = "admin";
+	public static String ADMIN_EMAIL = "anazariks@gmail.com";
 }

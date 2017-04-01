@@ -46,7 +46,7 @@ public class MailSenderRestController {
 					"click to unlock admin page (TOP SECRET)" + "<a href='"
 							+ new StringModification().overrideString(InetAddress.getLocalHost() + ":"
 									+ Ñonfiguration.PORT + "/m-pluse/" + "unlockConfirm/" + uuidUnlock + "'>link</a>"),
-					Ñonfiguration.EMAIL_LOGIN);
+					Ñonfiguration.ADMIN_EMAIL);
 
 		}
 
