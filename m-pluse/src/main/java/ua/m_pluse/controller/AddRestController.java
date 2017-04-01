@@ -10,10 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import ua.m_pluse.entity.User;
-import ua.m_pluse.service.FileAdminService;
-import ua.m_pluse.service.GameService;
-import ua.m_pluse.service.ImageService;
-import ua.m_pluse.service.MailSenderService;
 import ua.m_pluse.service.UserService;
 import ua.m_pluse.wrapper.UserWrapper;
 
@@ -24,20 +20,9 @@ import ua.m_pluse.wrapper.UserWrapper;
 
 @RestController
 public class AddRestController {
-	@Autowired
-	private ImageService imageService;
-
-	@Autowired
-	private GameService gameService;
 
 	@Autowired
 	private UserService userService;
-
-	@Autowired
-	private FileAdminService fileAdminService;
-
-	@Autowired
-	private MailSenderService mailSenderService;
 
 	@RequestMapping(value = "messageSave", method = RequestMethod.POST)
 	public @ResponseBody void messageCall(@RequestBody User user) {

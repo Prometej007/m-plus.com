@@ -11,10 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ua.m_pluse.dto.DtoUtilMapper;
 import ua.m_pluse.dto.UserDTO;
-import ua.m_pluse.service.FileAdminService;
-import ua.m_pluse.service.GameService;
-import ua.m_pluse.service.ImageService;
-import ua.m_pluse.service.MailSenderService;
 import ua.m_pluse.service.UserService;
 
 /**
@@ -25,19 +21,7 @@ import ua.m_pluse.service.UserService;
 public class UpdeteRestController {
 
 	@Autowired
-	private ImageService imageService;
-
-	@Autowired
-	private GameService gameService;
-
-	@Autowired
 	private UserService userService;
-
-	@Autowired
-	private FileAdminService fileAdminService;
-
-	@Autowired
-	private MailSenderService mailSenderService;
 
 	@RequestMapping(value = "loadMessages", method = RequestMethod.POST)
 	public @ResponseBody List<UserDTO> loadMessages(@RequestBody String index) {

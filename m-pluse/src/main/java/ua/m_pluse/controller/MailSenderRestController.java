@@ -13,11 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ua.m_pluse.constants.Ñonfiguration;
 import ua.m_pluse.entity.Email;
 import ua.m_pluse.entity.User;
-import ua.m_pluse.service.FileAdminService;
-import ua.m_pluse.service.GameService;
-import ua.m_pluse.service.ImageService;
 import ua.m_pluse.service.MailSenderService;
-import ua.m_pluse.service.UserService;
 import ua.m_pluse.wrapper.StringModification;
 
 /**
@@ -26,18 +22,6 @@ import ua.m_pluse.wrapper.StringModification;
  */
 @RestController
 public class MailSenderRestController {
-
-	@Autowired
-	private ImageService imageService;
-
-	@Autowired
-	private GameService gameService;
-
-	@Autowired
-	private UserService userService;
-
-	@Autowired
-	private FileAdminService fileAdminService;
 
 	@Autowired
 	private MailSenderService mailSenderService;

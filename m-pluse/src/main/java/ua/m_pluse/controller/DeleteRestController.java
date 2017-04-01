@@ -17,7 +17,6 @@ import ua.m_pluse.entity.Image;
 import ua.m_pluse.service.FileAdminService;
 import ua.m_pluse.service.GameService;
 import ua.m_pluse.service.ImageService;
-import ua.m_pluse.service.MailSenderService;
 import ua.m_pluse.service.UserService;
 
 /**
@@ -38,9 +37,6 @@ public class DeleteRestController {
 
 	@Autowired
 	private FileAdminService fileAdminService;
-
-	@Autowired
-	private MailSenderService mailSenderService;
 
 	@RequestMapping(value = "deleteMessage", method = RequestMethod.POST)
 	public @ResponseBody List<UserDTO> deleteMessage(@RequestBody String index) {
