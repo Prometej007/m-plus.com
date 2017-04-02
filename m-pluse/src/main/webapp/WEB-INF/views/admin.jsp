@@ -11,6 +11,7 @@
 <title>M-Plus Admin Page</title>
 <script src="js/jquery-3.2.0.min.js"></script>
 <script src="js/ajax.js"></script>
+
 <link rel="stylesheet" href="css/menu.css">
 <link rel="stylesheet" href="css/select.css">
 <link rel="stylesheet" href="css/style.css">
@@ -478,7 +479,7 @@
 						<div class="container" style="background-color: #f1f1f1">
 							<button type="button"
 								onclick="document.getElementById('Message').style.display='none'"
-								class="cancelbtn">Canceleee</button>
+								class="cancelbtn">Cancel</button>
 
 						</div>
 					</div>
@@ -651,29 +652,32 @@
 					<p>imgcontainer</p>
 				</div>
 
-				<div class="container" id="fileContainer">
+				<div class="container">
 
+					<div id="fileContainer">
+						<c:forEach var="file" items="${files}">
 
-					<c:forEach var="file" items="${files}">
-
-						<div style="color: black;">
-							<div>
-								<div style="width: 30%; height: 50px; display: inline-block;">
-									<p>${file.name}</p>
+							<div style="color: black;">
+								<div>
+									<div style="width: 30%; height: 50px; display: inline-block;">
+										<p>${file.name}</p>
+									</div>
+									<div style="width: 30%; height: 50px; display: inline-block;">
+										<p>
+											<input type="button"
+												onclick="copypast('${file.publicPath}${file.id}','${file.id}')"
+												value="&#128190;" />
+										</p>
+									</div>
+									<a onclick="deleteFile('${file.id}')"
+										style="width: 30%; height: 50px; display: inline-block;"
+										href="#">&times;</a>
 								</div>
-								<div style="width: 30%; height: 50px; display: inline-block;">
-									<p>${file.publicPath}${file.id}</p>
-								</div>
-								<a onclick="deleteFile('${file.id}')"
-									style="width: 30%; height: 50px; display: inline-block;"
-									href="#">&times;</a>
+
 							</div>
 
-						</div>
-
-					</c:forEach>
-
-
+						</c:forEach>
+					</div>
 					<div class="container" style="background-color: #f1f1f1">
 						<div>
 							<button class="profilebutton"
@@ -749,6 +753,8 @@
 	<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>-->
 	<script type="text/javascript" src="js/js1.js"></script>
 	<script type="text/javascript" src="js/galleria.classic.js"></script>
+
+	<script type="text/javascript" src="js/download.js"></script>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript" src="js/galleria-1.2.2.js"></script>

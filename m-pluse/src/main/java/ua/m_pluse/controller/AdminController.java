@@ -173,6 +173,7 @@ public class AdminController {
 
 		gameService.saveGame(game, name, pathA);
 		model.addAttribute("GameFromSave", new StringWrapper("style='display:block'"));
+
 		return admin(model, admin);
 	}
 
