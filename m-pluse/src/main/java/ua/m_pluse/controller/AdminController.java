@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import ua.m_pluse.constants.Ñonfiguration;
+import ua.m_pluse.constants.Configuration;
 import ua.m_pluse.entity.Game;
 import ua.m_pluse.entity.Image;
 import ua.m_pluse.entity.Role;
@@ -55,18 +55,10 @@ public class AdminController {
 
 		return "loginpage";
 	}
-
-	@RequestMapping("logout")
-	public String logout() {
-		admin = null;
-		return "redirect:/";
-	}
-
-	@RequestMapping("admin{id}")
-	public String admin(Model model, @PathVariable String id) {
-		if (admin != null) {
-
-			if (admin.equals(id)) {
+	
+	@RequestMapping("admin")
+	public String admin(Model model) {
+	
 
 				List<User> listOnred = new ArrayList<User>();
 				List<User> listWastead = new ArrayList<User>();
@@ -120,12 +112,7 @@ public class AdminController {
 				model.addAttribute("ONREADMESSAGE", listOnred);
 				model.addAttribute("message", all);
 				return "admin";
-			} else {
-				return "redirect:/loginpage";
-			}
-		} else {
-			return "redirect:/loginpage";
-		}
+		
 
 	}
 
@@ -136,30 +123,30 @@ public class AdminController {
 	public String saveImg(Model model, @RequestParam("password") String password, @RequestParam("name") String name) {
 
 		if (!lock) {
-			if (Ñonfiguration.localDateTime.getDayOfYear() < LocalDateTime.now().getHour()) {
+			if (Configuration.localDateTime.getDayOfYear() < LocalDateTime.now().getHour()) {
 				lock = true;
-			} else if (LocalDateTime.now().getHour() >= Ñonfiguration.lockTime
-					&& Ñonfiguration.localDateTime.getDayOfYear() == LocalDateTime.now().getHour()) {
+			} else if (LocalDateTime.now().getHour() >=Configuration.lockTime
+					&& Configuration.localDateTime.getDayOfYear() == LocalDateTime.now().getHour()) {
 				lock = true;
 			}
 		}
-		if (password.equals(Ñonfiguration.ADMIN_PASSWORD) && name.equals(Ñonfiguration.ADMIN_LOGIN) && lock) {
+		if (password.equals(Configuration.ADMIN_PASSWORD) && name.equals(Configuration.ADMIN_LOGIN) && lock) {
 			String uuid = UUID.randomUUID().toString();
 			admin = uuid;
-			Ñonfiguration.indexLocking = 0;
+			Configuration.indexLocking = 0;
 			return "redirect:/admin" + admin + "";
 
 		} else {
-			if (Ñonfiguration.indexLocking <= 3 && lock) {
+			if (Configuration.indexLocking <= 3 && lock) {
 
-				Ñonfiguration.indexLocking++;
+				Configuration.indexLocking++;
 			}
-			if (Ñonfiguration.indexLocking >= 3 && lock) {
+			if (Configuration.indexLocking >= 3 && lock) {
 
-				Ñonfiguration.lockTime = LocalDateTime.now().getHour();
-				Ñonfiguration.localDateTime = LocalDateTime.now();
+				Configuration.lockTime = LocalDateTime.now().getHour();
+				Configuration.localDateTime = LocalDateTime.now();
 				lock = false;
-				Ñonfiguration.indexLocking = 0;
+				Configuration.indexLocking = 0;
 			}
 
 			return "loginpage";
@@ -174,7 +161,7 @@ public class AdminController {
 		gameService.saveGame(game, name, pathA);
 		model.addAttribute("GameFromSave", new StringWrapper("style='display:block'"));
 
-		return admin(model, admin);
+		return "redirect:/admin";
 	}
 
 	@RequestMapping(value = "saveImg", method = RequestMethod.POST)
@@ -183,7 +170,7 @@ public class AdminController {
 		imageService.saveImg(image, name);
 		model.addAttribute("GalleryImage", new StringWrapper("style='display:block'"));
 
-		return admin(model, admin);
+		return "redirect:/admin";
 		// "redirect:/admin" + admin + "";
 	}
 
@@ -191,7 +178,7 @@ public class AdminController {
 	public String saveFile(@RequestParam MultipartFile file, @RequestParam String name, Model model) {
 		fileAdminService.saveFile(file, name);
 		model.addAttribute("FileFromSave", new StringWrapper("style='display:block'"));
-		return admin(model, admin);
+		return "redirect:/admin";
 	}
 
 	@RequestMapping(value = "deleteImg/{id}", method = RequestMethod.GET)
@@ -199,7 +186,7 @@ public class AdminController {
 
 		imageService.delete(Integer.parseInt(id));
 
-		return "redirect:/admin" + admin + "";
+		return "redirect:/admin";
 	}
 
 	@RequestMapping(value = "deleteGame/{id}", method = RequestMethod.GET)
@@ -207,7 +194,7 @@ public class AdminController {
 
 		gameService.delete(Integer.parseInt(id));
 
-		return "redirect:/admin" + admin + "";
+		return "redirect:/admin";
 	}
 
 	/*
@@ -216,12 +203,12 @@ public class AdminController {
 	@RequestMapping(value = "unlockConfirm/{uuidUnlock}", method = RequestMethod.GET)
 	public String UnlockConfirm(@PathVariable String uuidUnlock) {
 
-		if (Ñonfiguration.linkUnlock != null && Ñonfiguration.linkUnlock.equals(uuidUnlock)) {
-			Ñonfiguration.indexLocking = 0;
+		if (Configuration.linkUnlock != null && Configuration.linkUnlock.equals(uuidUnlock)) {
+			Configuration.indexLocking = 0;
 			lock = true;
 		}
 
-		return "redirect:/admin" + admin + "";
+		return "redirect:/admin";
 	}
 
 }

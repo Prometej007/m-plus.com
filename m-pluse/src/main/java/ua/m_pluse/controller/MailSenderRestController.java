@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import ua.m_pluse.constants.Ñonfiguration;
+import ua.m_pluse.constants.Configuration;
 import ua.m_pluse.entity.Email;
 import ua.m_pluse.entity.User;
 import ua.m_pluse.resource.wrapper.StringModification;
@@ -40,13 +40,13 @@ public class MailSenderRestController {
 		if (AdminController.lock == false) {
 
 			String uuidUnlock = UUID.randomUUID().toString();
-			Ñonfiguration.linkUnlock = uuidUnlock;
+			Configuration.linkUnlock = uuidUnlock;
 
 			mailSenderService.sendMail("Unlock this shit",
 					"click to unlock admin page (TOP SECRET)" + "<a href='"
 							+ new StringModification().overrideString(InetAddress.getLocalHost() + ":"
-									+ Ñonfiguration.PORT + "/m-pluse/" + "unlockConfirm/" + uuidUnlock + "'>link</a>"),
-					Ñonfiguration.ADMIN_EMAIL);
+									+ Configuration.PORT + "/m-pluse/" + "unlockConfirm/" + uuidUnlock + "'>link</a>"),
+							Configuration.ADMIN_EMAIL);
 
 		}
 

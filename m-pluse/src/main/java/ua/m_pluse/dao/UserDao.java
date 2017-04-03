@@ -15,4 +15,6 @@ public interface UserDao extends JpaRepository<User, Integer> {
 	 * all main methods (save,delete,findAll,findOne)
 	 * 
 	 */
+	
+	User findByName(String name);
 }

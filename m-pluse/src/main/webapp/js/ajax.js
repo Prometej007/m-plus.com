@@ -6,7 +6,7 @@ function deleteMessage(index) {
 
 		url : 'deleteMessage?' + $('input[name=csrf_name]').val() + "="
 				+ $('input[name=csrf_value]').val(),
-		method : 'POST',
+		method : 'DELETE',
 		contentType : 'application/json; charset=UTF-8',
 		dataType : 'json',
 		data : '' + index,
@@ -455,7 +455,7 @@ function deleteFile(index) {
 
 				url : 'deleteFile?' + $('input[name=csrf_name]').val() + "="
 						+ $('input[name=csrf_value]').val(),
-				method : 'POST',
+				method : 'DELETE',
 				contentType : 'application/json; charset=UTF-8',
 				dataType : 'json',
 				data : '' + index,
@@ -525,7 +525,7 @@ function deleteImg(index) {
 
 		url : 'deleteImg?' + $('input[name=csrf_name]').val() + "="
 				+ $('input[name=csrf_value]').val(),
-		method : 'POST',
+		method : 'DELETE',
 		contentType : 'application/json; charset=UTF-8',
 		dataType : 'json',
 		data : '' + index,
@@ -549,7 +549,7 @@ function deleteGame(index) {
 
 		url : 'deleteGame?' + $('input[name=csrf_name]').val() + "="
 				+ $('input[name=csrf_value]').val(),
-		method : 'POST',
+		method : 'DELETE',
 		contentType : 'application/json; charset=UTF-8',
 		dataType : 'json',
 		data : '' + index,

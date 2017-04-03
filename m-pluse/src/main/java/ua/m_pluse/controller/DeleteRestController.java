@@ -38,7 +38,7 @@ public class DeleteRestController {
 	@Autowired
 	private FileAdminService fileAdminService;
 
-	@RequestMapping(value = "deleteMessage", method = RequestMethod.POST)
+	@RequestMapping(value = "deleteMessage", method = RequestMethod.DELETE)
 	public @ResponseBody List<UserDTO> deleteMessage(@RequestBody String index) {
 
 		userService.delete(Integer.parseInt(index));
@@ -46,7 +46,7 @@ public class DeleteRestController {
 		return DtoUtilMapper.userToUserDTO(userService.findAll());
 	}
 
-	@RequestMapping(value = "deleteFile", method = RequestMethod.POST)
+	@RequestMapping(value = "deleteFile", method = RequestMethod.DELETE)
 	public @ResponseBody List<FileAdmin> deletefile(@RequestBody String index) {
 
 		fileAdminService.delete(Integer.parseInt(index));
@@ -54,7 +54,7 @@ public class DeleteRestController {
 		return fileAdminService.findAll();
 	}
 
-	@RequestMapping(value = "deleteImg", method = RequestMethod.POST)
+	@RequestMapping(value = "deleteImg", method = RequestMethod.DELETE)
 	public @ResponseBody List<Image> deleteImg(@RequestBody String index) {
 
 		imageService.delete(Integer.parseInt(index));
@@ -62,7 +62,7 @@ public class DeleteRestController {
 		return imageService.findAll();
 	}
 
-	@RequestMapping(value = "deleteGame", method = RequestMethod.POST)
+	@RequestMapping(value = "deleteGame", method = RequestMethod.DELETE)
 	public @ResponseBody List<Game> deleteGame(@RequestBody String index) {
 
 		gameService.delete(Integer.parseInt(index));

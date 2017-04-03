@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import ua.m_pluse.constants.Ñonfiguration;
+import ua.m_pluse.constants.Configuration;
 import ua.m_pluse.dao.FileAdminDao;
 import ua.m_pluse.entity.FileAdmin;
 import ua.m_pluse.resource.wrapper.StringModification;
@@ -63,10 +63,10 @@ public class FileAdminServiceImpl implements FileAdminService {
 		try {
 			fileAdmin = new FileAdmin(name,
 					new StringModification().overrideString(
-							InetAddress.getLocalHost() + ":" + Ñonfiguration.PORT + "/" + Ñonfiguration.NAME_PROJECT
+							InetAddress.getLocalHost() + ":" + Configuration.PORT + "/" + Configuration.NAME_PROJECT
 									+ "/" + "resources/AdminFiles/" + uuid + "/" + multipartFile.getOriginalFilename()),
-					new StringModification().overrideString(InetAddress.getLocalHost() + ":" + Ñonfiguration.PORT + "/"
-							+ Ñonfiguration.NAME_PROJECT + "/" + "download"));
+					new StringModification().overrideString(InetAddress.getLocalHost() + ":" + Configuration.PORT + "/"
+							+ Configuration.NAME_PROJECT + "/" + "download"));
 		} catch (UnknownHostException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

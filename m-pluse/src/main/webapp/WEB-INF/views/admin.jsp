@@ -50,10 +50,9 @@
 					class="navtag">GALLARY</a> <a href="#cont" class="navtag">CONTACT</a>
 				<div>
 
-					<form:form action="logout" method="get">
-
-						<button class="button">LogOut</button>
-					</form:form>
+						<form:form action="logout" method="post">
+						<button>logout</button>
+						</form:form>
 
 				</div>
 			</div>
