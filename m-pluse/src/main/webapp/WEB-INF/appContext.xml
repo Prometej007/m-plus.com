@@ -25,10 +25,9 @@
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
-    <context:component-scan base-package="ua.m_pluse.*"/>
-
-    <jpa:repositories base-package="ua.m_pluse.dao"/>
-
-    <tx:annotation-driven transaction-manager="transactionManager"/>
-
+  <!--   <context:component-scan base-package="ua.m_pluse.*"/>
+ -->
+<!--     <jpa:repositories base-package="ua.m_pluse.dao"/>-->
+<!--     <tx:annotation-driven transaction-manager="transactionManager"/>
+ -->
 </beans>

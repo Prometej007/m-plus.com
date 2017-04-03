@@ -16,23 +16,27 @@
 
         <security:logout logout-url="/logout" logout-success-url="/"/>
         
-        <security:remember-me key="myApp" user-service-ref="userDetailsService"/>
-        
+        <!-- <security:remember-me key="myApp" user-service-ref="userDetailsService"/>
+         -->
     </security:http>
 
     <security:authentication-manager>
-        <security:authentication-provider>
+  <!--       <security:authentication-provider>
             <security:user-service>
                 <security:user name="admin" password="admin" authorities="ROLE_ADMIN"/>
             </security:user-service>
         </security:authentication-provider>
-        <security:authentication-provider user-service-ref="userDetailsService">
+        
+         <security:authentication-provider user-service-ref="customUserDS">
             <security:password-encoder ref="encoder"/>
-        </security:authentication-provider>
-    </security:authentication-manager>
+        </security:authentication-provider> -->
+      <security:authentication-provider user-service-ref="customUserDS">
+		</security:authentication-provider>
+	</security:authentication-manager>
     
     
-    
+ <bean id="customUserDS" class="ua.m_pluse.service.Impl.CustomUserDetailService" ></bean>
+ 
     <bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
     </bean>
     

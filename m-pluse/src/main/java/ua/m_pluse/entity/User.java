@@ -14,8 +14,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import ua.m_pluse.service.UserService;
-
 /**
  * @author prometej
  * @version 1.0
@@ -158,7 +156,7 @@ public class User implements UserDetails {
 		return "User [id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + ", message=" + message
 				+ "]";
 	}
-	
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		List<SimpleGrantedAuthority> authorities = new ArrayList<SimpleGrantedAuthority>();
@@ -168,19 +166,16 @@ public class User implements UserDetails {
 
 	@Override
 	public String getPassword() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Integer("1111").toString();
 	}
 
 	@Override
 	public String getUsername() {
-		// TODO Auto-generated method stub
-		return String.valueOf(id);
+		return email;
 	}
 
 	@Override
 	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
