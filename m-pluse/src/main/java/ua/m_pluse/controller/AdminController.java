@@ -8,12 +8,14 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import org.springframework.web.servlet.ModelAndView;
 import ua.m_pluse.constants.Configuration;
 import ua.m_pluse.entity.Game;
 import ua.m_pluse.entity.Image;
@@ -31,6 +33,7 @@ import ua.m_pluse.service.UserService;
  * @version 1.0
  */
 @Controller
+@RequestMapping("/")
 public class AdminController {
 	/**
 	 * lock admin page
@@ -55,7 +58,14 @@ public class AdminController {
 
 		return "loginpage";
 	}
-	
+
+	@RequestMapping(value = "hello", method = RequestMethod.GET)
+	public String hello( ModelMap model) {
+		System.out.println("FUCK");
+
+			return "admin";
+	}
+
 	@RequestMapping("admin")
 	public String admin(Model model) {
 	
