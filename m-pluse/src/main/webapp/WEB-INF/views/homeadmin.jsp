@@ -2,44 +2,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-
-
-<meta charset="UTF-8">
-<title>${LOGO}</title>
-<link rel="shortcut icon" href="img/logo_m-plus.png" type="image/png">
-<script type="text/javascript" src="js/js.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
-<!--     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script> -->
-<script type="text/javascript" src="js/js1.js"></script>
-<script type="text/javascript" src="js/galleria.classic.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-<script type="text/javascript" src="js/galleria-1.2.2.js"></script>
-<script type="text/javascript" src="js/ajax.js"></script>
-
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/style1.css">
-<link rel="stylesheet" href="css/stylefooter.css">
-<link rel="stylesheet" href="css/styleicon.css">
-<link rel="stylesheet" href="css/galleria.classic.css">
-<link href="https://fonts.googleapis.com/css?family=Lato:900"
-	rel="stylesheet">
+	<meta charset="UTF-8">
+	<title>${LOGO}</title>
+	<link rel="shortcut icon" href="img/logo_m-plus.png" type="image/png">
+	<script type="text/javascript" src="js/js.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<!--     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script> -->
+	<script type="text/javascript" src="js/js1.js"></script>
+	<script type="text/javascript" src="js/galleria.classic.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+	<script type="text/javascript" src="js/galleria-1.2.2.js"></script>
+	<script type="text/javascript" src="js/ajax.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/galleria.classic.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:900"
+		rel="stylesheet">
 </head>
 <body>
-
 	<input type="hidden" name="csrf_name" value="${_csrf.parameterName}" />
 	<input type="hidden" name="csrf_value" value="${_csrf.token}" />
-	<!-- nav bar -->
-	<nav class="nav">
-		<div class="nav1">
-			<div class="navmenu">
-				<a href="#we" class="navtag">${WE}</a> <a href="#work"
-					class="navtag">${WORK}</a> <a href="#blog" class="navtag">${BLOG}</a>
-				<a href="#gall" class="navtag">${GALLERY}</a> <a href="#cont"
-					class="navtag">${CONTACT}</a>
-			</div>
-			<a href="#home" class="navlogo">${LOGO}</a>
-		</div>
-	</nav>
 	<!--  call back-->
 	<div class="navslide"
 		style="display: none; padding-top: 13%; right: 0; z-index: 10;"
@@ -100,7 +81,7 @@
 				WE <br> DO <br>
 			</span>
 		</div>
-		<span class="spanBG">CREAT</span>
+		<span class="spanBG">CREATE</span>
 		<div class="b b2-block1">
 			<div class="b2-block1-01">
 				<div class="b2-block1-01-00">
@@ -258,35 +239,7 @@
 			</span>
 		</div>
 	</div>
-	<!-- block 7 -->
-	<footer class="b7">
-		<div class="foot0">
-			<H1
-				style="font-size: 33px; color: rgb(226, 219, 25); font-family: 'Montserrat', sans-serif;; text-align: left">Follow
-				us:</H1>
-			<div class="row">
-				<i class="entypo-facebook" style="width: 40px; height: 40px;"></i> <i
-					class="entypo-twitter" style="width: 40px; height: 40px;"></i> <i
-					class="entypo-gplus" style="width: 40px; height: 40px;"></i> <i
-					class="entypo-pinterest" style="width: 40px; height: 40px;"></i> <i
-					class="entypo-dribbble" style="width: 40px; height: 40px;"></i>
-			</div>
-		</div>
-		<div class="foot1">
-			<a href="ua">UA</a> <a href="ru">RU</a>
-		</div>
-		<div class="foot2">
-			<h2>
-				<p class="foot2-p1">${CONTACT}</p>
-			</h2>
-			<p class="foot2-p2">${LOCATION}</p>
-			<p class="foot2-p3">${PHONE}</p>
-			<p class="foot2-p4">${EMAIL}</p>
-		</div>
-		<!--  		<div class="foot3"> -->
-
-		<!--  		</div>  -->
-	</footer>
+	</footer>-->
 	<script>
 		// Load the classic theme
 		Galleria.loadTheme('js/galleria.classic.min.js');
