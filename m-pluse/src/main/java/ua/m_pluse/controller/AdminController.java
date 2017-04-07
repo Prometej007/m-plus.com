@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import ua.m_pluse.constants.Ñonfiguration;
+import ua.m_pluse.constants.Configuration;
 import ua.m_pluse.entity.Game;
 import ua.m_pluse.entity.Image;
 import ua.m_pluse.entity.Role;
@@ -136,30 +136,30 @@ public class AdminController {
 	public String saveImg(Model model, @RequestParam("password") String password, @RequestParam("name") String name) {
 
 		if (!lock) {
-			if (Ñonfiguration.localDateTime.getDayOfYear() < LocalDateTime.now().getHour()) {
+			if (Configuration.localDateTime.getDayOfYear() < LocalDateTime.now().getHour()) {
 				lock = true;
-			} else if (LocalDateTime.now().getHour() >= Ñonfiguration.lockTime
-					&& Ñonfiguration.localDateTime.getDayOfYear() == LocalDateTime.now().getHour()) {
+			} else if (LocalDateTime.now().getHour() >= Configuration.lockTime
+					&& Configuration.localDateTime.getDayOfYear() == LocalDateTime.now().getHour()) {
 				lock = true;
 			}
 		}
-		if (password.equals(Ñonfiguration.ADMIN_PASSWORD) && name.equals(Ñonfiguration.ADMIN_LOGIN) && lock) {
+		if (password.equals(Configuration.ADMIN_PASSWORD) && name.equals(Configuration.ADMIN_LOGIN) && lock) {
 			String uuid = UUID.randomUUID().toString();
 			admin = uuid;
-			Ñonfiguration.indexLocking = 0;
+			Configuration.indexLocking = 0;
 			return "redirect:/admin" + admin + "";
 
 		} else {
-			if (Ñonfiguration.indexLocking <= 3 && lock) {
+			if (Configuration.indexLocking <= 3 && lock) {
 
-				Ñonfiguration.indexLocking++;
+				Configuration.indexLocking++;
 			}
-			if (Ñonfiguration.indexLocking >= 3 && lock) {
+			if (Configuration.indexLocking >= 3 && lock) {
 
-				Ñonfiguration.lockTime = LocalDateTime.now().getHour();
-				Ñonfiguration.localDateTime = LocalDateTime.now();
+				Configuration.lockTime = LocalDateTime.now().getHour();
+				Configuration.localDateTime = LocalDateTime.now();
 				lock = false;
-				Ñonfiguration.indexLocking = 0;
+				Configuration.indexLocking = 0;
 			}
 
 			return "loginpage";
@@ -215,8 +215,8 @@ public class AdminController {
 	@RequestMapping(value = "unlockConfirm/{uuidUnlock}", method = RequestMethod.GET)
 	public String UnlockConfirm(@PathVariable String uuidUnlock) {
 
-		if (Ñonfiguration.linkUnlock != null && Ñonfiguration.linkUnlock.equals(uuidUnlock)) {
-			Ñonfiguration.indexLocking = 0;
+		if (Configuration.linkUnlock != null && Configuration.linkUnlock.equals(uuidUnlock)) {
+			Configuration.indexLocking = 0;
 			lock = true;
 		}
 

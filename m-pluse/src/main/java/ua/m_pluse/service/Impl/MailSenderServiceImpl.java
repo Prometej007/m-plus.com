@@ -15,7 +15,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
-import ua.m_pluse.constants.Ñonfiguration;
+import ua.m_pluse.constants.Configuration;
 import ua.m_pluse.service.MailSenderService;
 
 /**
@@ -44,14 +44,14 @@ public class MailSenderServiceImpl implements MailSenderService {
 		properties.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 		Session session = Session.getDefaultInstance(properties, new Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(Ñonfiguration.EMAIL_LOGIN, Ñonfiguration.EMAIL_PASSWORD);
+				return new PasswordAuthentication(Configuration.EMAIL_LOGIN, Configuration.EMAIL_PASSWORD);
 			}
 		});
 		try {
 			MimeMessage message = new MimeMessage(session);
 			MimeMessageHelper helper = new MimeMessageHelper(message, true);
 
-			helper.setFrom(new InternetAddress(Ñonfiguration.EMAIL_LOGIN));
+			helper.setFrom(new InternetAddress(Configuration.EMAIL_LOGIN));
 
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
 			helper.setSubject(theme);

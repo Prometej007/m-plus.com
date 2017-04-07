@@ -2,7 +2,7 @@ package ua.m_pluse.constants;
 
 import java.time.LocalDateTime;
 
-public class Ñonfiguration {
+public class Configuration {
 
 	// port server
 	public static String PORT = "8080";
