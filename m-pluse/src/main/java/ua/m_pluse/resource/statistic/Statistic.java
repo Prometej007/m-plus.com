@@ -1,6 +1,5 @@
 package ua.m_pluse.resource.statistic;
 
-import java.time.LocalDateTime;
 /**
  * @author prometej
  * @version 1.0
