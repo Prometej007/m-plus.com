@@ -5,14 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import com.sun.javafx.collections.MappingChange;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import org.springframework.web.servlet.ModelAndView;
@@ -27,13 +26,13 @@ import ua.m_pluse.service.FileAdminService;
 import ua.m_pluse.service.GameService;
 import ua.m_pluse.service.ImageService;
 import ua.m_pluse.service.UserService;
+import java.util.*;
 
 /**
  * @author prometej
  * @version 1.0
  */
 @Controller
-@RequestMapping("/")
 public class AdminController {
 	/**
 	 * lock admin page
@@ -53,22 +52,25 @@ public class AdminController {
 	@Autowired
 	protected FileAdminService fileAdminService;
 
-	@RequestMapping("loginpage")
-	public String loginpage() {
-
+	@RequestMapping("/login")
+	public String loginpage( ModelMap model) {
 		return "loginpage";
 	}
+	@Value("${application.message:Hello World}")
+	private String message = "Hello World";
 
-	@RequestMapping(value = "hello", method = RequestMethod.GET)
-	public String hello( ModelMap model) {
-		System.out.println("FUCK");
-
-			return "admin";
+	@RequestMapping("/")
+	public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, ModelMap model) {
+		model.addAttribute("name", "IVAN");
+		System.out.println("GRETTINGS, "+ "IVAN" +"................!");
+		return "greeting";
 	}
 
-	@RequestMapping("admin")
+
+
+	@RequestMapping("/admin")
 	public String admin(Model model) {
-	
+
 
 				List<User> listOnred = new ArrayList<User>();
 				List<User> listWastead = new ArrayList<User>();
@@ -122,7 +124,7 @@ public class AdminController {
 				model.addAttribute("ONREADMESSAGE", listOnred);
 				model.addAttribute("message", all);
 				return "admin";
-		
+
 
 	}
 
