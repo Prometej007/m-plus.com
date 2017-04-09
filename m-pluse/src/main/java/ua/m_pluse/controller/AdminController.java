@@ -5,16 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import com.sun.javafx.collections.MappingChange;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import org.springframework.web.servlet.ModelAndView;
 import ua.m_pluse.constants.Configuration;
 import ua.m_pluse.entity.Game;
 import ua.m_pluse.entity.Image;
@@ -26,19 +25,18 @@ import ua.m_pluse.service.FileAdminService;
 import ua.m_pluse.service.GameService;
 import ua.m_pluse.service.ImageService;
 import ua.m_pluse.service.UserService;
-import java.util.*;
 
 /**
  * @author prometej
  * @version 1.0
  */
 @Controller
+@RequestMapping(value = "/")
 public class AdminController {
 	/**
 	 * lock admin page
 	 */
 	protected static boolean lock = true;
-	protected static String admin;
 
 	@Autowired
 	public UserService userService;
@@ -52,23 +50,18 @@ public class AdminController {
 	@Autowired
 	protected FileAdminService fileAdminService;
 
-	@RequestMapping("/login")
-	public String loginpage( ModelMap model) {
+	@RequestMapping("loginpage")
+	public String loginpage() {
+
 		return "loginpage";
 	}
-	@Value("${application.message:Hello World}")
-	private String message = "Hello World";
 
-	@RequestMapping("/")
-	public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, ModelMap model) {
-		model.addAttribute("name", "IVAN");
-		System.out.println("GRETTINGS, "+ "IVAN" +"................!");
-		return "greeting";
+	@RequestMapping("logout")
+	public String logout() {
+		return "redirect:/";
 	}
 
-
-
-	@RequestMapping("/admin")
+	@RequestMapping("admin")
 	public String admin(Model model) {
 
 
@@ -124,56 +117,54 @@ public class AdminController {
 				model.addAttribute("ONREADMESSAGE", listOnred);
 				model.addAttribute("message", all);
 				return "admin";
+		}
 
-
-	}
 
 	/*
 	 * security, 3 tries and block for 3 hours
 	 */
-	@RequestMapping(value = "login", method = RequestMethod.POST)
-	public String saveImg(Model model, @RequestParam("password") String password, @RequestParam("name") String name) {
-
-		if (!lock) {
-			if (Configuration.localDateTime.getDayOfYear() < LocalDateTime.now().getHour()) {
-				lock = true;
-			} else if (LocalDateTime.now().getHour() >=Configuration.lockTime
-					&& Configuration.localDateTime.getDayOfYear() == LocalDateTime.now().getHour()) {
-				lock = true;
-			}
-		}
-		if (password.equals(Configuration.ADMIN_PASSWORD) && name.equals(Configuration.ADMIN_LOGIN) && lock) {
-			String uuid = UUID.randomUUID().toString();
-			admin = uuid;
-			Configuration.indexLocking = 0;
-			return "redirect:/admin" + admin + "";
-
-		} else {
-			if (Configuration.indexLocking <= 3 && lock) {
-
-				Configuration.indexLocking++;
-			}
-			if (Configuration.indexLocking >= 3 && lock) {
-
-				Configuration.lockTime = LocalDateTime.now().getHour();
-				Configuration.localDateTime = LocalDateTime.now();
-				lock = false;
-				Configuration.indexLocking = 0;
-			}
-
-			return "loginpage";
-		}
-
-	}
+//	@RequestMapping(value = "login", method = RequestMethod.POST)
+//	public String saveImg(Model model, @RequestParam("password") String password, @RequestParam("name") String name) {
+//
+//		if (!lock) {
+//			if (Configuration.localDateTime.getDayOfYear() < LocalDateTime.now().getHour()) {
+//				lock = true;
+//			} else if (LocalDateTime.now().getHour() >= Configuration.lockTime
+//					&& Configuration.localDateTime.getDayOfYear() == LocalDateTime.now().getHour()) {
+//				lock = true;
+//			}
+//		}
+//		if (password.equals(Configuration.ADMIN_PASSWORD) && name.equals(Configuration.ADMIN_LOGIN) && lock) {
+//			String uuid = UUID.randomUUID().toString();
+//			admin = uuid;
+//			Configuration.indexLocking = 0;
+//			return "redirect:/admin" + admin + "";
+//
+//		} else {
+//			if (Configuration.indexLocking <= 3 && lock) {
+//
+//				Configuration.indexLocking++;
+//			}
+//			if (Configuration.indexLocking >= 3 && lock) {
+//
+//				Configuration.lockTime = LocalDateTime.now().getHour();
+//				Configuration.localDateTime = LocalDateTime.now();
+//				lock = false;
+//				Configuration.indexLocking = 0;
+//			}
+//
+//			return "loginpage";
+//		}
+//
+//	}
 
 	@RequestMapping(value = "saveGame", method = RequestMethod.POST)
 	public String saveGame(@RequestParam MultipartFile game, @RequestParam String name, @RequestParam String pathA,
-			Model model) {
+						   Model model) {
 
 		gameService.saveGame(game, name, pathA);
 		model.addAttribute("GameFromSave", new StringWrapper("style='display:block'"));
-
-		return "redirect:/admin";
+		return admin(model);
 	}
 
 	@RequestMapping(value = "saveImg", method = RequestMethod.POST)
@@ -182,7 +173,7 @@ public class AdminController {
 		imageService.saveImg(image, name);
 		model.addAttribute("GalleryImage", new StringWrapper("style='display:block'"));
 
-		return "redirect:/admin";
+		return admin(model);
 		// "redirect:/admin" + admin + "";
 	}
 
@@ -190,7 +181,7 @@ public class AdminController {
 	public String saveFile(@RequestParam MultipartFile file, @RequestParam String name, Model model) {
 		fileAdminService.saveFile(file, name);
 		model.addAttribute("FileFromSave", new StringWrapper("style='display:block'"));
-		return "redirect:/admin";
+		return admin(model);
 	}
 
 	@RequestMapping(value = "deleteImg/{id}", method = RequestMethod.GET)

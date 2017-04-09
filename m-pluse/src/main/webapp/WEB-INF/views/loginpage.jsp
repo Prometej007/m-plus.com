@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <html lang="en">
 
 <head>
-    <link rel="shortcut icon" href="img/logo_m-plus.png" " type="image/png">
+    <link rel="shortcut icon" href="img/logo_m-plus.png" BV type="image/png">
     <meta charset="UTF-8">
     <title>M-pulse</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
@@ -18,9 +18,9 @@
 </head>
 <body>
 <script type="text/javascript">
-    $(window, document, undefined).ready(function() {
+    $(window, document, undefined).ready(function () {
 
-        $('input').blur(function() {
+        $('input').blur(function () {
             var $this = $(this);
             if ($this.val())
                 $this.addClass('used');
@@ -30,7 +30,7 @@
 
         var $ripples = $('.ripples');
 
-        $ripples.on('click.Ripples', function(e) {
+        $ripples.on('click.Ripples', function (e) {
 
             var $this = $(this);
             var $offset = $this.parent().offset();
@@ -48,7 +48,7 @@
 
         });
 
-        $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function(e) {
+        $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function (e) {
             $(this).removeClass('is-active');
         });
 
@@ -60,12 +60,12 @@
 
         $.ajax({
 
-            url : 'sendEmailForUnlock?' + $('input[name=csrf_name]').val() + "="
+            url: 'sendEmailForUnlock?' + $('input[name=csrf_name]').val() + "="
             + $('input[name=csrf_value]').val(),
-            method : 'POST',
-            contentType : 'application/json; charset=UTF-8',
-            dataType : 'json',
-            success : function(res) {
+            method: 'POST',
+            contentType: 'application/json; charset=UTF-8',
+            dataType: 'json',
+            success: function (res) {
 
             }
         })
@@ -74,29 +74,29 @@
 
 </script>
 
-<input type="hidden" name="csrf_name" value="${_csrf.parameterName}" />
-<input type="hidden" name="csrf_value" value="${_csrf.token}" />
+<input type="hidden" name="csrf_name" value="${_csrf.parameterName}"/>
+<input type="hidden" name="csrf_value" value="${_csrf.token}"/>
 <div class="block">
-    <form:form action="login" method="POST" >
+    <form name='f' action="loginpage" method='POST'>
         <div class="group">
-            <input type="text" class="form" name="name"><span class="highlight"></span>
+            <input type='text' name='username' value=''>
+            <span class="highlight"></span>
             <span class="bar"></span>
             <label>Name</label>
         </div>
         <div class="group">
-            <input type="password" class="form" name="password"><span class="highlight"></span>
+            <input type='password' name='password' />
+            <span class="highlight"></span>
             <span class="bar"></span>
             <label>Password</label>
         </div>
-        <button type="submit" class="button buttonBlue">Login
-            <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-        </button>
+        <input class="button buttonBlue" name="submit" type="submit" value="submit" />
         <a href="#" onclick="sendEmailForUnlock()">Forgot password?</a>
-    </form:form>
+        </table>
+    </form>
 
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-    <script src="js/login.js"></script>
 </div>
 
 

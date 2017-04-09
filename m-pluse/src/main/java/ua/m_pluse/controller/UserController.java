@@ -88,7 +88,7 @@ public class UserController {
 		return "homeRU";
 	}
 
-	@RequestMapping(value =  "en" , method = RequestMethod.GET)
+	@RequestMapping(value =  {"/","en"} , method = RequestMethod.GET)
 	public String homeEN(Model model/* , @PathVariable String languageTeg */) {
 		Statistic.homeEN++;
 
