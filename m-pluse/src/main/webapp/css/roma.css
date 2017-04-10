@@ -1,0 +1,67 @@
+.vasia {
+	margin-top: 4%;
+}
+
+.form {
+	display: flex;
+	flex-flow: wrap;
+	width: 75%;
+	background-color: rgba(234, 225, 202, 0);
+	margin: auto;
+}
+
+.blockcon {
+	margin: 15px;
+}
+
+.info {
+	flex: 3;
+	width: 100%
+}
+
+.text1 {
+	overflow: auto;
+	resize: none;
+	width: 100%;
+	height: 40%;
+}
+
+.info {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	text-align: center
+}
+
+.cont {
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 28pt;
+}
+
+.wit {
+	width: 100%
+}
+
+.wid {
+	width: 100%;
+	margin-bottom: 7px;
+	height: 20%;
+}
+
+.ns {
+	width: 75%;
+	margin: auto;
+}
+
+.nss {
+	margin: auto;
+}
+
+.ab {
+	text-aling: left;
+}
+.abw{
+	margin-top: 25%;
+}

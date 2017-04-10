@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    max-width: 1024px;
+    min-width: 240px;
+    height: 100%;
+    width: 100%;
+    background: url(../img/web16.png)no-repeat center center fixed;
+    font-family: 'Lato', sans-serif;
+    background-size: cover;
+}
+.text p {
+    font-size: 2.84em;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+.text h1{
+    color: white;
+    font-size: 6em;
+}
+.text{
+    margin-top: 6%;
+    text-align: center;
+}
+.logo img{
+    height: 20em;
+    margin-top: 1.5rem;
+    margin-left: 3.5rem;
+}
+.logo p{
+    color: yellow;
+    font-weight: 200;
+    margin-left: 9rem;
+    margin-right: 3.5rem;
+}
+main{
+    overflow: auto;
+}
+.we-do{
+    margin-top: 10em;
+    color: white;
+}
+.what-do{
+    text-align: center;
+    border: 0.3em solid yellow;
+    padding: 0.3em;
+    margin-left: 3em;
+    margin-right: 3em;
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+.first-line, .second-line, .third-line{
+    margin-left: 7em;
+    margin-right: 7em;
+    margin-bottom: 5em;
+    overflow: auto;
+}
+.first-line p{
+    text-align: center;
+    font-size: 2.4em;
+}
+.second-line p{
+    text-align: center;
+    font-size: 2.4em;
+}
+.third-line p{
+    text-align: center;
+    font-size: 2.4em;
+}
+.frst-block-one{
+    float: left;
+}
+.frst-block-two{
+    float: right;
+}
+.frst-block-one img{
+    height: 20em;
+}
+
+.frst-block-two img{
+    height: 20em;
+}
+.our-projects{
+    overflow: auto;
+    margin-top: 7em;
+
+}
+.string1{
+    float: left;
+}
+.string2{
+    float: right;
+}
+.string1 img {
+    height: 20em;
+    margin-left: 5em;
+    margin-bottom: 4em;
+}
+.string2 img{
+    height: 20em;
+    margin-right: 5em;
+    margin-bottom: 4em;
+}
+.carousel img{
+    height: 40em;
+    width: 61em;
+}
+.gal-text{
+    color: white;
+    text-align: center;
+    border: 0.9em solid yellow;
+     margin-left: 9em;
+    margin-right: 9em;
+    margin-bottom: 3em;
+    margin-top: 10em;
+}

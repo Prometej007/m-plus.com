@@ -30,6 +30,12 @@ public class UserController {
 
 	@Autowired
 	private FileAdminService fileAdminService;
+	
+	
+	@RequestMapping("mobver")
+	public String romaLoh(){
+		return "mobver";
+	}
 
 	@RequestMapping(value = "ua", method = RequestMethod.GET)
 	public String homeUA(Model model/* , @PathVariable String languageTeg */) {
