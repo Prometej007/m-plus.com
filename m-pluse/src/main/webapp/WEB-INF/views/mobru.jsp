@@ -46,7 +46,7 @@
 	</header>
 	<main>
 	<div class="we-do">
-		<img src="img/rwhat.png" class="img wow flip"></img>
+		<img src="img/whatru.png" class="img wow flip"></img>
 		<div class="first-line">
 			<div class="frst-block-one wow zoomInLeft">
 				<img src="img/vr1.png" alt="3D visualization">
@@ -84,7 +84,7 @@
 	<div class="our-projects">
 		<center>
 			<div class="nss">
-				<img src="img/nash.png" class="ns"></img>
+				<img src="img/ourru.png" class="ns"></img>
 			</div>
 		</center>
 		<div class="files">
