@@ -41,6 +41,11 @@ public class UserController {
 	public String romaLohxxx(){
 		return "moben";
 	}
+	
+	@RequestMapping("mobru")
+	public String romaLohxxD(){
+		return "mobru";
+	}
 
 	@RequestMapping(value = "ua", method = RequestMethod.GET)
 	public String homeUA(Model model/* , @PathVariable String languageTeg */) {
