@@ -2,16 +2,30 @@
     width: 100%;
     margin-top: -65%;
     margin-left: -30%;
+    animation: fadeInDownBig 2s
 }
 .mp{
     margin-top: -11%;
     margin-left: 30%;
+        animation: fadeInDownBig 2s
 }
 .hed{
     width: 100%;
     margin: auto;
+        animation: fadeInDownBig 2s
 }
 .headd{
     width: 100%;
     
+}
+.ln{
+    font-size: 4rem;
+    top: 0;
+    position: absolute;
+    right: 0;
+    font-family: lato;
+    color: #ffff06;
+}
+a{
+	color:yellow;
 }

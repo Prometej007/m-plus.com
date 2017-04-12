@@ -4,15 +4,20 @@
 }
 .img{
     width: 100%;
-    margin-top: 4%;
+    margin-top: 5%;
 }
 .b1 {
     background: yellow;
     color: white;
-    font-size: 9pt;
+    font-size: 3rem;
     margin-top: 2%;
 }
 .imput{
     width: 55%;
     margin-top:4%;
+}
+.input{
+    height: 4rem;
+    width: 100%;
+    font-size: 4rem;
 }

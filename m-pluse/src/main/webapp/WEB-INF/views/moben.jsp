@@ -19,66 +19,67 @@
 <body>
 	<header>
 	<div class=hed>
-		<img src="img/rheader.png" class="headd wow fadeInDownBig"></img>
+		<img src="img/rheader.png" class="headd wow fadeInDownBig"> </img>
 		<div class="header">
-			<img src="img/rlog.png" class="wow fadeInDownBig"></img>
+		<img src="img/rlog.png" class="wow fadeInDownBig"></img>
 		</div>
 		<div class="mp">
 			<img src="img/rweb8.png" class="wow fadeInDownBig"></img>
 		</div>
 		<div class="ln">
 		<a href="mobru">RU</a>
-		<a href="moben">EN</a>
+		<a href="mobver">UA</a>
 		</div> 
 	</div>
 	<div class="text">
     <div class="abw wow fadeInUp">
 		<h1>M-plus</h1>
 		<p style="text-align: left;">
-			Для нас сайт – це мистецтво, яке відображає бізнес, його цінності та
-			ідеали. При створенні шедеврів ми керуємось нашим досвідом
-			та використовуємо передові технології створення сайтів. Кожен наш
-			сайт – є унікальним, адже саме унікальність дозволяє нам бути №1 на
-			ринку. Щоденно ми аналізуєм нові тренди у сферах дизайну, маркетингу
-			та технологій. Кожен день для нас є викликом робити все
-			можливе заради найкращаго результату, і нам це вдається.
+			For our site - is an art that reflects the business, its values and
+ideals. When creating masterpieces we are guided by our experience
+and use advanced technology of websites. Each of our
+Website - is unique because it allows us to be unique on №1
+market. Every day we analyze new trends in design, marketing
+and technology. Every day is a challenge for us to do everything
+naykraschaho possible for the result, and we do it.
+
 		</p>
 	</div>
 	</div>
 	</header>
 	<main>
 	<div class="we-do">
-		<img src="img/rwhat.png" class="img wow flip"></img>
+		<img src="img/what12.png" class="img wow flip"></img>
 		<div class="first-line">
 			<div class="frst-block-one wow zoomInLeft">
 				<img src="img/vr1.png" alt="3D visualization">
-				<p>3D - візуалізація</p>
+				<p>3D - visualization</p>
 			</div>
 			<div class="frst-block-two wow zoomInRight">
 				<img src="img/site.png" alt="Development sites">
-				<p>Створення сайтів</p>
+				<p>Website Design</p>
 			</div>
 		</div>
 		<div class="second-line">
 			<div class="frst-block-one wow zoomInLeft">
 				<img src="img/virtual_reality4.png" alt="3D visualization">
 				<p>
-					Віртуальна та <br>доповнена реальність
+					Virtual reality
 				</p>
 			</div>
 			<div class="frst-block-two wow zoomInRight">
 				<img src="img/game%20development.png" alt="Development sites">
-				<p>Ігри та програми</p>
+				<p>Games and applications</p>
 			</div>
 		</div>
 		<div class="third-line">
 			<div class="frst-block-one wow zoomInLeft">
 				<img src="img/design4.png" alt="3D visualization">
-				<p>Дизайн</p>
+				<p>Design</p>
 			</div>
 			<div class="frst-block-two wow zoomInRight">
 				<img src="img/marketingg.png" alt="Development sites">
-				<p>Маркетинг</p>
+				<p>Marketing</p>
 			</div>
 		</div>
 	</div>
@@ -86,7 +87,7 @@
 	<div class="our-projects">
 		<center>
 			<div class="nss">
-				<img src="img/nash.png" class="ns"></img>
+				<img src="img/our.png" class="ns"></img>
 			</div>
 		</center>
 		<div class="files">
@@ -108,7 +109,7 @@
 			</div>
 		</div>
 	</div>
-	<img src="img/gall2.png" class="img"></img>
+	<img src="img/gall4.png" class="img"></img>
 	<!-- Fotorama --start-->
 	<center>
 		<div class="fotorama" data-width="700" data-ratio="700/467"
@@ -121,28 +122,28 @@
 	<!-- Fotorama --end-->
 	<div class="vasia zoom">
 		<center>
-			<img src="img/zv.png" style="width: 70%;"></img>
+			<img src="img/feedback.png" style="width: 70%;"></img>
 		</center>
 	</div>
 	<div class=form>
 		<div class="blockcon wit">
 			<form action="https://formspree.io/your@email.com" method="POST"></form>
 			<label for="name"></label> <br> <input class="wid" type="text"
-				id="name" placeholder="Введіть ім'я" required pattern="[A-Z]" /> <br>
+				id="name" placeholder="Enter your name" required pattern="[A-Z]" /> <br>
 			<input class="wid" type="text" id="name"
-				placeholder="Введіть фамілію" required pattern="[A-Z]" /> <br>
+				placeholder="Enter your surname" required pattern="[A-Z]" /> <br>
 			<label for="sname"></label> <input class="wid" type="text" id="sname"
-				placeholder="Введіть телефон" /> <br>
-			<textarea class="text1" name="text" placeholder="Введіть Текст"></textarea>
+				placeholder="Enter your phone number" /> <br>
+			<textarea class="text1" name="text" placeholder="Enter your message"></textarea>
 			<div class="namme">
-				<input class="wid b1" type="submit" id="bs" value="Відправити" />
+				<input class="wid b1" type="submit" id="bs" value="Submit" />
 			</div>
 		</div>
 	</div>
 	<div class="cont">
 		<img src="img/gps1.png" class="img"></img>
 		<p>
-			Вул. Ю. Дрогобича 8,<br>м. Львів,Україна,79011
+	    Str. Y. Drohobych 8,<br>Lviv, Ukraine,79011
 		</p>
 	</div>
 	<div class="cont">
@@ -154,14 +155,14 @@
 	<div class="cont">
 		<img src="img/zs1.png" class="img"></img>
 		<p>
-			Дізнавайтесь першими про всі наші<br>новини
+			Learn the first about all our <br>news
 		</p>
 	</div>
 	<center>
 		<div id=foot class="imput">
 			<input class="input" type="text" id="name"><br> 
 			<input class="wid b1" type="button" placeholder="Введіть ім'я"
-				value="Відправити">
+				value="Submit">
 		</div>
 	</center>
 	</div>

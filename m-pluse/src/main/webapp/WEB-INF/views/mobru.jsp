@@ -27,23 +27,21 @@
 			<img src="img/rweb8.png" class="wow fadeInDownBig"></img>
 		</div>
 		<div class="ln">
-		<a href="mobru">RU</a>
-		<a href="moben">EN</a>
-		</div> 
+			<a href="mobua">RU</a> <a href="moben">EN</a>
+		</div>
 	</div>
 	<div class="text">
-    <div class="abw wow fadeInUp">
-		<h1>M-plus</h1>
-		<p style="text-align: left;">
-			Для нас сайт – це мистецтво, яке відображає бізнес, його цінності та
-			ідеали. При створенні шедеврів ми керуємось нашим досвідом
-			та використовуємо передові технології створення сайтів. Кожен наш
-			сайт – є унікальним, адже саме унікальність дозволяє нам бути №1 на
-			ринку. Щоденно ми аналізуєм нові тренди у сферах дизайну, маркетингу
-			та технологій. Кожен день для нас є викликом робити все
-			можливе заради найкращаго результату, і нам це вдається.
-		</p>
-	</div>
+		<div class="abw wow fadeInUp">
+			<h1>M-plus</h1>
+			<p style="text-align: left;">Для нас сайт - это искусство,
+				которое отражает бизнес, его ценности и идеалы. При создании
+				шедевров мы руководствуемся нашим опытом и используем передовые
+				технологии создания сайтов. каждый наш сайт - является уникальным,
+				ведь именно уникальность позволяет нам быть №1 на рынка. Ежедневно
+				мы анализируем новые тренды в сферах дизайна, маркетинга и
+				технологий. Каждый день для нас вызовом делать все возможное для
+				найкращаго результата, и нам это удается.</p>
+		</div>
 	</div>
 	</header>
 	<main>
@@ -52,23 +50,23 @@
 		<div class="first-line">
 			<div class="frst-block-one wow zoomInLeft">
 				<img src="img/vr1.png" alt="3D visualization">
-				<p>3D - візуалізація</p>
+				<p>3D - визуализация</p>
 			</div>
 			<div class="frst-block-two wow zoomInRight">
 				<img src="img/site.png" alt="Development sites">
-				<p>Створення сайтів</p>
+				<p>Создание сайтов</p>
 			</div>
 		</div>
 		<div class="second-line">
 			<div class="frst-block-one wow zoomInLeft">
 				<img src="img/virtual_reality4.png" alt="3D visualization">
 				<p>
-					Віртуальна та <br>доповнена реальність
+					Виртуальная и <br> дополненная реальность
 				</p>
 			</div>
 			<div class="frst-block-two wow zoomInRight">
 				<img src="img/game%20development.png" alt="Development sites">
-				<p>Ігри та програми</p>
+				Игры и программы </ p>
 			</div>
 		</div>
 		<div class="third-line">
@@ -128,21 +126,21 @@
 		<div class="blockcon wit">
 			<form action="https://formspree.io/your@email.com" method="POST"></form>
 			<label for="name"></label> <br> <input class="wid" type="text"
-				id="name" placeholder="Введіть ім'я" required pattern="[A-Z]" /> <br>
+				id="name" placeholder="Введите имя" required pattern="[A-Z]" /> <br>
 			<input class="wid" type="text" id="name"
-				placeholder="Введіть фамілію" required pattern="[A-Z]" /> <br>
+				placeholder="Введите фамилию" required pattern="[A-Z]" /> <br>
 			<label for="sname"></label> <input class="wid" type="text" id="sname"
-				placeholder="Введіть телефон" /> <br>
-			<textarea class="text1" name="text" placeholder="Введіть Текст"></textarea>
+				placeholder="Введите телефон" /> <br>
+			<textarea class="text1" name="text" placeholder="Введите Текст"></textarea>
 			<div class="namme">
-				<input class="wid b1" type="submit" id="bs" value="Відправити" />
+				<input class="wid b1" type="submit" id="bs" value="Отправить" />
 			</div>
 		</div>
 	</div>
 	<div class="cont">
 		<img src="img/gps1.png" class="img"></img>
 		<p>
-			Вул. Ю. Дрогобича 8,<br>м. Львів,Україна,79011
+         Ул. Ю. Дрогобыча 8, <br> м. Львов, Украина, 79011
 		</p>
 	</div>
 	<div class="cont">
@@ -154,14 +152,14 @@
 	<div class="cont">
 		<img src="img/zs1.png" class="img"></img>
 		<p>
-			Дізнавайтесь першими про всі наші<br>новини
+			Узнавайте первыми о нас <br> новости
 		</p>
 	</div>
 	<center>
 		<div id=foot class="imput">
-			<input class="input" type="text" id="name"><br> 
-			<input class="wid b1" type="button" placeholder="Введіть ім'я"
-				value="Відправити">
+			<input class="input" type="text" id="name"><br> <input
+				class="wid b1" type="button" placeholder="Введіть ім'я"
+				value="Отправить">
 		</div>
 	</center>
 	</div>
