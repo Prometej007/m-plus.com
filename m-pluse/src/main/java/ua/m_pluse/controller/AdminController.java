@@ -35,9 +35,6 @@ public class AdminController {
 	/**
 	 * lock admin page
 	 */
-	protected static boolean lock = true;
-	protected static String admin;
-
 	@Autowired
 	public UserService userService;
 
@@ -58,15 +55,11 @@ public class AdminController {
 
 	@RequestMapping("logout")
 	public String logout() {
-		admin = null;
-		return "redirect:/";
+		return "redirect:/logout";
 	}
 
-	@RequestMapping("admin{id}")
-	public String admin(Model model, @PathVariable String id) {
-		if (admin != null) {
-
-			if (admin.equals(id)) {
+	@RequestMapping("admin")
+	public String admin(Model model) {
 
 				List<User> listOnred = new ArrayList<User>();
 				List<User> listWastead = new ArrayList<User>();
@@ -120,50 +113,43 @@ public class AdminController {
 				model.addAttribute("ONREADMESSAGE", listOnred);
 				model.addAttribute("message", all);
 				return "admin";
-			} else {
-				return "redirect:/loginpage";
-			}
-		} else {
-			return "redirect:/loginpage";
-		}
-
 	}
 
 	/*
 	 * security, 3 tries and block for 3 hours
 	 */
 	@RequestMapping(value = "login", method = RequestMethod.POST)
-	public String saveImg(Model model, @RequestParam("password") String password, @RequestParam("name") String name) {
+	public String saveImg(Model model) {
 
-		if (!lock) {
-			if (Configuration.localDateTime.getDayOfYear() < LocalDateTime.now().getHour()) {
-				lock = true;
-			} else if (LocalDateTime.now().getHour() >= Configuration.lockTime
-					&& Configuration.localDateTime.getDayOfYear() == LocalDateTime.now().getHour()) {
-				lock = true;
-			}
-		}
-		if (password.equals(Configuration.ADMIN_PASSWORD) && name.equals(Configuration.ADMIN_LOGIN) && lock) {
-			String uuid = UUID.randomUUID().toString();
-			admin = uuid;
-			Configuration.indexLocking = 0;
-			return "redirect:/admin" + admin + "";
-
-		} else {
-			if (Configuration.indexLocking <= 3 && lock) {
-
-				Configuration.indexLocking++;
-			}
-			if (Configuration.indexLocking >= 3 && lock) {
-
-				Configuration.lockTime = LocalDateTime.now().getHour();
-				Configuration.localDateTime = LocalDateTime.now();
-				lock = false;
-				Configuration.indexLocking = 0;
-			}
+//		if (!lock) {
+//			if (Configuration.localDateTime.getDayOfYear() < LocalDateTime.now().getHour()) {
+//				lock = true;
+//			} else if (LocalDateTime.now().getHour() >= Configuration.lockTime
+//					&& Configuration.localDateTime.getDayOfYear() == LocalDateTime.now().getHour()) {
+//				lock = true;
+//			}
+//		}
+//		if (password.equals(Configuration.ADMIN_PASSWORD) && name.equals(Configuration.ADMIN_LOGIN) && lock) {
+//			String uuid = UUID.randomUUID().toString();
+//			admin = uuid;
+//			Configuration.indexLocking = 0;
+//			return "redirect:/admin" + admin + "";
+//
+//		} else {
+//			if (Configuration.indexLocking <= 3 && lock) {
+//
+//				Configuration.indexLocking++;
+//			}
+//			if (Configuration.indexLocking >= 3 && lock) {
+//
+//				Configuration.lockTime = LocalDateTime.now().getHour();
+//				Configuration.localDateTime = LocalDateTime.now();
+//				lock = false;
+//				Configuration.indexLocking = 0;
+//			}
 
 			return "loginpage";
-		}
+		
 
 	}
 
@@ -173,7 +159,7 @@ public class AdminController {
 
 		gameService.saveGame(game, name, pathA);
 		model.addAttribute("GameFromSave", new StringWrapper("style='display:block'"));
-		return admin(model, admin);
+		return "redirect:/admin";
 	}
 
 	@RequestMapping(value = "saveImg", method = RequestMethod.POST)
@@ -182,7 +168,7 @@ public class AdminController {
 		imageService.saveImg(image, name);
 		model.addAttribute("GalleryImage", new StringWrapper("style='display:block'"));
 
-		return admin(model, admin);
+		return "redirect:/admin";
 		// "redirect:/admin" + admin + "";
 	}
 
@@ -190,7 +176,7 @@ public class AdminController {
 	public String saveFile(@RequestParam MultipartFile file, @RequestParam String name, Model model) {
 		fileAdminService.saveFile(file, name);
 		model.addAttribute("FileFromSave", new StringWrapper("style='display:block'"));
-		return admin(model, admin);
+		return "redirect:/admin";
 	}
 
 	@RequestMapping(value = "deleteImg/{id}", method = RequestMethod.GET)
@@ -198,7 +184,7 @@ public class AdminController {
 
 		imageService.delete(Integer.parseInt(id));
 
-		return "redirect:/admin" + admin + "";
+		return "redirect:/admin";
 	}
 
 	@RequestMapping(value = "deleteGame/{id}", method = RequestMethod.GET)
@@ -206,13 +192,13 @@ public class AdminController {
 
 		gameService.delete(Integer.parseInt(id));
 
-		return "redirect:/admin" + admin + "";
+		return "redirect:/admin";
 	}
 
 	/*
 	 * unlock from email
 	 */
-	@RequestMapping(value = "unlockConfirm/{uuidUnlock}", method = RequestMethod.GET)
+	/*@RequestMapping(value = "unlockConfirm/{uuidUnlock}", method = RequestMethod.GET)
 	public String UnlockConfirm(@PathVariable String uuidUnlock) {
 
 		if (Configuration.linkUnlock != null && Configuration.linkUnlock.equals(uuidUnlock)) {
@@ -220,7 +206,7 @@ public class AdminController {
 			lock = true;
 		}
 
-		return "redirect:/admin" + admin + "";
-	}
+		return "redirect:/admin";
+	}*/
 
 }

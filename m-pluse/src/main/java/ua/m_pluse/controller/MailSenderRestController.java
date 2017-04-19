@@ -35,7 +35,7 @@ public class MailSenderRestController {
 
 	}
 
-	@RequestMapping(value = "sendEmailForUnlock", method = RequestMethod.POST)
+	/*@RequestMapping(value = "sendEmailForUnlock", method = RequestMethod.POST)
 	public void sendEmailForUnlock() throws UnknownHostException {
 		if (AdminController.lock == false) {
 
@@ -50,6 +50,6 @@ public class MailSenderRestController {
 
 		}
 
-	}
+	}*/
 
 }
