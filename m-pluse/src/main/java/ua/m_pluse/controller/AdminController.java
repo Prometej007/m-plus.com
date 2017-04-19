@@ -60,7 +60,6 @@ public class AdminController {
 
 	@RequestMapping("admin")
 	public String admin(Model model) {
-
 				List<User> listOnred = new ArrayList<User>();
 				List<User> listWastead = new ArrayList<User>();
 				String all = "";
