@@ -3,15 +3,20 @@ package ua.m_pluse.controller;
 import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import ua.m_pluse.entity.User;
+import ua.m_pluse.service.GameService;
+import ua.m_pluse.service.ImageService;
 import ua.m_pluse.service.UserService;
+import ua.m_pluse.service.utils.StringWrapper;
 import ua.m_pluse.service.utils.UserWrapper;
 
 /**
@@ -24,6 +29,10 @@ public class AddRestController {
 
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private ImageService imageService;
+	@Autowired
+	private GameService gameService;
 
 	@RequestMapping(value = "messageSave", method = RequestMethod.POST)
 	public @ResponseBody void messageCall(@RequestBody User user) {
@@ -63,5 +72,14 @@ public class AddRestController {
 		user.setEmail(email);
 		userService.save(user);
 	}
-
+	/*
+	@RequestMapping(value = "saveImg", method = RequestMethod.POST)
+	public @ResponseBody void saveImg(@RequestParam("image") MultipartFile image, @RequestParam("name") String name) {
+		imageService.saveImg(image, name);
+	}
+	@RequestMapping(value = "saveGame", method = RequestMethod.POST)
+	public @ResponseBody void saveGame(@RequestParam("game") MultipartFile game, @RequestParam("name") String name, @RequestParam("pathA") String pathA) {
+		gameService.saveGame(game, name, pathA);
+	}
+*/
 }
