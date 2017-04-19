@@ -14,8 +14,8 @@ import org.springframework.web.multipart.MultipartFile;
 import ua.m_pluse.constants.Configuration;
 import ua.m_pluse.dao.FileAdminDao;
 import ua.m_pluse.entity.FileAdmin;
-import ua.m_pluse.resource.wrapper.StringModification;
 import ua.m_pluse.service.FileAdminService;
+import ua.m_pluse.service.utils.StringModification;
 
 /**
  * @author prometej

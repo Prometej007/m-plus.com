@@ -2,7 +2,7 @@ package ua.m_pluse.dto;
 
 import java.time.LocalDate;
 
-import ua.m_pluse.entity.Role;
+import ua.m_pluse.entity.enums.Role;
 
 /**
  * @author prometej

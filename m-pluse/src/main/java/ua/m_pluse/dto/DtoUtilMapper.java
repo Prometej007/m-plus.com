@@ -3,8 +3,8 @@ package ua.m_pluse.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-import ua.m_pluse.entity.Role;
 import ua.m_pluse.entity.User;
+import ua.m_pluse.entity.enums.Role;
 
 /**
  * @author prometej

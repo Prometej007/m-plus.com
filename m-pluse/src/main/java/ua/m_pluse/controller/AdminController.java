@@ -17,14 +17,14 @@ import org.springframework.web.multipart.MultipartFile;
 import ua.m_pluse.constants.Configuration;
 import ua.m_pluse.entity.Game;
 import ua.m_pluse.entity.Image;
-import ua.m_pluse.entity.Role;
 import ua.m_pluse.entity.User;
-import ua.m_pluse.resource.statistic.Statistic;
-import ua.m_pluse.resource.wrapper.StringWrapper;
+import ua.m_pluse.entity.enums.Role;
 import ua.m_pluse.service.FileAdminService;
 import ua.m_pluse.service.GameService;
 import ua.m_pluse.service.ImageService;
 import ua.m_pluse.service.UserService;
+import ua.m_pluse.service.utils.StringWrapper;
+import ua.m_pluse.service.utils.config.Statistic;
 
 /**
  * @author prometej

@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import ua.m_pluse.entity.User;
-import ua.m_pluse.resource.wrapper.UserWrapper;
 import ua.m_pluse.service.UserService;
+import ua.m_pluse.service.utils.UserWrapper;
 
 /**
  * @author prometej
