@@ -1,4 +1,4 @@
-package ua.m_pluse.resource.wrapper;
+package ua.m_pluse.service.utils;
 
 
 /**

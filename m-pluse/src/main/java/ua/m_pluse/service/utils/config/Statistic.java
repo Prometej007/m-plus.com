@@ -1,4 +1,4 @@
-package ua.m_pluse.resource.statistic;
+package ua.m_pluse.service.utils.config;
 
 /**
  * @author prometej

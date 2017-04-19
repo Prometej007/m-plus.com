@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ua.m_pluse.dao.UserDao;
-import ua.m_pluse.entity.Role;
 import ua.m_pluse.entity.User;
+import ua.m_pluse.entity.enums.Role;
 import ua.m_pluse.service.UserService;
 
 

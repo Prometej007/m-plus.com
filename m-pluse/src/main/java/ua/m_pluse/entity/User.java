@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import ua.m_pluse.entity.enums.Role;
+
 /**
  * @author prometej
  * @version 1.0

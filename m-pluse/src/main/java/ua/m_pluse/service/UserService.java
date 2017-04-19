@@ -21,5 +21,5 @@ public interface UserService {
 
 	void updateRole(int id);
 
-	public List<User> returnAllEmail();
+	List<User> returnAllEmail();
 }

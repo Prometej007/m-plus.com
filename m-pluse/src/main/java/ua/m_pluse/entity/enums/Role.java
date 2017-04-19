@@ -1,4 +1,4 @@
-package ua.m_pluse.entity;
+package ua.m_pluse.entity.enums;
 
 /**
  * @author prometej

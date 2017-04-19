@@ -16,10 +16,10 @@ public interface FileAdminService {
 
 	void delete(int id);
 
-	public FileAdmin findByPath(String path);
+	FileAdmin findByPath(String path);
 
-	public FileAdmin findByName(String name);
+	FileAdmin findByName(String name);
 
-	public void saveFile(MultipartFile multipartFile, String name);
+	void saveFile(MultipartFile multipartFile, String name);
 
 }
